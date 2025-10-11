@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck } from "lucide-react";
-import dynamic from 'next/dynamic';
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,11 +8,7 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SuccessCounters } from "@/components/success-counters";
-
-const InteractiveHero = dynamic(() => import('@/components/interactive-hero').then(mod => mod.InteractiveHero), {
-  ssr: false,
-  loading: () => <div className="absolute inset-0 bg-background/10" />,
-});
+import { InteractiveHeroDynamic } from "@/components/interactive-hero-dynamic";
 
 const services = [
   { name: "Web/App Development", icon: Code, description: "Crafting bespoke digital experiences from scratch." },
@@ -35,7 +30,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
         <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
-          <InteractiveHero />
+          <InteractiveHeroDynamic />
           <div className="relative z-10 container px-4 md:px-6">
             <div className="max-w-3xl mx-auto space-y-4">
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
