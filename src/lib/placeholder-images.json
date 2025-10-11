@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "testimonial-avatar-1",
+      "description": "Avatar for Jane Doe",
+      "imageUrl": "https://picsum.photos/seed/101/100/100",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-avatar-2",
+      "description": "Avatar for John Smith",
+      "imageUrl": "https://picsum.photos/seed/102/100/100",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-avatar-3",
+      "description": "Avatar for Alex Ray",
+      "imageUrl": "https://picsum.photos/seed/103/100/100",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "service-web-dev",
+      "description": "Abstract image for web development service",
+      "imageUrl": "https://picsum.photos/seed/201/600/400",
+      "imageHint": "code abstract"
+    },
+    {
+      "id": "service-cloud",
+      "description": "Abstract image for cloud hosting service",
+      "imageUrl": "https://picsum.photos/seed/202/600/400",
+      "imageHint": "cloud technology"
+    },
+    {
+      "id": "service-analytics",
+      "description": "Abstract image for analytics service",
+      "imageUrl": "https://picsum.photos/seed/203/600/400",
+      "imageHint": "data chart"
+    }
+  ]
 }
