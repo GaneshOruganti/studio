@@ -45,7 +45,7 @@ export function InteractiveHero() {
     );
 
     const particlesMaterial = new THREE.PointsMaterial({
-      color: 0x8A3FFC, // A color from the primary palette
+      color: 0x2563eb, // A color from the primary palette
       size: 0.02,
       blending: THREE.AdditiveBlending,
       transparent: true,
