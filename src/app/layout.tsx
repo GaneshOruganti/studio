@@ -23,7 +23,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn('font-body antialiased min-h-screen bg-background text-foreground')}>
-        <div className="relative flex min-h-dvh flex-col">
+        <div className="relative flex min-h-dvh flex-col px-4 sm:px-6 lg:px-8">
           <Header />
           <div className="flex-1">{children}</div>
           <Footer />
