@@ -9,6 +9,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SuccessCounters } from "@/components/success-counters";
 import { InteractiveHeroDynamic } from "@/components/interactive-hero-dynamic";
+import { LogoCloud } from "@/components/logo-cloud";
 
 const services = [
   { name: "Web/App Development", icon: Code, description: "Crafting bespoke digital experiences from scratch." },
@@ -91,7 +92,13 @@ export default function Home() {
                 <div className="w-full">
                     <SuccessCounters />
                 </div>
-                <div className="w-full max-w-4xl mx-auto">
+                <div className="mt-12">
+                  <h3 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-8">
+                    Trusted by the World's Best Companies
+                  </h3>
+                  <LogoCloud />
+                </div>
+                <div className="w-full max-w-4xl mx-auto pt-12">
                     <Carousel opts={{ loop: true }} className="w-full">
                         <CarouselContent>
                             {testimonials.map((testimonial, index) => {
