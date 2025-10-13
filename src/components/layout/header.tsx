@@ -24,9 +24,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      <div className="container h-16 flex justify-center items-center pt-8">
-        <div className="w-auto flex items-center justify-between p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
-          <Link href="/" className="flex items-center gap-2 px-96">
+      <div className="container h-16 flex items-center pt-4">
+        <div className="w-full flex items-center justify-between p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
+          <Link href="/" className="flex items-center gap-2 px-4">
             <Icons.logo className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
               Branch Edge
@@ -51,7 +51,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 px-96">
+          <div className="flex items-center gap-2 px-4">
             <ThemeToggle />
 
             {/* Mobile Navigation */}
