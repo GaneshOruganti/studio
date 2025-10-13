@@ -98,9 +98,41 @@ body {
   .logo-slide {
       @apply h-[100px] w-[250px] flex items-center justify-center p-4;
   }
+
+  .testimonial-slider::before,
+  .testimonial-slider::after {
+    content: "";
+    @apply absolute h-full w-24 z-10;
+  }
+
+  .testimonial-slider::before {
+    @apply left-0 top-0 bg-gradient-to-r from-muted/20 to-transparent;
+  }
+
+  .testimonial-slider::after {
+    @apply right-0 top-0 bg-gradient-to-l from-muted/20 to-transparent;
+  }
+  
+  .dark .testimonial-slider::before {
+    @apply bg-gradient-to-r from-background to-transparent;
+  }
+  
+  .dark .testimonial-slider::after {
+    @apply bg-gradient-to-l from-background to-transparent;
+  }
+
+  .testimonial-slide-track {
+      animation: testimonial-scroll 40s linear infinite;
+      width: calc(398px * 12);
+  }
 }
 
 @keyframes scroll {
 	0% { transform: translateX(0); }
 	100% { transform: translateX(calc(-250px * 7))}
+}
+
+@keyframes testimonial-scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-398px * 6))}
 }

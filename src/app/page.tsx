@@ -1,10 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck } from "lucide-react";
+import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SuccessCounters } from "@/components/success-counters";
@@ -21,10 +20,34 @@ const services = [
 ];
 
 const testimonials = [
-  { name: "Jane Doe", company: "Innovate Inc.", quote: "Branch Edge transformed our digital presence. Their team is professional, and the results speak for themselves.", avatarId: "testimonial-avatar-1" },
-  { name: "John Smith", company: "Solutions Co.", quote: "The best tech partner we've ever worked with. Their insights and execution are top-notch.", avatarId: "testimonial-avatar-2" },
-  { name: "Alex Ray", company: "Creative Minds", quote: "Working with Branch Edge was a breeze. They understood our vision and delivered beyond our expectations.", avatarId: "testimonial-avatar-3" },
+  { name: "Jane Doe", company: "Innovate Inc.", quote: "Branch Edge transformed our digital presence. Their team is professional, and the results speak for themselves.", avatarId: "testimonial-avatar-1", rating: 4.8 },
+  { name: "John Smith", company: "Solutions Co.", quote: "The best tech partner we've ever worked with. Their insights and execution are top-notch.", avatarId: "testimonial-avatar-2", rating: 5.0 },
+  { name: "Alex Ray", company: "Creative Minds", quote: "Working with Branch Edge was a breeze. They understood our vision and delivered beyond our expectations.", avatarId: "testimonial-avatar-3", rating: 4.9 },
+  { name: "Sarah Lee", company: "DataDriven LLC", quote: "The analytics they provided gave us the clarity we needed to scale our operations effectively.", avatarId: "testimonial-avatar-4", rating: 4.7 },
+  { name: "Michael Chen", company: "CloudScape", quote: "Their expertise in cloud solutions has been a game-changer for our infrastructure. Highly recommended!", avatarId: "testimonial-avatar-5", rating: 5.0 },
+  { name: "Emily White", company: "Growthify", quote: "Our SEO rankings have skyrocketed since we started working with them. Incredible results!", avatarId: "testimonial-avatar-6", rating: 4.9 },
 ];
+
+const duplicatedTestimonials = [...testimonials, ...testimonials];
+
+const StarRating = ({ rating }: { rating: number }) => {
+  const fullStars = Math.floor(rating);
+  const halfStar = rating % 1 !== 0;
+  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+
+  return (
+    <div className="flex items-center gap-1 text-yellow-500">
+      {[...Array(fullStars)].map((_, i) => (
+        <Star key={`full-${i}`} className="w-5 h-5 fill-current" />
+      ))}
+      {halfStar && <Star key="half" className="w-5 h-5 fill-current" />}
+      {[...Array(emptyStars)].map((_, i) => (
+        <Star key={`empty-${i}`} className="w-5 h-5" />
+      ))}
+    </div>
+  );
+};
+
 
 export default function Home() {
   return (
@@ -98,35 +121,30 @@ export default function Home() {
                   </h3>
                   <LogoCloud />
                 </div>
-                <div className="w-full max-w-4xl mx-auto pt-12">
-                    <Carousel opts={{ loop: true }} className="w-full">
-                        <CarouselContent>
-                            {testimonials.map((testimonial, index) => {
-                                const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);
-                                return (
-                                    <CarouselItem key={index}>
-                                        <div className="p-1">
-                                            <Card>
-                                                <CardContent className="flex flex-col items-center justify-center p-6 space-y-4">
-                                                    <Avatar>
-                                                        {avatar && <AvatarImage src={avatar.imageUrl} alt={testimonial.name} data-ai-hint={avatar.imageHint} />}
-                                                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                                    </Avatar>
-                                                    <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
-                                                    <div className="font-semibold">
-                                                        <p>{testimonial.name}</p>
-                                                        <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                                                    </div>
-                                                </CardContent>
-                                            </Card>
-                                        </div>
-                                    </CarouselItem>
-                                );
-                            })}
-                        </CarouselContent>
-                        <CarouselPrevious className="hidden sm:flex" />
-                        <CarouselNext className="hidden sm:flex" />
-                    </Carousel>
+                <div className="w-full max-w-7xl mx-auto pt-12 testimonial-slider overflow-hidden relative">
+                    <div className="testimonial-slide-track flex">
+                        {duplicatedTestimonials.map((testimonial, index) => {
+                            const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);
+                            return (
+                                <div key={index} className="testimonial-slide flex-shrink-0 w-[350px] mx-4">
+                                    <Card>
+                                        <CardContent className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
+                                            <Avatar className="w-16 h-16">
+                                                {avatar && <AvatarImage src={avatar.imageUrl} alt={testimonial.name} data-ai-hint={avatar.imageHint} />}
+                                                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                            </Avatar>
+                                            <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
+                                            <div className="font-semibold">
+                                                <p>{testimonial.name}</p>
+                                                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                                            </div>
+                                            <StarRating rating={testimonial.rating} />
+                                        </CardContent>
+                                    </Card>
+                                </div>
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
         </section>

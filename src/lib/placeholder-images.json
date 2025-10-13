@@ -19,6 +19,24 @@
       "imageHint": "person portrait"
     },
     {
+      "id": "testimonial-avatar-4",
+      "description": "Avatar for Sarah Lee",
+      "imageUrl": "https://picsum.photos/seed/104/100/100",
+      "imageHint": "woman face"
+    },
+    {
+      "id": "testimonial-avatar-5",
+      "description": "Avatar for Michael Chen",
+      "imageUrl": "https://picsum.photos/seed/105/100/100",
+      "imageHint": "man face"
+    },
+    {
+      "id": "testimonial-avatar-6",
+      "description": "Avatar for Emily White",
+      "imageUrl": "https://picsum.photos/seed/106/100/100",
+      "imageHint": "professional woman"
+    },
+    {
       "id": "service-web-dev",
       "description": "Abstract image for web development service",
       "imageUrl": "https://picsum.photos/seed/201/600/400",
