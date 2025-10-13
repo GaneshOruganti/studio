@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -16,7 +17,7 @@ const navItems = [
   { name: "Services", href: "/services" },
   { name: "AI Insights", href: "/insights" },
   { name: "Testimonials", href: "/testimonials" },
-  { name: "Partners", href: "/#partners" },
+  { name: "Partner", href: "/partner" },
   { name: "Our Team", href: "/team" },
   { name: "Career", href: "/career" },
   { name: "Contact", href: "/contact" },
