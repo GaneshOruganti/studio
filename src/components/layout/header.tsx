@@ -21,35 +21,37 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <div className="container flex h-14 max-w-screen-2xl items-center">
-        <div className="flex-1 flex justify-start">
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Icons.logo className="h-6 w-6 text-primary" />
-            <span className="hidden font-bold sm:inline-block font-headline">
-              Branch Edge
-            </span>
-          </Link>
-        </div>
-        
-        <div className="flex-1 flex justify-center">
-          <nav className="hidden md:flex items-center gap-6 text-sm">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "transition-colors hover:text-foreground/80",
-                  pathname === item.href ? "text-foreground" : "text-foreground/60"
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
+    <header className="sticky top-0 z-50 w-full backdrop-blur-sm bg-background/60">
+      <div className="container flex h-20 items-center justify-between">
+        <Link href="/" className="flex items-center gap-2">
+          <Icons.logo className="h-6 w-6 text-primary" />
+          <span className="hidden font-bold sm:inline-block font-headline">
+            Branch Edge
+          </span>
+        </Link>
 
-        <div className="flex flex-1 items-center justify-end space-x-2">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-1 p-1 rounded-full border bg-card/80 shadow-sm">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={cn(
+                "transition-colors hover:text-foreground/90 rounded-full px-4 py-1.5 text-sm font-medium",
+                pathname === item.href
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-foreground/60"
+              )}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+
+          {/* Mobile Navigation */}
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
@@ -92,7 +94,6 @@ export function Header() {
             </Button>
           </nav>
           */}
-          <ThemeToggle />
         </div>
       </div>
     </header>
