@@ -63,17 +63,17 @@ export function InteractiveHero() {
       }
 
       update() {
-        // Cursor repulsion
+        // Cursor attraction
         const dxMouse = mouse.x - this.x;
         const dyMouse = mouse.y - this.y;
         const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
         
-        if (distanceMouse < mouse.radius) {
-          const force = (mouse.radius - distanceMouse) / mouse.radius;
+        if (distanceMouse < mouse.radius * 2) { // Increased radius for attraction
+          const force = (mouse.radius * 2 - distanceMouse) / (mouse.radius * 2);
           const forceDirectionX = dxMouse / distanceMouse;
           const forceDirectionY = dyMouse / distanceMouse;
-          this.x -= forceDirectionX * force * 2;
-          this.y -= forceDirectionY * force * 2;
+          this.x += forceDirectionX * force * 1.5;
+          this.y += forceDirectionY * force * 1.5;
         } else {
             // Add autonomous movement
             this.x += this.vx;
@@ -146,6 +146,11 @@ export function InteractiveHero() {
       mouse.y = event.clientY - rect.top;
     };
     
+    const handleMouseLeave = () => {
+      mouse.x = -1000;
+      mouse.y = -1000;
+    };
+
     const handleResize = () => {
       width = currentMount.clientWidth;
       height = currentMount.clientHeight;
@@ -156,6 +161,7 @@ export function InteractiveHero() {
 
     window.addEventListener("resize", handleResize);
     currentMount.addEventListener("mousemove", handleMouseMove);
+    currentMount.addEventListener("mouseleave", handleMouseLeave);
     
     init();
     animate();
@@ -164,6 +170,7 @@ export function InteractiveHero() {
       window.removeEventListener("resize", handleResize);
       if (currentMount) {
           currentMount.removeEventListener("mousemove", handleMouseMove);
+          currentMount.removeEventListener("mouseleave", handleMouseLeave);
       }
       cancelAnimationFrame(animationFrameId);
       if (currentMount && canvas) {
