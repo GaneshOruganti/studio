@@ -78,7 +78,7 @@ export default function Home() {
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2 services-anim" style={{ viewTimelineName: '--services', viewTimelineAxis: 'block', animationTimeline: '--services', animationName: 'reveal-up', animationRangeStart: 'entry 25%', animationRangeEnd: 'cover 30%', animationFillMode: 'both' } as React.CSSProperties}>
+              <div className="space-y-2 services-anim">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Our Services</div>
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Built for the Future</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -88,7 +88,7 @@ export default function Home() {
             </div>
             <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
               {services.map((service, i) => (
-                <div key={service.name} className="services-card-anim" style={{ viewTimelineName: '--service-card', viewTimelineAxis: 'block', animationTimeline: '--service-card', animationName: 'reveal-up', animationDelay: `${i * 100}ms`, animationRangeStart: 'entry 25%', animationRangeEnd: 'cover 20%', animationFillMode: 'both' } as React.CSSProperties}>
+                <div key={service.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
                   <Card className="h-full hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
                     <CardHeader className="flex flex-row items-center gap-4">
                       <div className="bg-primary/10 p-3 rounded-full">
