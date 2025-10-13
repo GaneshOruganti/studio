@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -25,7 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
       <div className="container h-20 flex justify-center items-start pt-4">
         <div className="w-auto flex items-center justify-center py-1 px-2 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
-          <Link href="/" className="flex items-center gap-2 pr-12 pl-2">
+          <Link href="/" className="flex items-center gap-2 pr-16 pl-2">
             <Icons.logo className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
               Branch Edge
@@ -50,7 +49,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 px-2">
+          <div className="flex items-center gap-2 px-10">
             <ThemeToggle />
 
             {/* Mobile Navigation */}
