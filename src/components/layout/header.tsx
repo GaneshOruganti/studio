@@ -33,7 +33,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1">
+          <nav className="hidden md:flex items-center gap-1 px-4">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -50,7 +50,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 pr-2">
+          <div className="flex items-center gap-2 px-4">
             <ThemeToggle />
 
             {/* Mobile Navigation */}
