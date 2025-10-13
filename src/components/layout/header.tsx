@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from "next/link";
@@ -22,8 +23,8 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full backdrop-blur-sm bg-background/60">
-      <div className="container flex h-20 items-center justify-between">
-        <div className="flex items-center gap-4">
+      <div className="container flex h-20 items-center">
+        <div className="flex-1 flex items-center justify-start">
           <Link href="/" className="flex items-center gap-2">
             <Icons.logo className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
@@ -33,7 +34,7 @@ export function Header() {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-1 p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
+        <nav className="hidden md:flex flex-1 items-center justify-center gap-1 p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
           {navItems.map((item) => (
             <Link
               key={item.name}
@@ -50,7 +51,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex-1 flex items-center justify-end gap-2">
           <ThemeToggle />
 
           {/* Mobile Navigation */}
