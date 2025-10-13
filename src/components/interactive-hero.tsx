@@ -38,19 +38,19 @@ export function InteractiveHero() {
       x: number;
       y: number;
       size: number;
-      baseX: number;
-      baseY: number;
       density: number;
       color: string;
+      vx: number;
+      vy: number;
 
       constructor(x: number, y: number, color: string) {
         this.x = x;
         this.y = y;
         this.size = 2.5;
-        this.baseX = this.x;
-        this.baseY = this.y;
         this.density = Math.random() * 20 + 5;
         this.color = color;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
       }
 
       draw() {
@@ -63,28 +63,29 @@ export function InteractiveHero() {
       }
 
       update() {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceDirectionX = dx / distance;
-        const forceDirectionY = dy / distance;
-        const maxDistance = mouse.radius;
-        const force = (maxDistance - distance) / maxDistance;
-        let directionX = (forceDirectionX * force * this.density);
-        let directionY = (forceDirectionY * force * this.density);
-
-        if (distance < mouse.radius) {
-          this.x -= directionX;
-          this.y -= directionY;
+        // Cursor repulsion
+        const dxMouse = mouse.x - this.x;
+        const dyMouse = mouse.y - this.y;
+        const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+        
+        if (distanceMouse < mouse.radius) {
+          const force = (mouse.radius - distanceMouse) / mouse.radius;
+          const forceDirectionX = dxMouse / distanceMouse;
+          const forceDirectionY = dyMouse / distanceMouse;
+          this.x -= forceDirectionX * force * 2;
+          this.y -= forceDirectionY * force * 2;
         } else {
-          if (this.x !== this.baseX) {
-            let dx = this.x - this.baseX;
-            this.x -= dx / 10;
-          }
-          if (this.y !== this.baseY) {
-            let dy = this.y - this.baseY;
-            this.y -= dy / 10;
-          }
+            // Add autonomous movement
+            this.x += this.vx;
+            this.y += this.vy;
+        }
+
+        // Boundary check
+        if (this.x < 0 || this.x > width) {
+            this.vx *= -1;
+        }
+        if (this.y < 0 || this.y > height) {
+            this.vy *= -1;
         }
       }
     }
@@ -154,14 +155,16 @@ export function InteractiveHero() {
     };
 
     window.addEventListener("resize", handleResize);
-    window.addEventListener("mousemove", handleMouseMove);
+    currentMount.addEventListener("mousemove", handleMouseMove);
     
     init();
     animate();
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (currentMount) {
+          currentMount.removeEventListener("mousemove", handleMouseMove);
+      }
       cancelAnimationFrame(animationFrameId);
       if (currentMount && canvas) {
         currentMount.removeChild(canvas);
