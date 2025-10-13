@@ -26,7 +26,7 @@ export function InteractiveHero() {
     
     let animationFrameId: number;
     const particles: Particle[] = [];
-    const particleCount = 200;
+    const particleCount = 160;
 
     const mouse = {
       x: -1000,
@@ -106,6 +106,9 @@ export function InteractiveHero() {
     function connect() {
       if (!ctx) return;
       let opacityValue = 1;
+      const isDarkMode = document.documentElement.classList.contains('dark');
+      const lineColor = isDarkMode ? 'rgba(255, 255, 255, ' : 'rgba(0, 0, 0, ';
+
       for (let a = 0; a < particles.length; a++) {
         for (let b = a; b < particles.length; b++) {
           const dx = particles[a].x - particles[b].x;
@@ -114,11 +117,7 @@ export function InteractiveHero() {
 
           if (distance < 120) {
             opacityValue = 1 - distance / 120;
-            const primaryColorValues = getComputedStyle(document.documentElement).getPropertyValue('--primary').split(' ');
-            const h = parseFloat(primaryColorValues[0]);
-            const s = parseFloat(primaryColorValues[1]);
-            const l = parseFloat(primaryColorValues[2]);
-            ctx.strokeStyle = `hsla(${h}, ${s}, ${l}, ${opacityValue})`;
+            ctx.strokeStyle = `${lineColor}${opacityValue})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);
@@ -159,6 +158,19 @@ export function InteractiveHero() {
       init();
     };
 
+    // Use a MutationObserver to detect theme changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          // Re-initialize to pick up new theme colors
+          init();
+        }
+      });
+    });
+
+    observer.observe(document.documentElement, { attributes: true });
+
+
     window.addEventListener("resize", handleResize);
     currentMount.addEventListener("mousemove", handleMouseMove);
     currentMount.addEventListener("mouseleave", handleMouseLeave);
@@ -172,6 +184,7 @@ export function InteractiveHero() {
           currentMount.removeEventListener("mousemove", handleMouseMove);
           currentMount.removeEventListener("mouseleave", handleMouseLeave);
       }
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
       if (currentMount && canvas) {
         currentMount.removeChild(canvas);
