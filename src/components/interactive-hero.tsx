@@ -2,7 +2,6 @@
 "use client";
 
 import { useRef, useEffect } from "react";
-import * as THREE from "three";
 
 export function InteractiveHero() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -11,167 +10,163 @@ export function InteractiveHero() {
     if (!mountRef.current) return;
 
     const currentMount = mountRef.current;
-    let renderer: THREE.WebGLRenderer | null = null;
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    if (!ctx) {
+      console.error("Canvas 2D context is not supported.");
+      return;
+    }
+
+    currentMount.appendChild(canvas);
+
+    let width = currentMount.clientWidth;
+    let height = currentMount.clientHeight;
+    canvas.width = width;
+    canvas.height = height;
+    
     let animationFrameId: number;
+    const particles: Particle[] = [];
+    const particleCount = 100;
 
-    try {
-      if (!window.WebGLRenderingContext) {
-        console.warn("WebGL is not supported in this browser.");
-        return;
-      }
-       // Scene
-      const scene = new THREE.Scene();
+    const mouse = {
+      x: -1000,
+      y: -1000,
+      radius: 60,
+    };
 
-      // Camera
-      const camera = new THREE.PerspectiveCamera(
-        75,
-        currentMount.clientWidth / currentMount.clientHeight,
-        0.1,
-        1000
-      );
-      camera.position.z = 50;
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      baseX: number;
+      baseY: number;
+      density: number;
+      color: string;
 
-      // Renderer
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
-      renderer.setPixelRatio(window.devicePixelRatio);
-      currentMount.appendChild(renderer.domElement);
-
-      // Mouse
-      const mouse = new THREE.Vector2(-10, -10);
-      const handleMouseMove = (event: MouseEvent) => {
-        if (!currentMount) return;
-        const rect = currentMount.getBoundingClientRect();
-        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-      };
-      window.addEventListener('mousemove', handleMouseMove);
-
-      // Particle Geometry
-      const particlesCount = 5000;
-      const positions = new Float32Array(particlesCount * 3);
-      const originalPositions = new Float32Array(particlesCount * 3);
-      const colors = new Float32Array(particlesCount * 3);
-      const primaryColor = new THREE.Color("hsl(var(--primary))");
-      const accentColor = new THREE.Color("hsl(var(--accent))");
-
-      const grid = { width: 100, height: 100 };
-      let i = 0;
-      for (let x = 0; x < grid.width; x++) {
-        for (let y = 0; y < grid.height; y++) {
-          if (i >= particlesCount) break;
-          const i3 = i * 3;
-          const xPos = (x - grid.width / 2) * 1.5;
-          const yPos = (y - grid.height / 2) * 1.5;
-          
-          positions[i3] = xPos;
-          positions[i3 + 1] = yPos;
-          positions[i3 + 2] = 0;
-
-          originalPositions[i3] = xPos;
-          originalPositions[i3 + 1] = yPos;
-          originalPositions[i3 + 2] = 0;
-
-          const color = Math.random() > 0.1 ? primaryColor : accentColor;
-          const intensity = Math.random() * 0.5 + 0.5;
-          colors[i3] = color.r * intensity;
-          colors[i3 + 1] = color.g * intensity;
-          colors[i3 + 2] = color.b * intensity;
-          i++;
-        }
+      constructor(x: number, y: number, color: string) {
+        this.x = x;
+        this.y = y;
+        this.size = 1;
+        this.baseX = this.x;
+        this.baseY = this.y;
+        this.density = Math.random() * 20 + 5;
+        this.color = color;
       }
 
-      const particlesGeometry = new THREE.BufferGeometry();
-      particlesGeometry.setAttribute(
-        "position",
-        new THREE.BufferAttribute(positions, 3)
-      );
-      particlesGeometry.setAttribute(
-        "color",
-        new THREE.BufferAttribute(colors, 3)
-      );
+      draw() {
+        if (!ctx) return;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.closePath();
+        ctx.fill();
+      }
 
-      const particlesMaterial = new THREE.PointsMaterial({
-        size: 0.8,
-        vertexColors: true,
-        blending: THREE.AdditiveBlending,
-        transparent: true,
-        opacity: 0.9,
-      });
+      update() {
+        const dx = mouse.x - this.x;
+        const dy = mouse.y - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const forceDirectionX = dx / distance;
+        const forceDirectionY = dy / distance;
+        const maxDistance = mouse.radius;
+        const force = (maxDistance - distance) / maxDistance;
+        let directionX = (forceDirectionX * force * this.density);
+        let directionY = (forceDirectionY * force * this.density);
 
-      const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
-      scene.add(particleSystem);
-      
-      const clock = new THREE.Clock();
-      
-      // Animation
-      const animate = () => {
-        if (!renderer) return;
-        animationFrameId = requestAnimationFrame(animate);
-        
-        const elapsedTime = clock.getElapsedTime();
-        const positions = particleSystem.geometry.attributes.position.array as Float32Array;
-        
-        const raycaster = new THREE.Raycaster();
-        raycaster.setFromCamera(mouse, camera);
-        const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
-        const mouseWorld = new THREE.Vector3();
-        raycaster.ray.intersectPlane(plane, mouseWorld);
-
-        for (let i = 0; i < particlesCount; i++) {
-            const i3 = i * 3;
-            
-            const dx = mouseWorld.x - originalPositions[i3];
-            const dy = mouseWorld.y - originalPositions[i3 + 1];
-            const dist = Math.sqrt(dx * dx + dy * dy);
-            
-            const force = Math.max(0, 10 - dist);
-            const angle = Math.atan2(dy, dx);
-
-            const targetX = originalPositions[i3] + Math.cos(angle) * force;
-            const targetY = originalPositions[i3+1] + Math.sin(angle) * force;
-            const targetZ = -force * 2;
-
-            positions[i3] += (targetX - positions[i3]) * 0.05;
-            positions[i3 + 1] += (targetY - positions[i3 + 1]) * 0.05;
-            positions[i3 + 2] += (targetZ - positions[i3 + 2]) * 0.05;
+        if (distance < mouse.radius) {
+          this.x -= directionX;
+          this.y -= directionY;
+        } else {
+          if (this.x !== this.baseX) {
+            let dx = this.x - this.baseX;
+            this.x -= dx / 10;
+          }
+          if (this.y !== this.baseY) {
+            let dy = this.y - this.baseY;
+            this.y -= dy / 10;
+          }
         }
-        
-        particleSystem.geometry.attributes.position.needsUpdate = true;
-        particleSystem.rotation.y += 0.0001;
-        particleSystem.rotation.x += 0.0001;
-
-        renderer.render(scene, camera);
-      };
-
-      animate();
-
-      // Handle resize
-      const handleResize = () => {
-        if (!renderer) return;
-        const width = currentMount.clientWidth;
-        const height = currentMount.clientHeight;
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-        renderer.setSize(width, height);
-      };
-      window.addEventListener("resize", handleResize);
-
-      return () => {
-        window.removeEventListener("resize", handleResize);
-        window.removeEventListener('mousemove', handleMouseMove);
-        cancelAnimationFrame(animationFrameId);
-        if (currentMount && renderer?.domElement) {
-          currentMount.removeChild(renderer.domElement);
-        }
-        renderer?.dispose();
-      };
-    } catch (error) {
-      console.error("Failed to initialize WebGL for InteractiveHero:", error);
-       if (renderer && currentMount.contains(renderer.domElement)) {
-        currentMount.removeChild(renderer.domElement);
       }
     }
+
+    function init() {
+      particles.length = 0;
+      const primaryColor = `hsl(${getComputedStyle(document.documentElement).getPropertyValue('--primary')})`;
+      const accentColor = `hsl(${getComputedStyle(document.documentElement).getPropertyValue('--accent')})`;
+      
+      for (let i = 0; i < particleCount; i++) {
+        const x = Math.random() * width;
+        const y = Math.random() * height;
+        const color = Math.random() > 0.2 ? primaryColor : accentColor;
+        particles.push(new Particle(x, y, color));
+      }
+    }
+
+    function connect() {
+      if (!ctx) return;
+      let opacityValue = 1;
+      for (let a = 0; a < particles.length; a++) {
+        for (let b = a; b < particles.length; b++) {
+          const dx = particles[a].x - particles[b].x;
+          const dy = particles[a].y - particles[b].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 120) {
+            opacityValue = 1 - distance / 120;
+            const primaryColorValues = getComputedStyle(document.documentElement).getPropertyValue('--primary').split(' ');
+            const h = parseFloat(primaryColorValues[0]);
+            const s = parseFloat(primaryColorValues[1]);
+            const l = parseFloat(primaryColorValues[2]);
+            ctx.strokeStyle = `hsla(${h}, ${s}, ${l}, ${opacityValue})`;
+            ctx.lineWidth = 0.5;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+    }
+    
+    function animate() {
+      if (!ctx) return;
+      ctx.clearRect(0, 0, width, height);
+      for (const particle of particles) {
+        particle.update();
+        particle.draw();
+      }
+      connect();
+      animationFrameId = requestAnimationFrame(animate);
+    }
+    
+    const handleMouseMove = (event: MouseEvent) => {
+      const rect = currentMount.getBoundingClientRect();
+      mouse.x = event.clientX - rect.left;
+      mouse.y = event.clientY - rect.top;
+    };
+    
+    const handleResize = () => {
+      width = currentMount.clientWidth;
+      height = currentMount.clientHeight;
+      canvas.width = width;
+      canvas.height = height;
+      init();
+    };
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("mousemove", handleMouseMove);
+    
+    init();
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("mousemove", handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+      if (currentMount && canvas) {
+        currentMount.removeChild(canvas);
+      }
+    };
   }, []);
 
   return <div ref={mountRef} className="absolute inset-0 z-0 opacity-60" />;
