@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { Github, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 
 export function Footer() {
@@ -38,12 +38,20 @@ export function Footer() {
             <h4 className="font-semibold font-headline text-lg">Follow Us</h4>
             <div className="flex items-center gap-4">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Facebook className="h-6 w-6" />
+                <span className="sr-only">Facebook</span>
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter className="h-6 w-6" />
                 <span className="sr-only">Twitter</span>
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github className="h-6 w-6" />
-                <span className="sr-only">GitHub</span>
+                <Instagram className="h-6 w-6" />
+                <span className="sr-only">Instagram</span>
+              </Link>
+              <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <Youtube className="h-6 w-6" />
+                <span className="sr-only">YouTube</span>
               </Link>
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="h-6 w-6" />
