@@ -46,7 +46,7 @@ export function InteractiveHero() {
       constructor(x: number, y: number, color: string) {
         this.x = x;
         this.y = y;
-        this.size = 1;
+        this.size = 2.5;
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = Math.random() * 20 + 5;
@@ -169,5 +169,5 @@ export function InteractiveHero() {
     };
   }, []);
 
-  return <div ref={mountRef} className="absolute inset-0 z-0 opacity-60" />;
+  return <div ref={mountRef} className="absolute inset-0 z-0 opacity-70" />;
 }
