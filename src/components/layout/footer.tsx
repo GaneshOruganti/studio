@@ -57,7 +57,7 @@ export function Footer() {
             © {new Date().getFullYear()} Branch Edge. All Rights Reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Made with ❤️ for Branch Edge
+            Made with ❤️ Branch Edge
           </p>
         </div>
       </div>
