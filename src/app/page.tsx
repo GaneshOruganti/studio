@@ -117,7 +117,7 @@ export default function Home() {
                 <div className="w-full">
                     <SuccessCounters />
                 </div>
-                <div className="mt-12">
+                <div id="partners" className="mt-12">
                   <h3 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-8">
                     Trusted by the World's Best Companies
                   </h3>
