@@ -12,9 +12,9 @@ export function Footer() {
               <Icons.logo className="h-8 w-8 text-primary" />
               <span className="text-2xl font-bold font-headline">Branch Edge</span>
             </div>
-            <h3 className="text-xl font-semibold font-headline">Engineering Your Digital Future.</h3>
+            <h3 className="text-xl font-semibold font-headline">Discover. Develop. Succeed.</h3>
             <p className="text-muted-foreground max-w-md">
-              We partner with businesses to build powerful software, architecting digital solutions that foster innovation and drive measurable results.
+              We empower businesses by delivering cutting-edge software solutions that redefine digital experiences, driving growth, and unlocking new opportunities for success.
             </p>
           </div>
           <div className="space-y-4">
