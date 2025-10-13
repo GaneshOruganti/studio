@@ -24,7 +24,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full">
       <div className="container h-20 flex justify-center items-start pt-4">
         <div className="w-auto flex items-center justify-between p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
-          <Link href="/" className="flex items-center gap-2 pl-4 pr-8">
+          <Link href="/" className="flex items-center gap-2 pl-4 pr-64">
             <Icons.logo className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
               Branch Edge
@@ -49,7 +49,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 pl-8 pr-4">
+          <div className="flex items-center gap-2 pl-64 pr-4">
             <ThemeToggle />
 
             {/* Mobile Navigation */}
