@@ -6,13 +6,13 @@ import * as THREE from "three";
 
 export function InteractiveHero() {
   const mountRef = useRef<HTMLDivElement>(null);
-  const mouse = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
     if (!mountRef.current) return;
 
     const currentMount = mountRef.current;
     let renderer: THREE.WebGLRenderer | null = null;
+    let animationFrameId: number;
 
     try {
       // Scene
@@ -25,7 +25,7 @@ export function InteractiveHero() {
         0.1,
         1000
       );
-      camera.position.z = 5;
+      camera.position.z = 70;
 
       // Renderer
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -33,12 +33,25 @@ export function InteractiveHero() {
       renderer.setPixelRatio(window.devicePixelRatio);
       currentMount.appendChild(renderer.domElement);
 
-      // Particles
-      const particlesCount = 5000;
+      // Digital Rain Particles
+      const particlesCount = 10000;
       const positions = new Float32Array(particlesCount * 3);
+      const velocities = new Float32Array(particlesCount);
+      const colors = new Float32Array(particlesCount * 3);
+      const primaryColor = new THREE.Color("hsl(var(--primary))");
 
-      for (let i = 0; i < particlesCount * 3; i++) {
-        positions[i] = (Math.random() - 0.5) * 10;
+      for (let i = 0; i < particlesCount; i++) {
+        const i3 = i * 3;
+        positions[i3] = (Math.random() - 0.5) * 200; // x
+        positions[i3 + 1] = Math.random() * 150;     // y
+        positions[i3 + 2] = (Math.random() - 0.5) * 50;  // z
+        
+        velocities[i] = 0.2 + Math.random() * 0.3; // speed
+
+        const intensity = Math.random() * 0.5 + 0.5;
+        colors[i3] = primaryColor.r * intensity;
+        colors[i3 + 1] = primaryColor.g * intensity;
+        colors[i3 + 2] = primaryColor.b * intensity;
       }
 
       const particlesGeometry = new THREE.BufferGeometry();
@@ -46,41 +59,38 @@ export function InteractiveHero() {
         "position",
         new THREE.BufferAttribute(positions, 3)
       );
+       particlesGeometry.setAttribute(
+        "color",
+        new THREE.BufferAttribute(colors, 3)
+      );
 
       const particlesMaterial = new THREE.PointsMaterial({
-        color: 0x2563eb, // A color from the primary palette
-        size: 0.02,
+        size: 0.5,
+        vertexColors: true,
         blending: THREE.AdditiveBlending,
         transparent: true,
-        opacity: 0.7
+        opacity: 0.8
       });
 
       const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
       scene.add(particleSystem);
       
-      // Mouse move handler
-      const handleMouseMove = (event: MouseEvent) => {
-          const rect = currentMount.getBoundingClientRect();
-          mouse.current.x = ((event.clientX - rect.left) / currentMount.clientWidth) * 2 - 1;
-          mouse.current.y = -(((event.clientY - rect.top) / currentMount.clientHeight) * 2 - 1);
-      };
-      window.addEventListener("mousemove", handleMouseMove);
-
       // Animation
-      const clock = new THREE.Clock();
       const animate = () => {
         if (!renderer) return;
-        requestAnimationFrame(animate);
-        const elapsedTime = clock.getElapsedTime();
-
-        // Animate particles
-        particleSystem.rotation.y = elapsedTime * 0.05;
+        animationFrameId = requestAnimationFrame(animate);
         
-        // Animate camera based on mouse
-        camera.position.x += (mouse.current.x * 0.5 - camera.position.x) * 0.05;
-        camera.position.y += (mouse.current.y * 0.5 - camera.position.y) * 0.05;
-        camera.lookAt(scene.position);
+        const positions = particleSystem.geometry.attributes.position.array as Float32Array;
 
+        for (let i = 0; i < particlesCount; i++) {
+            positions[i * 3 + 1] -= velocities[i];
+            if (positions[i * 3 + 1] < -75) {
+                positions[i * 3 + 1] = 75;
+            }
+        }
+        
+        particleSystem.geometry.attributes.position.needsUpdate = true;
+        particleSystem.rotation.y += 0.0001;
 
         renderer.render(scene, camera);
       };
@@ -90,19 +100,21 @@ export function InteractiveHero() {
       // Handle resize
       const handleResize = () => {
         if (!renderer) return;
-        camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
+        const width = currentMount.clientWidth;
+        const height = currentMount.clientHeight;
+        camera.aspect = width / height;
         camera.updateProjectionMatrix();
-        renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+        renderer.setSize(width, height);
       };
       window.addEventListener("resize", handleResize);
 
       return () => {
         window.removeEventListener("resize", handleResize);
-        window.removeEventListener("mousemove", handleMouseMove);
+        cancelAnimationFrame(animationFrameId);
         if (currentMount && renderer) {
           currentMount.removeChild(renderer.domElement);
-          renderer.dispose();
         }
+        renderer?.dispose();
       };
     } catch (error) {
       console.error("Failed to initialize WebGL for InteractiveHero:", error);
