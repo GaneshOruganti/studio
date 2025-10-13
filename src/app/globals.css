@@ -167,3 +167,15 @@ body {
     opacity: 1;
   }
 }
+
+.services-anim {
+  animation: reveal-up 1s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 30%;
+}
+
+.services-card-anim {
+  animation: reveal-up 1s cubic-bezier(0.25, 1, 0.5, 1) both;
+  animation-timeline: view();
+  animation-range: entry 25% cover 20%;
+}
