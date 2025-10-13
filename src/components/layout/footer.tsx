@@ -52,9 +52,12 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-border/40 pt-8">
-          <p className="text-center text-sm text-muted-foreground md:text-left">
+        <div className="mt-8 border-t border-border/40 pt-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4">
+          <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Branch Edge. All Rights Reserved.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Made with ❤️ for Branch Edge
           </p>
         </div>
       </div>
