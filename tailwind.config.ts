@@ -91,12 +91,25 @@ export default {
         scroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(calc(-250px * 7))' }
+        },
+        'reveal-up': {
+          from: {
+            transform: 'translateY(40%)',
+            filter: 'blur(10px)',
+            opacity: '0'
+          },
+          to: {
+            transform: 'translateY(0)',
+            filter: 'blur(0)',
+            opacity: '1'
+          }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         scroll: 'scroll 20s linear infinite',
+        'reveal-up': 'reveal-up 1s cubic-bezier(0.25, 1, 0.5, 1) forwards'
       },
     },
   },

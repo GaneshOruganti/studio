@@ -78,7 +78,7 @@ export default function Home() {
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
+              <div className="space-y-2 services-anim">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Our Services</div>
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Built for the Future</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -86,9 +86,9 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              {services.map((service) => (
-                <Card key={service.name} className="h-full hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
+            <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12 services-anim">
+              {services.map((service, i) => (
+                <Card key={service.name} className="h-full hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 services-card-anim" style={{ animationDelay: `${i * 150}ms` } as React.CSSProperties}>
                   <CardHeader className="flex flex-row items-center gap-4">
                     <div className="bg-primary/10 p-3 rounded-full">
                        <service.icon className="h-6 w-6 text-primary" />
