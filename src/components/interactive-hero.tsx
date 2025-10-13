@@ -26,7 +26,7 @@ export function InteractiveHero() {
     
     let animationFrameId: number;
     const particles: Particle[] = [];
-    const particleCount = 100;
+    const particleCount = 200;
 
     const mouse = {
       x: -1000,
@@ -72,8 +72,8 @@ export function InteractiveHero() {
           const force = (mouse.radius * 2 - distanceMouse) / (mouse.radius * 2);
           const forceDirectionX = dxMouse / distanceMouse;
           const forceDirectionY = dyMouse / distanceMouse;
-          this.x += forceDirectionX * force * 3.5;
-          this.y += forceDirectionY * force * 3.5;
+          this.x += forceDirectionX * force * 5.5;
+          this.y += forceDirectionY * force * 5.5;
         } else {
             // Add autonomous movement
             this.x += this.vx;
