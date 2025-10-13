@@ -24,9 +24,9 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
-      <div className="container h-16 flex items-center pt-4">
+      <div className="container h-14 flex items-center pt-2">
         <div className="w-full flex items-center justify-between p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
-          <Link href="/" className="flex items-center gap-2 px-4">
+          <Link href="/" className="flex items-center gap-2 px-3">
             <Icons.logo className="h-6 w-6 text-primary" />
             <span className="hidden font-bold sm:inline-block font-headline">
               Branch Edge
@@ -40,7 +40,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 className={cn(
-                  "transition-colors hover:text-foreground/90 rounded-full px-4 py-1 text-sm font-medium",
+                  "transition-colors hover:text-foreground/90 rounded-full px-3 py-1 text-sm font-medium",
                   pathname === item.href
                     ? "bg-primary text-primary-foreground shadow-sm"
                     : "text-foreground/60"
@@ -51,7 +51,7 @@ export function Header() {
             ))}
           </nav>
 
-          <div className="flex items-center gap-2 px-4">
+          <div className="flex items-center gap-2 px-3">
             <ThemeToggle />
 
             {/* Mobile Navigation */}
