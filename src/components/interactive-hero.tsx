@@ -72,8 +72,8 @@ export function InteractiveHero() {
           const force = (mouse.radius * 2 - distanceMouse) / (mouse.radius * 2);
           const forceDirectionX = dxMouse / distanceMouse;
           const forceDirectionY = dyMouse / distanceMouse;
-          this.x += forceDirectionX * force * 1.5;
-          this.y += forceDirectionY * force * 1.5;
+          this.x += forceDirectionX * force * 3.5;
+          this.y += forceDirectionY * force * 3.5;
         } else {
             // Add autonomous movement
             this.x += this.vx;
