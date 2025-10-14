@@ -11,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, MapPin, Search, X, Star, Briefcase, DollarSign } from "lucide-react";
+import { ArrowRight, MapPin, Search, X, Star, Briefcase, DollarSign, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -23,12 +23,15 @@ import { cn } from "@/lib/utils";
 
 type View = "all" | "saved";
 
+const JOBS_PER_PAGE = 8;
+
 export default function CareerPage() {
   const [keyword, setKeyword] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [savedJobs, setSavedJobs] = useState<string[]>([]);
   const [view, setView] = useState<View>("all");
+  const [currentPage, setCurrentPage] = useState(1);
 
   const jobCategories = [...Array.from(new Set(jobOpenings.map(job => job.category)))];
   const jobTypes = [...Array.from(new Set(jobOpenings.map(job => job.type)))];
@@ -37,18 +40,21 @@ export default function CareerPage() {
     setSelectedCategories(prev => 
       prev.includes(category) ? prev.filter(c => c !== category) : [...prev, category]
     );
+    setCurrentPage(1);
   };
 
   const handleTypeChange = (type: string) => {
     setSelectedTypes(prev =>
       prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
     );
+    setCurrentPage(1);
   };
 
   const clearFilters = () => {
     setKeyword("");
     setSelectedCategories([]);
     setSelectedTypes([]);
+    setCurrentPage(1);
   };
 
   const toggleSaveJob = (jobId: string) => {
@@ -64,13 +70,23 @@ export default function CareerPage() {
     return keywordMatch && categoryMatch && typeMatch;
   });
 
-  const jobsToShow = view === 'saved'
+  const jobsToList = view === 'saved'
     ? allFilteredJobs.filter(job => savedJobs.includes(job.id))
     : allFilteredJobs;
 
+  const totalPages = Math.ceil(jobsToList.length / JOBS_PER_PAGE);
+  const paginatedJobs = jobsToList.slice((currentPage - 1) * JOBS_PER_PAGE, currentPage * JOBS_PER_PAGE);
+
   const switchView = (newView: View) => {
     setView(newView);
+    setCurrentPage(1);
   };
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage > 0 && newPage <= totalPages) {
+        setCurrentPage(newPage);
+    }
+  }
 
   return (
     <div className="container py-12 md:py-24">
@@ -81,7 +97,7 @@ export default function CareerPage() {
             <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-8 gap-4">
               <div className="flex items-center gap-2 border-b">
                 <Button variant="ghost" onClick={() => switchView('all')} className={cn("rounded-none border-b-2", view === 'all' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground')}>
-                  All Jobs ({allFilteredJobs.length})
+                  All Jobs ({jobsToList.length})
                 </Button>
                 <Button variant="ghost" onClick={() => switchView('saved')} className={cn("rounded-none border-b-2", view === 'saved' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground')}>
                   Saved Jobs ({savedJobs.length})
@@ -104,8 +120,8 @@ export default function CareerPage() {
             </div>
 
             <div className="grid gap-6">
-              {jobsToShow.length > 0 ? (
-                jobsToShow.map((job) => (
+              {paginatedJobs.length > 0 ? (
+                paginatedJobs.map((job) => (
                   <Card
                     key={job.id}
                     className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
@@ -149,6 +165,22 @@ export default function CareerPage() {
                 </p>
               )}
             </div>
+
+            {totalPages > 1 && (
+                <div className="flex justify-center items-center gap-4 mt-8">
+                    <Button variant="outline" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
+                        <ArrowLeft className="mr-2" />
+                        Previous
+                    </Button>
+                    <span className="text-sm font-medium text-muted-foreground">
+                        Page {currentPage} of {totalPages}
+                    </span>
+                    <Button variant="outline" onClick={() => handlePageChange(currentPage + 1)} disabled={currentPage === totalPages}>
+                        Next
+                        <ArrowRight className="ml-2" />
+                    </Button>
+                </div>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -166,7 +198,8 @@ export default function CareerPage() {
                       placeholder="Enter keyword"
                       value={keyword}
                       onChange={(e) => {
-                        setKeyword(e.target.value)
+                        setKeyword(e.target.value);
+                        setCurrentPage(1);
                       }}
                       className="rounded-r-none focus:z-10"
                     />

@@ -13,6 +13,7 @@ export type Job = {
 };
 
 export const jobOpenings: Job[] = [
+  // Full-Time Roles
   {
     id: "chief-innovation-architect",
     title: "Chief Innovation Architect",
@@ -116,7 +117,7 @@ export const jobOpenings: Job[] = [
     perks: ["Customer-facing leadership", "Bonus structure based on retention", "Travel opportunities", "Health and wellness stipend"],
   },
   {
-    id: "digital-brand-evangelist-v2",
+    id: "digital-brand-evangelist",
     title: "Digital Brand Evangelist",
     category: "Marketing",
     location: "Remote",
@@ -149,6 +150,183 @@ export const jobOpenings: Job[] = [
     ],
     perks: ["Security conference budget (e.g., Black Hat, DEF CON)", "Advanced security certifications (e.g., CISSP, OSCP)", "Latest security software", "Ethical hacking opportunities"],
   },
+  {
+    id: "data-security-guardian",
+    title: "Data Security Guardian",
+    category: "Security",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Safeguard systems and customer data against threats. Conduct security assessments, manage firewalls and encryption, monitor vulnerabilities, and lead response planning for incidents. Educate teams on best practices and develop policies to ensure compliance with industry standards.",
+    rolesAndResponsibilities: [
+      "Conduct regular security assessments and risk analysis.",
+      "Manage and configure security tools like firewalls, IDS/IPS, and encryption.",
+      "Monitor for, investigate, and respond to security incidents.",
+      "Develop and enforce data protection policies and procedures."
+    ],
+    perks: ["Advanced security training", "Budget for security tools", "Career growth in a critical field", "Contribution to a secure product"],
+  },
+  {
+    id: "ai-product-architect",
+    title: "AI Product Architect",
+    category: "AI",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Lead the ideation, design, and development of AI-driven products across various sectors. Define architecture, ensure robust data pipelines, and guide the team in deploying and optimizing AI/ML models. Evaluate new AI technologies for integration and maintain compliance with ethical standards.",
+    rolesAndResponsibilities: [
+        "Lead the architectural design of AI-powered products.",
+        "Define and manage data pipelines for training and inference.",
+        "Guide the engineering team on AI model deployment and optimization.",
+        "Evaluate and integrate new AI technologies and frameworks."
+    ],
+    perks: ["Lead innovative AI projects", "Work with a talented AI team", "Access to state-of-the-art MLOps tools", "Shape the future of our AI products"],
+  },
+  {
+    id: "product-strategy-lead",
+    title: "Product Strategy Lead",
+    category: "Product",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Define the product vision and develop winning strategies for market entry and growth. Conduct competitive analysis, gather user feedback, prioritize feature development, and align roadmaps with business objectives. Work closely with leadership, design, and engineering to translate strategy into actionable plans.",
+    rolesAndResponsibilities: [
+        "Define and communicate the product vision and strategic roadmap.",
+        "Conduct market research and competitive analysis to identify opportunities.",
+        "Prioritize features and initiatives based on business and user impact.",
+        "Collaborate with cross-functional teams to ensure successful product launches."
+    ],
+    perks: ["High-level strategic impact", "Leadership and mentorship role", "Direct influence on company direction", "Competitive bonus structure"],
+  },
+  {
+    id: "innovation-solutions-engineer",
+    title: "Innovation Solutions Engineer",
+    category: "Engineering",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Design and implement advanced software solutions using the latest technologies. Collaborate with cross-functional teams to build products that deliver high value at speed. Ensure scalability, reliability, and security while following agile and DevOps best practices. Constantly research and prototype emerging tools and frameworks relevant to your domain.",
+    rolesAndResponsibilities: [
+        "Develop scalable and reliable software solutions.",
+        "Collaborate with product and design teams to build new features.",
+        "Research and prototype with new technologies and frameworks.",
+        "Write clean, maintainable, and well-tested code."
+    ],
+    perks: ["Work on a variety of challenging projects", "Flexible technology stack", "Professional development budget", "Opportunities for open-source contributions"],
+  },
+  {
+    id: "customer-success-catalyst",
+    title: "Customer Success Catalyst",
+    category: "Customer Success",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Be the client’s advocate, ensuring successful adoption of solutions, high satisfaction, and long-term retention. Onboard accounts, provide technical assistance, collect feedback, and collaborate with product/engineering to improve the offering. Monitor key use metrics and provide training and resources to enable success.",
+    rolesAndResponsibilities: [
+        "Ensure successful customer onboarding and adoption.",
+        "Act as the primary advocate for our clients.",
+        "Provide technical assistance and strategic guidance.",
+        "Gather and relay customer feedback to the product team."
+    ],
+    perks: ["Build strong client relationships", "Directly impact customer satisfaction", "Performance-based bonuses", "Professional growth opportunities"],
+  },
+  {
+    id: "ux-ui-design-lead",
+    title: "UX/UI Design Lead",
+    category: "Design",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Lead the design of intuitive, modern, and visually striking interfaces for our digital products. Mentor a team of designers, establish and maintain design systems, and champion a user-centered design process from research to implementation.",
+    rolesAndResponsibilities: [
+        "Lead and mentor a team of UX/UI designers.",
+        "Oversee the creation of wireframes, prototypes, and high-fidelity designs.",
+        "Establish and maintain a comprehensive design system.",
+        "Drive user research and testing to inform design decisions."
+    ],
+    perks: ["Lead a creative team", "Shape the visual identity of our products", "Access to top design tools", "Opportunities for creative freedom"],
+  },
+  {
+    id: "engineering-team-lead",
+    title: "Engineering Team Lead",
+    category: "Engineering",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Lead a team of software engineers in building and maintaining high-quality software products. Provide technical guidance, mentor team members, and ensure the successful delivery of projects. Foster a collaborative and productive team environment.",
+    rolesAndResponsibilities: [
+        "Lead and manage a team of software engineers.",
+        "Provide technical mentorship and guidance.",
+        "Oversee the software development lifecycle from planning to deployment.",
+        "Foster a culture of collaboration, innovation, and continuous improvement."
+    ],
+    perks: ["Leadership and mentorship opportunities", "Influence over technical direction", "Team performance bonuses", "Professional management training"],
+  },
+  {
+    id: "devops-lead",
+    title: "DevOps Lead",
+    category: "DevOps",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Lead the DevOps team in automating and optimizing our software delivery processes. Design and manage our cloud infrastructure, ensure system reliability and security, and promote a culture of DevOps best practices.",
+    rolesAndResponsibilities: [
+        "Lead and mentor the DevOps engineering team.",
+        "Architect and manage scalable and reliable cloud infrastructure.",
+        "Oversee the CI/CD pipeline and deployment processes.",
+        "Champion DevOps best practices across the organization."
+    ],
+    perks: ["Lead a critical engineering function", "Budget for advanced tooling", "Strategic role in technical operations", "Flexible on-call schedule"],
+  },
+  {
+    id: "qa-test-lead",
+    title: "QA/Test Lead",
+    category: "QA",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Lead our quality assurance efforts to ensure our products meet the highest standards of quality and reliability. Develop and implement test strategies, manage automated and manual testing processes, and work closely with development teams to identify and resolve issues.",
+    rolesAndResponsibilities: [
+        "Develop and execute comprehensive test plans and strategies.",
+        "Lead and mentor a team of QA engineers.",
+        "Oversee both manual and automated testing efforts.",
+        "Collaborate with developers to ensure product quality from start to finish."
+    ],
+    perks: ["Own the quality assurance process", "Access to modern testing frameworks", "Critical role in product delivery", "Opportunities for certification"],
+  },
+  {
+    id: "customer-success-manager",
+    title: "Customer Success Manager",
+    category: "Customer Success",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Manage a portfolio of clients, ensuring they achieve their desired outcomes while using our products. Develop strong relationships, provide strategic advice, and act as the voice of the customer to internal teams.",
+    rolesAndResponsibilities: [
+        "Manage a dedicated portfolio of customer accounts.",
+        "Develop and maintain strong, long-lasting customer relationships.",
+        "Provide strategic guidance to help customers achieve their goals.",
+        "Serve as the primary liaison between customers and internal teams."
+    ],
+    perks: ["Build and manage key client relationships", "Directly contribute to customer retention", "Competitive commission and bonus structure", "Professional development opportunities"],
+  },
+  {
+    id: "hr-talent-lead",
+    title: "HR & Talent Lead",
+    category: "HR",
+    location: "Remote",
+    type: "Full-Time",
+    salary: "Competitive",
+    description: "Lead our efforts to attract, retain, and develop top talent. Manage the full recruitment lifecycle, develop and implement HR policies, and foster a positive and inclusive company culture. Act as a strategic partner to leadership on all people-related matters.",
+    rolesAndResponsibilities: [
+        "Lead the full-cycle recruitment process to attract top talent.",
+        "Develop and implement HR policies and programs.",
+        "Champion a positive and inclusive company culture.",
+        "Advise leadership on talent management and organizational development."
+    ],
+    perks: ["Shape the company culture", "Lead a critical business function", "Strategic role with leadership visibility", "Budget for wellness and culture initiatives"],
+  },
+  // Internship Roles
   {
     id: "software-development-intern",
     title: "Software Development Intern",
@@ -214,7 +392,7 @@ export const jobOpenings: Job[] = [
     perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
   },
   {
-    id: "product-management-intern",
+    id: "product-management-intern-ext",
     title: "Product Management Intern",
     category: "Internship",
     location: "Remote",
@@ -230,7 +408,7 @@ export const jobOpenings: Job[] = [
     perks: ["Learn the full product development lifecycle", "Gain strategic business experience", "Mentorship from product leaders", "Impact product direction"],
   },
   {
-    id: "cybersecurity-intern-2",
+    id: "cybersecurity-intern-ext",
     title: "Cybersecurity Intern",
     category: "Internship",
     location: "Remote",
@@ -278,7 +456,7 @@ export const jobOpenings: Job[] = [
     perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   },
   {
-    id: "software-engineering-intern-2",
+    id: "software-engineering-intern",
     title: "Software Engineering Intern",
     category: "Internship",
     location: "Remote",
@@ -286,9 +464,8 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Work on feature development, bug fixing, and learn modern coding practices alongside the engineering team.",
     rolesAndResponsibilities: [
-      "Work on feature development, bug fixing, and learn modern coding practices alongside the engineering team.",
       "Contribute to web/app development.",
-      "Learn modern frameworks while working alongside senior developers.",
+      "Learn modern frameworks while working alongside senior developers."
     ],
     perks: ["Mentorship from senior engineers", "Hands-on project experience", "Flexible work hours", "Potential for future employment"],
   },
@@ -303,7 +480,7 @@ export const jobOpenings: Job[] = [
     rolesAndResponsibilities: [
       "Assist in building and testing AI models.",
       "Perform data analysis.",
-      "Explore new machine learning techniques.",
+      "Explore new machine learning techniques."
     ],
     perks: ["Work with large datasets and cutting-edge models", "Mentorship from data scientists", "Gain practical AI/ML skills", "Academic credit support"],
   },
@@ -318,54 +495,9 @@ export const jobOpenings: Job[] = [
     rolesAndResponsibilities: [
       "Collaborate with designers to create intuitive interfaces.",
       "Work on user research.",
-      "Contribute to UX/UI projects.",
+      "Contribute to UX/UI projects."
     ],
     perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
-  },
-  {
-    id: "devops-intern-2",
-    title: "DevOps Intern",
-    category: "Internship",
-    location: "Remote",
-    type: "Internship",
-    salary: "Paid",
-    description: "Support the automation of deployments, maintain cloud infrastructure, and monitor reliability and performance.",
-    rolesAndResponsibilities: [
-      "Support the automation of deployments.",
-      "Maintain cloud infrastructure.",
-      "Monitor reliability and performance.",
-    ],
-    perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
-  },
-  {
-    id: "cybersecurity-intern-3",
-    title: "Cybersecurity Intern",
-    category: "Internship",
-    location: "Remote",
-    type: "Internship",
-    salary: "Paid",
-    description: "Participate in vulnerability assessments, policy creation, and help ensure compliance with security protocols.",
-    rolesAndResponsibilities: [
-      "Participate in vulnerability assessments.",
-      "Assist in policy creation.",
-      "Help ensure compliance with security protocols.",
-    ],
-    perks: ["Gain experience in a high-demand field", "Work with advanced security tools", "Mentorship from cybersecurity experts", "Understand real-world security challenges"],
-  },
-  {
-    id: "product-management-intern-2",
-    title: "Product Management Intern",
-    category: "Internship",
-    location: "Remote",
-    type: "Internship",
-    salary: "Paid",
-    description: "Support product roadmapping, conduct market research, and coordinate feature prioritization and releases.",
-    rolesAndResponsibilities: [
-      "Support product roadmapping.",
-      "Conduct market research.",
-      "Coordinate feature prioritization and releases.",
-    ],
-    perks: ["Learn the full product development lifecycle", "Gain strategic business experience", "Mentorship from product leaders", "Impact product direction"],
   },
   {
     id: "business-analytics-intern",
@@ -378,7 +510,7 @@ export const jobOpenings: Job[] = [
     rolesAndResponsibilities: [
       "Analyze product and business data.",
       "Build dashboards.",
-      "Deliver insights that support decision-making.",
+      "Deliver insights that support decision-making."
     ],
     perks: ["Develop strong analytical skills", "Work with business intelligence tools", "Present findings to leadership", "Data-driven decision making"],
   },
@@ -393,7 +525,7 @@ export const jobOpenings: Job[] = [
     rolesAndResponsibilities: [
       "Engage with users.",
       "Prepare documentation.",
-      "Help in onboarding and troubleshooting customer issues.",
+      "Help in onboarding and troubleshooting customer issues."
     ],
     perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   }
