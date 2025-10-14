@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap } from "lucide-react";
@@ -86,7 +87,10 @@ export default function Home() {
             <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 lg:grid-cols-4 lg:gap-8">
               {whatWeDo.map((item, i) => (
                 <div key={item.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
-                  <Card className={`h-full text-center transition-all duration-300 ${item.highlighted ? 'bg-card shadow-xl scale-105' : 'bg-transparent border-0 shadow-none'}`}>
+                  <Card className={`h-full text-center transition-all duration-300 ${item.highlighted
+                      ? 'bg-card shadow-xl scale-105 hover:shadow-primary/20'
+                      : 'bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105'
+                    }`}>
                     <CardContent className="p-6 flex flex-col items-center gap-4">
                       <div className={`p-4 rounded-lg mb-4 ${item.highlighted ? 'bg-primary/10' : 'bg-card'}`}>
                          <item.icon className="h-8 w-8 text-primary" />
