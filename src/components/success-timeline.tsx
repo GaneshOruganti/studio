@@ -67,7 +67,7 @@ const TimelineNode = ({
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0.3, 0.35], [100, 0]);
+  const x = useTransform(scrollYProgress, [0.3, 0.35], [-100, 0]);
   const opacity = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
 
   return (
@@ -78,7 +78,7 @@ const TimelineNode = ({
         ...item.position,
         translateX: "-50%",
         translateY: "-50%",
-        y,
+        x,
         opacity,
       }}
     >
