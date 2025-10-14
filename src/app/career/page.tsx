@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import { ArrowRight, MapPin, Search, X, ArrowLeft, Star } from "lucide-react";
 import Link from "next/link";
