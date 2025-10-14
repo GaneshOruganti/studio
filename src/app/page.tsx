@@ -104,7 +104,7 @@ export default function Home() {
                 <div className="inline-block rounded-full bg-muted px-4 py-2 text-sm font-semibold text-primary">Our Expertise</div>
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">What We Do</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We specialize in creating innovative digital solutions across multiple domains to help businesses thrive in the modern digital landscape.
+                  We build the innovative digital solutions that help businesses like yours succeed. From smart software to standout branding, we're here to help you grow.
                 </p>
               </div>
             </div>
