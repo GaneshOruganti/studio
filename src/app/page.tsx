@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone, Palette } from "lucide-react";
+import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone, Palette, Layers, UserCog, Database, Search, Bot, PieChart, Briefcase } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,12 +11,15 @@ import { InteractiveHeroDynamic } from "@/components/interactive-hero-dynamic";
 import { LogoCloud } from "@/components/logo-cloud";
 
 const services = [
-  { name: "Web/App Development", icon: Code, description: "Crafting bespoke digital experiences from scratch." },
-  { name: "Cloud Hosting", icon: Cloud, description: "Scalable and secure cloud infrastructure for your applications." },
-  { name: "Analytics", icon: BarChart, description: "Actionable insights from your data to drive growth." },
-  { name: "SEO", icon: TrendingUp, description: "Boosting your online visibility to reach the right audience." },
-  { name: "Managed IT", icon: Shield, description: "Proactive IT management to keep your systems running smoothly." },
-  { name: "User Authentication", icon: UserCheck, description: "Secure and seamless user login and management." },
+  { name: "AI & ML Solutions", icon: BrainCircuit, description: "Artificial intelligence and machine learning solutions to automate and optimize processes." },
+  { name: "CRM Development", icon: UserCog, description: "Customer Relationship Management systems to manage and improve customer interactions." },
+  { name: "RCM Development", icon: Database, description: "Revenue Cycle Management systems to optimize financial processes and billing." },
+  { name: "Answer Engine Optimization", icon: Bot, description: "Optimize content for AI-powered search and voice assistants." },
+  { name: "Search Engine Optimization", icon: Search, description: "Improve your website's visibility and ranking on search engines." },
+  { name: "Content Creation", icon: FileText, description: "We create content for online branding to enhance your digital presence." },
+  { name: "Digital Marketing/Branding", icon: Megaphone, description: "Strategic digital marketing campaigns and brand development to boost your online presence." },
+  { name: "Business Software", icon: Briefcase, description: "Custom enterprise software solutions that streamline operations and boost productivity." },
+  { name: "Mobile Applications", icon: AppWindow, description: "Native and cross-platform mobile apps for iOS and Android platforms." },
 ];
 
 const whatWeDo = [
@@ -130,25 +133,31 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2 services-anim">
-                <div className="inline-block rounded-lg bg-background px-3 py-1 text-sm">Our Services</div>
-                <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Built for the Future</h2>
+                <div className="inline-block rounded-full bg-background px-4 py-2 text-sm font-semibold text-primary shadow-sm">
+                  <Star className="inline-block h-4 w-4 mr-2 text-yellow-400 fill-yellow-400" />
+                  Complete Solutions
+                </div>
+                <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Our Services</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We offer a comprehensive suite of services to empower your business in the digital age.
+                  Comprehensive technology solutions to meet all your business needs and drive digital transformation.
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-start gap-6 py-12 lg:grid-cols-3 lg:gap-12">
+            <div className="mx-auto grid max-w-7xl justify-center gap-8 py-12 sm:grid-cols-2 md:grid-cols-3">
               {services.map((service, i) => (
-                <div key={service.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
-                  <Card className="h-full hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300 bg-background">
-                    <CardHeader className="flex flex-row items-center gap-4">
-                      <div className="bg-primary/10 p-3 rounded-full">
-                         <service.icon className="h-6 w-6 text-primary" />
+                <div key={service.name} className="relative group services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
+                   <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
+                  <Card className="h-full bg-background transition-all duration-200 relative">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-4">
+                        <div className="p-3 rounded-lg bg-muted">
+                           <service.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div className="flex-grow">
+                          <h3 className="font-bold text-lg">{service.name}</h3>
+                          <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
+                        </div>
                       </div>
-                      <CardTitle className="font-headline text-xl">{service.name}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <CardDescription>{service.description}</CardDescription>
                     </CardContent>
                   </Card>
                 </div>
