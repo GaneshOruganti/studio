@@ -4,18 +4,19 @@
 import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Linkedin, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const teamMembers = [
-    { name: "John Doe", role: "CEO & Founder", avatarId: "testimonial-avatar-2", social: { twitter: "#", linkedin: "#" }, contribution: "John leads the company with a vision for innovation and excellence, driving the team to create cutting-edge solutions." },
-    { name: "Jane Smith", role: "Chief Technology Officer", avatarId: "testimonial-avatar-1", social: { twitter: "#", linkedin: "#" }, contribution: "Jane architects our technology stack, ensuring our products are scalable, secure, and built on the latest technologies." },
-    { name: "Alex Johnson", role: "Lead Developer", avatarId: "testimonial-avatar-3", social: { twitter: "#", linkedin: "#" }, contribution: "Alex guides the development team, turning complex requirements into robust and efficient software solutions." },
-    { name: "Emily White", role: "UX/UI Designer", avatarId: "testimonial-avatar-6", social: { twitter: "#", linkedin: "#" }, contribution: "Emily crafts intuitive and beautiful user experiences, making sure our products are a joy to use." },
-    { name: "Michael Chen", role: "Cloud Architect", avatarId: "testimonial-avatar-5", social: { twitter: "#", linkedin: "#" }, contribution: "Michael designs and manages our cloud infrastructure, ensuring high availability and performance for all our services." },
-    { name: "Sarah Lee", role: "Data Scientist", avatarId: "testimonial-avatar-4", social: { twitter: "#", linkedin: "#" }, contribution: "Sarah turns data into insights, leveraging machine learning to drive product innovation and business strategy." },
+    { name: "John Doe", role: "CEO & Founder", avatarId: "testimonial-avatar-2", social: { linkedin: "#", instagram: "#" }, contribution: "John leads the company with a vision for innovation and excellence, driving the team to create cutting-edge solutions." },
+    { name: "Jane Smith", role: "Chief Technology Officer", avatarId: "testimonial-avatar-1", social: { linkedin: "#", instagram: "#" }, contribution: "Jane architects our technology stack, ensuring our products are scalable, secure, and built on the latest technologies." },
+    { name: "Alex Johnson", role: "Lead Developer", avatarId: "testimonial-avatar-3", social: { linkedin: "#", instagram: "#" }, contribution: "Alex guides the development team, turning complex requirements into robust and efficient software solutions." },
+    { name: "Emily White", role: "UX/UI Designer", avatarId: "testimonial-avatar-6", social: { linkedin: "#", instagram: "#" }, contribution: "Emily crafts intuitive and beautiful user experiences, making sure our products are a joy to use." },
+    { name: "Michael Chen", role: "Cloud Architect", avatarId: "testimonial-avatar-5", social: { linkedin: "#", instagram: "#" }, contribution: "Michael designs and manages our cloud infrastructure, ensuring high availability and performance for all our services." },
+    { name: "Sarah Lee", role: "Data Scientist", avatarId: "testimonial-avatar-4", social: { linkedin: "#", instagram: "#" }, contribution: "Sarah turns data into insights, leveraging machine learning to drive product innovation and business strategy." },
 ];
 
 export default function TeamPage() {
@@ -58,23 +59,31 @@ export default function TeamPage() {
                     </p>
                 </div>
 
-                <div className="relative w-full h-[350px] flex items-center justify-center">
+                <div className="relative w-full h-[400px] flex items-center justify-center">
                     {teamMembers.map((member, index) => {
                         const avatar = PlaceHolderImages.find(img => img.id === member.avatarId);
                         return (
                             <div
                                 key={member.name}
-                                className="absolute w-[200px] h-[250px]"
+                                className="absolute w-[250px] h-[320px]"
                                 style={getCardStyle(index)}
                                 onClick={() => setActiveIndex(index)}
                             >
-                                <div className="w-full h-full p-4 bg-card rounded-lg shadow-lg flex flex-col items-center justify-center text-center cursor-pointer border">
-                                    <Avatar className="w-24 h-24 mb-4 border-2 border-primary">
+                                <div className="w-full h-full p-6 bg-card rounded-xl shadow-lg flex flex-col items-center justify-center text-center cursor-pointer border-2 border-transparent hover:border-primary transition-all duration-300">
+                                    <Avatar className="w-28 h-28 mb-4 border-4 border-primary/50">
                                         {avatar && <AvatarImage src={avatar.imageUrl} alt={member.name} data-ai-hint={avatar.imageHint} />}
                                         <AvatarFallback>{member.name.substring(0, 2)}</AvatarFallback>
                                     </Avatar>
-                                    <h3 className="font-bold font-headline text-lg">{member.name}</h3>
-                                    <p className="text-sm text-primary">{member.role}</p>
+                                    <h3 className="font-bold font-headline text-xl">{member.name}</h3>
+                                    <p className="text-sm text-primary mb-3">{member.role}</p>
+                                    <div className="flex items-center gap-4">
+                                      <Link href={member.social.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                                        <Linkedin className="h-5 w-5" />
+                                      </Link>
+                                      <Link href={member.social.instagram} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary">
+                                        <Instagram className="h-5 w-5" />
+                                      </Link>
+                                    </div>
                                 </div>
                             </div>
                         );
