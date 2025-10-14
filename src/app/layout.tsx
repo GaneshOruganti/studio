@@ -30,7 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-dvh flex-col px-4 sm:px-6 lg:px-8">
+          <div className="relative flex min-h-dvh flex-col">
             <Header />
             <div className="flex-1">{children}</div>
             <Footer />
