@@ -5,7 +5,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { AnimatedTimeline } from "@/components/animated-timeline";
+import { SuccessTimeline } from "@/components/success-timeline";
 
 const coreValues = [
     {
@@ -79,7 +79,7 @@ export default function AboutPage() {
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To be a global leader in digital transformation, shaping the future of industries through relentless innovation and technological excellence.</p>
                 </div>
 
-                <div className="text-center mb-16 services-anim">
+                <div className="text-center mb-24 services-anim">
                     <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Mission</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To accelerate our clients' success by delivering cutting-edge, agile, and scalable digital solutions with unmatched speed and quality.</p>
                 </div>
@@ -118,8 +118,14 @@ export default function AboutPage() {
                         </div>
                     ))}
                 </div>
-
-                <AnimatedTimeline />
+                
+                <div className="mt-24">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Our Track Record</h2>
+                        <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">A proven history of delivering excellence and driving success.</p>
+                    </div>
+                    <SuccessTimeline />
+                </div>
 
             </div>
         </div>
