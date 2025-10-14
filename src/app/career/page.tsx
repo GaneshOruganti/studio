@@ -1,4 +1,5 @@
 
+
 "use client";
 
 import { useState } from "react";
@@ -10,7 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ArrowRight, MapPin, Search, X, ArrowLeft, Star } from "lucide-react";
+import { ArrowRight, MapPin, Search, X, ArrowLeft, Star, Briefcase, DollarSign } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -136,13 +137,20 @@ export default function CareerPage() {
                     <CardContent className="p-6">
                       <div className="flex flex-col sm:flex-row justify-between gap-4">
                         <div className="flex-grow">
-                          <Link href={`/career/${job.id}`} className="block">
-                            <h3 className="text-xl font-bold text-primary hover:underline">{job.title}</h3>
-                          </Link>
-                          <div className="flex items-center gap-2 text-muted-foreground mt-2">
-                            <MapPin className="h-4 w-4" />
-                            <span>{job.location}</span>
-                          </div>
+                            <Link href={`/career/${job.id}`} className="block">
+                                <h3 className="text-xl font-bold text-primary hover:underline">{job.title}</h3>
+                            </Link>
+                            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mt-2">
+                                <div className="flex items-center gap-2">
+                                    <MapPin className="h-4 w-4" /> {job.location}
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <Briefcase className="h-4 w-4" /> {job.type}
+                                </div>
+                                <div className="flex items-center gap-2">
+                                    <DollarSign className="h-4 w-4" /> {job.salary}
+                                </div>
+                            </div>
                         </div>
                         <div className="flex-shrink-0 flex items-center gap-2">
                           <Button variant="ghost" size="icon" onClick={() => toggleSaveJob(job.id)}>
