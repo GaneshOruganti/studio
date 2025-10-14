@@ -73,6 +73,11 @@ export default function AboutPage() {
         <div className="py-12 md:py-24 bg-muted/20">
             <div className="container">
                 <div className="text-center mb-12 services-anim">
+                    <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Vision</h2>
+                    <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To be a global leader in digital transformation, shaping the future of industries through relentless innovation and technological excellence.</p>
+                </div>
+
+                <div className="text-center mb-12 services-anim">
                     <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Mission</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To accelerate our clients' success by delivering cutting-edge, agile, and scalable digital solutions with unmatched speed and quality.</p>
                 </div>
