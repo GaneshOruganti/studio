@@ -1,5 +1,4 @@
 
-
 export type Job = {
     id: string;
     title: string;
@@ -142,13 +141,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Onboards, supports, and grows customer relationships. Acts as the customer’s internal advocate, troubleshoots issues, collects feedback, and partners with product/development teams to exceed client goals.",
     rolesAndResponsibilities: [
-      "Manage the entire customer lifecycle from onboarding to renewal.",
-      "Serve as the primary point of contact and internal advocate for clients.",
-      "Proactively troubleshoot issues and provide strategic guidance.",
-      "Gather and relay customer feedback to product and development teams.",
-      "Develop strategies to exceed client goals and drive long-term value."
+      "Develop and execute customer success strategies to maximize retention and satisfaction.",
+      "Monitor onboarding processes and ensure smooth client adoption of products.",
+      "Analyze usage data to provide actionable insights and improvements.",
+      "Act as a liaison between customers and internal product/service teams.",
+      "Organize training sessions, webinars, and support documentation."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in customer success, account management, or client-facing roles.",
+      "Strong analytical skills and proficiency with CRM tools.",
+      "Exceptional interpersonal and communication skills.",
+      "Demonstrated ability to manage and grow client relationships."
+    ],
     perks: ["Customer-facing leadership", "Bonus structure based on retention", "Travel opportunities", "Health and wellness stipend"],
   },
   {
@@ -160,13 +164,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Builds and amplifies the company’s narrative online. Runs digital campaigns, social listening/engagement, PR, and thought leadership to position your company as an industry leader and employer of choice.",
     rolesAndResponsibilities: [
-      "Develop and execute the company’s digital brand strategy.",
-      "Manage and grow our online presence through social media, content, and PR.",
-      "Run targeted digital marketing campaigns (SEO, SEM, social).",
-      "Create thought leadership content (blogs, whitepapers, webinars).",
-      "Position the company as an industry leader and top employer brand."
+      "Create and promote compelling digital content across social media, blogs, and campaigns.",
+      "Build and engage online communities to expand brand loyalty.",
+      "Collaborate with product and marketing teams for consistent messaging.",
+      "Monitor and respond to brand-related conversations and feedback.",
+      "Identify partnership opportunities and manage influencer relationships."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in digital marketing, content creation, or community management.",
+      "Knowledge of SEO, social media platforms, and analytics tools.",
+      "Strong writing and storytelling capabilities.",
+      "Ability to work creatively and strategically."
+    ],
     perks: ["Content creation budget", "Social media management tools", "Public speaking opportunities", "Flexible content strategy"],
   },
   {
@@ -178,13 +187,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Secures company and customer data, anticipates digital threats, automates security systems, and educates teams on best practices to maintain trust and compliance.",
     rolesAndResponsibilities: [
-      "Proactively secure company infrastructure and customer data.",
-      "Anticipate and defend against emerging digital threats.",
-      "Automate security monitoring, testing, and incident response.",
-      "Develop and enforce security policies and best practices.",
-      "Educate the team on security awareness to maintain a strong security posture."
+      "Lead security operations, risk assessments, and vulnerability management.",
+      "Implement controls for data privacy, access management, and threat detection.",
+      "Coordinate incident response and ensure compliance with data protection laws.",
+      "Educate teams on cybersecurity best practices and protocols.",
+      "Collaborate with IT and DevOps to secure cloud infrastructure."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in cybersecurity, information security, or IT security roles.",
+      "Certifications such as CISSP, CEH, or CISM preferred.",
+      "Knowledge of security tools, firewalls, and network protocols.",
+      "Strong analytical and problem-solving skills."
+    ],
     perks: ["Security conference budget (e.g., Black Hat, DEF CON)", "Advanced security certifications (e.g., CISSP, OSCP)", "Latest security software", "Ethical hacking opportunities"],
   },
   {
@@ -196,12 +210,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Safeguard systems and customer data against threats. Conduct security assessments, manage firewalls and encryption, monitor vulnerabilities, and lead response planning for incidents. Educate teams on best practices and develop policies to ensure compliance with industry standards.",
     rolesAndResponsibilities: [
-      "Conduct regular security assessments and risk analysis.",
-      "Manage and configure security tools like firewalls, IDS/IPS, and encryption.",
-      "Monitor for, investigate, and respond to security incidents.",
-      "Develop and enforce data protection policies and procedures."
+      "Lead security operations, risk assessments, and vulnerability management.",
+      "Implement controls for data privacy, access management, and threat detection.",
+      "Coordinate incident response and ensure compliance with data protection laws.",
+      "Educate teams on cybersecurity best practices and protocols.",
+      "Collaborate with IT and DevOps to secure cloud infrastructure."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in cybersecurity, information security, or IT security roles.",
+      "Certifications such as CISSP, CEH, or CISM preferred.",
+      "Knowledge of security tools, firewalls, and network protocols.",
+      "Strong analytical and problem-solving skills."
+    ],
     perks: ["Advanced security training", "Budget for security tools", "Career growth in a critical field", "Contribution to a secure product"],
   },
   {
@@ -213,12 +233,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Lead the ideation, design, and development of AI-driven products across various sectors. Define architecture, ensure robust data pipelines, and guide the team in deploying and optimizing AI/ML models. Evaluate new AI technologies for integration and maintain compliance with ethical standards.",
     rolesAndResponsibilities: [
-        "Lead the architectural design of AI-powered products.",
-        "Define and manage data pipelines for training and inference.",
-        "Guide the engineering team on AI model deployment and optimization.",
-        "Evaluate and integrate new AI technologies and frameworks."
+        "Design and oversee AI product architectures aligned with business goals.",
+        "Ensure integration of AI models with software platforms reliably and efficiently.",
+        "Collaborate with data scientists, engineers, and product managers.",
+        "Maintain documentation and oversee technical governance.",
+        "Analyze new AI technologies for potential product enhancements."
     ],
-    requirements: [],
+    requirements: [
+      "Expert in AI/ML concepts, cloud services, data pipelines.",
+      "Proven experience architecting AI-based products.",
+      "Strong programming and system design skills.",
+      "Ability to lead cross-functional technical teams."
+    ],
     perks: ["Lead innovative AI projects", "Work with a talented AI team", "Access to state-of-the-art MLOps tools", "Shape the future of our AI products"],
   },
   {
@@ -230,12 +256,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Define the product vision and develop winning strategies for market entry and growth. Conduct competitive analysis, gather user feedback, prioritize feature development, and align roadmaps with business objectives. Work closely with leadership, design, and engineering to translate strategy into actionable plans.",
     rolesAndResponsibilities: [
-        "Define and communicate the product vision and strategic roadmap.",
-        "Conduct market research and competitive analysis to identify opportunities.",
-        "Prioritize features and initiatives based on business and user impact.",
-        "Collaborate with cross-functional teams to ensure successful product launches."
+        "Develop and communicate product vision and strategy.",
+        "Conduct market research, competitor analysis, and user feedback loops.",
+        "Align cross-team priorities and manage product roadmaps.",
+        "Facilitate product launches and monitor key performance indicators.",
+        "Advise leadership on product opportunities and risks."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in product management or strategy roles.",
+      "Strong business acumen and analytical skills.",
+      "Excellent stakeholder management and communication.",
+      "Familiarity with agile development and product lifecycle."
+    ],
     perks: ["High-level strategic impact", "Leadership and mentorship role", "Direct influence on company direction", "Competitive bonus structure"],
   },
   {
@@ -247,12 +279,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Design and implement advanced software solutions using the latest technologies. Collaborate with cross-functional teams to build products that deliver high value at speed. Ensure scalability, reliability, and security while following agile and DevOps best practices. Constantly research and prototype emerging tools and frameworks relevant to your domain.",
     rolesAndResponsibilities: [
-        "Develop scalable and reliable software solutions.",
-        "Collaborate with product and design teams to build new features.",
-        "Research and prototype with new technologies and frameworks.",
-        "Write clean, maintainable, and well-tested code."
+        "Design and build innovative software solutions addressing unique client challenges.",
+        "Collaborate with R&D and product teams to prototype and test new ideas.",
+        "Integrate latest technologies such as AI, automation, and analytics.",
+        "Ensure code quality, scalability, and performance.",
+        "Participate in code reviews and mentor junior engineers."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in software engineering with innovative, client-focused projects.",
+      "Familiarity with AI, cloud, and modern software development frameworks.",
+      "Strong problem-solving and adaptability skills.",
+      "Excellent communication and team collaboration."
+    ],
     perks: ["Work on a variety of challenging projects", "Flexible technology stack", "Professional development budget", "Opportunities for open-source contributions"],
   },
   {
@@ -264,12 +302,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Be the client’s advocate, ensuring successful adoption of solutions, high satisfaction, and long-term retention. Onboard accounts, provide technical assistance, collect feedback, and collaborate with product/engineering to improve the offering. Monitor key use metrics and provide training and resources to enable success.",
     rolesAndResponsibilities: [
-        "Ensure successful customer onboarding and adoption.",
-        "Act as the primary advocate for our clients.",
-        "Provide technical assistance and strategic guidance.",
-        "Gather and relay customer feedback to the product team."
+        "Onboard and guide customers through the product journey.",
+        "Maintain strong relationships and respond proactively to issues.",
+        "Collaborate with product and engineering to resolve customer challenges.",
+        "Drive usage, feature adoption, and customer loyalty.",
+        "Collect and synthesize customer feedback for continuous improvement."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in customer support, success, or account management.",
+      "Passion for customer service and data-driven decision-making.",
+      "Strong interpersonal and communication skills.",
+      "Familiarity with CRM and customer success software."
+    ],
     perks: ["Build strong client relationships", "Directly impact customer satisfaction", "Performance-based bonuses", "Professional growth opportunities"],
   },
   {
@@ -281,12 +325,17 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Lead the design of intuitive, modern, and visually striking interfaces for our digital products. Mentor a team of designers, establish and maintain design systems, and champion a user-centered design process from research to implementation.",
     rolesAndResponsibilities: [
-        "Lead and mentor a team of UX/UI designers.",
-        "Oversee the creation of wireframes, prototypes, and high-fidelity designs.",
-        "Establish and maintain a comprehensive design system.",
-        "Drive user research and testing to inform design decisions."
+        "Lead and manage a UX/UI design team.",
+        "Develop design frameworks, style guides, and conduct usability testing.",
+        "Collaborate with product and engineering for seamless implementation.",
+        "Oversee design innovation, accessibility, and brand consistency."
     ],
-    requirements: [],
+    requirements: [
+      "Proven experience as a UX/UI lead or senior designer.",
+      "Portfolio showcasing user-centered design and innovation.",
+      "Strong expertise with design tools like Figma, Sketch, Adobe Creative Suite.",
+      "Ability to guide and mentor design teams."
+    ],
     perks: ["Lead a creative team", "Shape the visual identity of our products", "Access to top design tools", "Opportunities for creative freedom"],
   },
   {
@@ -298,12 +347,17 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Lead a team of software engineers in building and maintaining high-quality software products. Provide technical guidance, mentor team members, and ensure the successful delivery of projects. Foster a collaborative and productive team environment.",
     rolesAndResponsibilities: [
-        "Lead and manage a team of software engineers.",
-        "Provide technical mentorship and guidance.",
-        "Oversee the software development lifecycle from planning to deployment.",
-        "Foster a culture of collaboration, innovation, and continuous improvement."
+        "Manage development teams and allocate resources effectively.",
+        "Ensure adherence to coding standards and efficient project execution.",
+        "Facilitate communication between product, QA, and management.",
+        "Lead technical planning, reviews, and mentoring junior staff."
     ],
-    requirements: [],
+    requirements: [
+      "Significant experience in software development and team leadership.",
+      "Strong technical expertise in full-stack development.",
+      "Excellent organizational and interpersonal skills.",
+      "Ability to motivate and lead teams under tight deadlines."
+    ],
     perks: ["Leadership and mentorship opportunities", "Influence over technical direction", "Team performance bonuses", "Professional management training"],
   },
   {
@@ -315,12 +369,17 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Lead the DevOps team in automating and optimizing our software delivery processes. Design and manage our cloud infrastructure, ensure system reliability and security, and promote a culture of DevOps best practices.",
     rolesAndResponsibilities: [
-        "Lead and mentor the DevOps engineering team.",
-        "Architect and manage scalable and reliable cloud infrastructure.",
-        "Oversee the CI/CD pipeline and deployment processes.",
-        "Champion DevOps best practices across the organization."
+        "Strategize and maintain infrastructure and CI/CD pipelines.",
+        "Lead DevOps team and ensure automation, security, and performance.",
+        "Monitor systems and resolve escalated deployment issues.",
+        "Collaborate on disaster recovery, backup, and security policies."
     ],
-    requirements: [],
+    requirements: [
+      "Advanced experience in cloud platforms, containerization, and automation.",
+      "Leadership experience in DevOps or infrastructure teams.",
+      "Strong scripting and systems knowledge.",
+      "Excellent problem-solving and communication skills."
+    ],
     perks: ["Lead a critical engineering function", "Budget for advanced tooling", "Strategic role in technical operations", "Flexible on-call schedule"],
   },
   {
@@ -349,12 +408,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Manage a portfolio of clients, ensuring they achieve their desired outcomes while using our products. Develop strong relationships, provide strategic advice, and act as the voice of the customer to internal teams.",
     rolesAndResponsibilities: [
-        "Manage a dedicated portfolio of customer accounts.",
-        "Develop and maintain strong, long-lasting customer relationships.",
-        "Provide strategic guidance to help customers achieve their goals.",
-        "Serve as the primary liaison between customers and internal teams."
+        "Onboard and guide customers through the product journey.",
+        "Maintain strong relationships and respond proactively to issues.",
+        "Collaborate with product and engineering to resolve customer challenges.",
+        "Drive usage, feature adoption, and customer loyalty.",
+        "Collect and synthesize customer feedback for continuous improvement."
     ],
-    requirements: [],
+    requirements: [
+      "Experience in customer support, success, or account management.",
+      "Passion for customer service and data-driven decision-making.",
+      "Strong interpersonal and communication skills.",
+      "Familiarity with CRM and customer success software."
+    ],
     perks: ["Build and manage key client relationships", "Directly contribute to customer retention", "Competitive commission and bonus structure", "Professional development opportunities"],
   },
   {
