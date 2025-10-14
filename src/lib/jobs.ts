@@ -391,12 +391,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Lead our quality assurance efforts to ensure our products meet the highest standards of quality and reliability. Develop and implement test strategies, manage automated and manual testing processes, and work closely with development teams to identify and resolve issues.",
     rolesAndResponsibilities: [
-        "Develop and execute comprehensive test plans and strategies.",
-        "Lead and mentor a team of QA engineers.",
-        "Oversee both manual and automated testing efforts.",
-        "Collaborate with developers to ensure product quality from start to finish."
+        "Develop and implement comprehensive testing strategies.",
+        "Lead QA team in functional, integration, regression, and performance testing.",
+        "Manage bug tracking, reporting, and resolution verification.",
+        "Collaborate with development and product teams for quality standards.",
+        "Automate tests to increase efficiency."
     ],
-    requirements: [],
+    requirements: [
+        "Extensive QA/testing experience, including automation frameworks.",
+        "Strong knowledge of software development lifecycle.",
+        "Leadership and mentoring skills.",
+        "Detail-oriented approach and communication abilities."
+    ],
     perks: ["Own the quality assurance process", "Access to modern testing frameworks", "Critical role in product delivery", "Opportunities for certification"],
   },
   {
@@ -431,12 +437,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Lead our efforts to attract, retain, and develop top talent. Manage the full recruitment lifecycle, develop and implement HR policies, and foster a positive and inclusive company culture. Act as a strategic partner to leadership on all people-related matters.",
     rolesAndResponsibilities: [
-        "Lead the full-cycle recruitment process to attract top talent.",
-        "Develop and implement HR policies and programs.",
-        "Champion a positive and inclusive company culture.",
-        "Advise leadership on talent management and organizational development."
+        "Manage end-to-end recruitment and onboarding.",
+        "Develop employee engagement and retention strategies.",
+        "Oversee compliance with labor laws and company policies.",
+        "Create a culture of diversity, inclusion, and continuous learning.",
+        "Manage performance evaluation and career development programs."
     ],
-    requirements: [],
+    requirements: [
+        "Proven HR leadership experience.",
+        "Strong interpersonal and communication skills.",
+        "Knowledge of recruitment and labor regulations.",
+        "Organizational and strategic thinking."
+    ],
     perks: ["Shape the company culture", "Lead a critical business function", "Strategic role with leadership visibility", "Budget for wellness and culture initiatives"],
   },
   
@@ -625,6 +637,22 @@ export const jobOpenings: Job[] = [
     perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
   },
   {
+    id: "devops-intern",
+    title: "DevOps Intern",
+    category: "DevOps",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Support the automation of deployments, maintain cloud infrastructure, and monitor reliability and performance.",
+    rolesAndResponsibilities: [
+      "Support the automation of deployments.",
+      "Maintain cloud infrastructure.",
+      "Monitor reliability and performance."
+    ],
+    requirements: [],
+    perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
+  },
+  {
     id: "business-analytics-intern",
     title: "Business Analytics Intern",
     category: "Analytics",
@@ -663,3 +691,5 @@ export const aboutCompany = "At Branch Edge, we are dedicated to delivering next
 export function getJobById(id: string) {
     return jobOpenings.find(job => job.id === id);
 }
+
+    
