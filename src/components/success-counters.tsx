@@ -1,16 +1,18 @@
+
 "use client";
 
 import { useEffect, useState, useRef } from 'react';
 
 const counters = [
-    { label: "Projects Completed", value: 1200, suffix: "+" },
-    { label: "Happy Clients", value: 350, suffix: "+" },
-    { label: "Years of Experience", value: 10, suffix: "" },
-    { label: "Support Tickets Solved", value: 25, suffix: "K" }
+    { label: "Projects Completed", value: 120, suffix: "+" },
+    { label: "Happy Clients", value: 35, suffix: "+" },
+    { label: "Years of Experience", value: 4, suffix: "" },
+    { label: "Support Tickets Solved", value: 5, suffix: "K" },
+    { label: "Customer Reviews", value: 4.9, suffix: "/5.0", isRating: true },
 ];
 
-const Counter = ({ label, value, suffix }: { label: string, value: number, suffix: string }) => {
-    const [count, setCount] = useState(0);
+const Counter = ({ label, value, suffix, isRating }: { label: string, value: number, suffix: string, isRating?: boolean }) => {
+    const [count, setCount] = useState(isRating ? 0.0 : 0);
     const ref = useRef<HTMLDivElement>(null);
     const hasAnimated = useRef(false);
 
@@ -32,7 +34,11 @@ const Counter = ({ label, value, suffix }: { label: string, value: number, suffi
                             setCount(end);
                             clearInterval(timer);
                         } else {
-                            setCount(Math.ceil(start));
+                            if (isRating) {
+                                setCount(parseFloat(start.toFixed(1)));
+                            } else {
+                                setCount(Math.ceil(start));
+                            }
                         }
                     }, 16);
                 }
@@ -49,12 +55,14 @@ const Counter = ({ label, value, suffix }: { label: string, value: number, suffi
                 observer.unobserve(ref.current);
             }
         };
-    }, [value]);
+    }, [value, isRating]);
+    
+    const displayValue = isRating ? count.toFixed(1) : count;
 
     return (
         <div ref={ref} className="text-center">
             <p className="text-4xl md:text-5xl font-bold font-headline text-primary">
-                {count}{suffix}
+                {displayValue}{suffix}
             </p>
             <p className="text-sm md:text-base text-muted-foreground">{label}</p>
         </div>
@@ -63,7 +71,7 @@ const Counter = ({ label, value, suffix }: { label: string, value: number, suffi
 
 export function SuccessCounters() {
     return (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {counters.map(counter => (
                 <Counter key={counter.label} {...counter} />
             ))}
