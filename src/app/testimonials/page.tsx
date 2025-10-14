@@ -1,3 +1,5 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   { id: "VIDEO_ID_1", title: "Transformative Results with Branch Edge", speaker: "Jane Doe, CEO of Innovate Inc." },
@@ -18,22 +20,31 @@ export default function TestimonialsPage() {
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-2">
-        {testimonials.map((testimonial) => (
-          <div key={testimonial.id}>
-            <div className="aspect-video overflow-hidden rounded-lg border">
-              <iframe
-                className="w-full h-full"
-                src={`https://www.youtube.com/embed/${testimonial.id}`}
-                title={testimonial.title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-            <div className="mt-4">
-              <h3 className="text-lg font-bold font-headline">{testimonial.title}</h3>
-              <p className="text-muted-foreground">{testimonial.speaker}</p>
-            </div>
+        {testimonials.map((testimonial, i) => (
+          <div key={testimonial.id} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
+            <Card className="h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+              <CardContent className="p-0">
+                <div className="aspect-video overflow-hidden rounded-t-lg">
+                  <iframe
+                    className="w-full h-full"
+                    src={`https://www.youtube.com/embed/${testimonial.id}`}
+                    title={testimonial.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </CardContent>
+              <CardHeader>
+                <div className="flex gap-4">
+                  <Quote className="h-6 w-6 text-primary flex-shrink-0" />
+                  <div>
+                    <CardTitle className="font-headline text-xl mb-1">{testimonial.title}</CardTitle>
+                    <p className="text-muted-foreground font-medium">{testimonial.speaker}</p>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
           </div>
         ))}
       </div>
