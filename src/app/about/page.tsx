@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { TypewriterEffect } from "@/components/typewriter-effect";
 
 const coreValues = [
     {
@@ -34,6 +35,11 @@ const coreValues = [
 
 export default function AboutPage() {
   const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-image');
+  const texts = [
+      "At Branch Edge, innovation drives everything we do. We specialize in delivering cutting-edge technology solutions including custom websites, e-commerce, AI-powered products, analytics, SEO, and cloud hosting with unmatched speed and quality.",
+      "Our mission is to empower businesses across education, real estate, government, and more through agile, secure, and scalable digital solutions tailored to their unique needs. We go beyond technology by partnering with clients to accelerate growth, improve experiences, and unlock new potential.",
+      "With a team rooted in creativity, integrity, and deep technical expertise, we continuously explore emerging technologies to shape the future of digital transformation. Join us on a journey of innovation, where your success is our priority."
+  ];
 
   return (
     <div className="w-full max-w-6xl mx-auto">
@@ -56,15 +62,9 @@ export default function AboutPage() {
                 About Us
                 </h1>
                 <div className="space-y-4 text-muted-foreground text-lg">
-                    <p className="services-anim" style={{ animationDelay: '150ms' }}>
-                        At Branch Edge, innovation drives everything we do. We specialize in delivering cutting-edge technology solutions including custom websites, e-commerce, AI-powered products, analytics, SEO, and cloud hosting with unmatched speed and quality.
-                    </p>
-                    <p className="services-anim" style={{ animationDelay: '300ms' }}>
-                        Our mission is to empower businesses across education, real estate, government, and more through agile, secure, and scalable digital solutions tailored to their unique needs. We go beyond technology by partnering with clients to accelerate growth, improve experiences, and unlock new potential.
-                    </p>
-                    <p className="services-anim" style={{ animationDelay: '450ms' }}>
-                        With a team rooted in creativity, integrity, and deep technical expertise, we continuously explore emerging technologies to shape the future of digital transformation. Join us on a journey of innovation, where your success is our priority.
-                    </p>
+                    {texts.map((text, i) => (
+                        <TypewriterEffect key={i} text={text} />
+                    ))}
                 </div>
             </div>
             </div>
