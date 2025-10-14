@@ -76,7 +76,7 @@ export function Footer() {
           {/* Contact Us Column */}
           <div>
             <h4 className="font-bold font-headline text-lg mb-4">Contact Us</h4>
-            <div className="space-y-2 text-muted-foreground">
+            <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 shrink-0 text-primary" />
                   <a href="mailto:contact@branchedge.com" className="hover:text-primary transition-colors text-sm">contact@branchedge.com</a>
@@ -115,9 +115,12 @@ export function Footer() {
         </div>
 
         <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-2">
-                <Icons.logo className="h-8 w-8 text-primary" />
-                <p className="font-bold font-headline text-lg">Branch Edge</p>
+            <div className="flex items-center gap-4">
+                <div className="flex items-center gap-2">
+                    <Icons.logo className="h-8 w-8 text-primary" />
+                    <p className="font-bold font-headline text-lg">Branch Edge</p>
+                </div>
+                <p className="text-sm text-muted-foreground">SR Nagar, Balkampet, Hyderabad, Telangana, 500038</p>
             </div>
             
             <div className="text-center md:text-right text-sm text-muted-foreground">
