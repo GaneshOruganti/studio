@@ -6,8 +6,8 @@ export function Footer() {
   return (
     <footer className="border-t border-border/40 py-12">
       <div className="container">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2 space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
+          <div className="col-span-1 md:col-span-6 space-y-4">
             <div className="flex items-center gap-2">
               <Icons.logo className="h-8 w-8 text-primary" />
               <span className="text-2xl font-bold font-headline">Branch Edge</span>
@@ -17,7 +17,7 @@ export function Footer() {
               We empower businesses by delivering cutting-edge software solutions that redefine digital experiences, driving growth, and unlocking new opportunities for success.
             </p>
           </div>
-          <div className="space-y-4">
+          <div className="col-span-1 md:col-span-3 space-y-4">
             <h4 className="font-semibold font-headline text-lg">Contact Us</h4>
             <div className="space-y-2 text-muted-foreground">
               <div className="flex items-start gap-3">
@@ -34,7 +34,7 @@ export function Footer() {
               </div>
             </div>
           </div>
-          <div className="space-y-4">
+          <div className="col-span-1 md:col-span-3 space-y-4">
             <h4 className="font-semibold font-headline text-lg">Follow Us</h4>
             <div className="flex items-center gap-4">
               <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
