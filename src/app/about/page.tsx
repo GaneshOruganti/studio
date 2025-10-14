@@ -82,9 +82,7 @@ export default function AboutPage() {
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To accelerate our clients' success by delivering cutting-edge, agile, and scalable digital solutions with unmatched speed and quality.</p>
                 </div>
 
-                <AnimatedTimeline />
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-24">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                     {coreValues.slice(0, 3).map((value, i) => (
                         <div key={value.title} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>
                            <Card className="h-full bg-background/50 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full max-w-sm mx-auto">
@@ -118,6 +116,8 @@ export default function AboutPage() {
                         </div>
                     ))}
                 </div>
+
+                <AnimatedTimeline />
 
             </div>
         </div>
