@@ -11,13 +11,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, MapPin, Briefcase, ExternalLink, DollarSign } from "lucide-react";
 import Link from "next/link";
@@ -145,17 +138,16 @@ export default function CareerPage() {
         </p>
       </div>
       
-      <div className="flex justify-center mb-8">
-        <Select onValueChange={setFilter} defaultValue="All">
-          <SelectTrigger className="w-[280px]">
-            <SelectValue placeholder="Filter by category" />
-          </SelectTrigger>
-          <SelectContent>
-            {jobCategories.map(category => (
-              <SelectItem key={category} value={category}>{category}</SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+      <div className="flex justify-center flex-wrap gap-4 mb-8">
+        {jobCategories.map(category => (
+          <Button
+            key={category}
+            variant={filter === category ? "default" : "outline"}
+            onClick={() => setFilter(category)}
+          >
+            {category}
+          </Button>
+        ))}
       </div>
 
       <div className="grid gap-8 max-w-4xl mx-auto">
