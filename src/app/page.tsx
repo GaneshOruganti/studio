@@ -4,7 +4,6 @@ import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star 
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { SuccessCounters } from "@/components/success-counters";
 import { InteractiveHeroDynamic } from "@/components/interactive-hero-dynamic";
@@ -18,36 +17,6 @@ const services = [
   { name: "Managed IT", icon: Shield, description: "Proactive IT management to keep your systems running smoothly." },
   { name: "User Authentication", icon: UserCheck, description: "Secure and seamless user login and management." },
 ];
-
-const testimonials = [
-  { name: "Jane Doe", company: "Innovate Inc.", quote: "Branch Edge transformed our digital presence. Their team is professional, and the results speak for themselves.", avatarId: "testimonial-avatar-1", rating: 4.8 },
-  { name: "John Smith", company: "Solutions Co.", quote: "The best tech partner we've ever worked with. Their insights and execution are top-notch.", avatarId: "testimonial-avatar-2", rating: 5.0 },
-  { name: "Alex Ray", company: "Creative Minds", quote: "Working with Branch Edge was a breeze. They understood our vision and delivered beyond our expectations.", avatarId: "testimonial-avatar-3", rating: 4.9 },
-  { name: "Sarah Lee", company: "DataDriven LLC", quote: "The analytics they provided gave us the clarity we needed to scale our operations effectively.", avatarId: "testimonial-avatar-4", rating: 4.7 },
-  { name: "Michael Chen", company: "CloudScape", quote: "Their expertise in cloud solutions has been a game-changer for our infrastructure. Highly recommended!", avatarId: "testimonial-avatar-5", rating: 5.0 },
-  { name: "Emily White", company: "Growthify", quote: "Our SEO rankings have skyrocketed since we started working with them. Incredible results!", avatarId: "testimonial-avatar-6", rating: 4.9 },
-];
-
-const duplicatedTestimonials = [...testimonials, ...testimonials];
-
-const StarRating = ({ rating }: { rating: number }) => {
-  const fullStars = Math.floor(rating);
-  const halfStar = rating % 1 !== 0;
-  const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
-
-  return (
-    <div className="flex items-center gap-1 text-yellow-500">
-      {[...Array(fullStars)].map((_, i) => (
-        <Star key={`full-${i}`} className="w-5 h-5 fill-current" />
-      ))}
-      {halfStar && <Star key="half" className="w-5 h-5 fill-current" />}
-      {[...Array(emptyStars)].map((_, i) => (
-        <Star key={`empty-${i}`} className="w-5 h-5" />
-      ))}
-    </div>
-  );
-};
-
 
 export default function Home() {
   return (
@@ -117,36 +86,16 @@ export default function Home() {
                 <div className="w-full">
                     <SuccessCounters />
                 </div>
+                <div className="mt-8">
+                  <Button asChild>
+                    <Link href="/testimonials">View Our Testimonials</Link>
+                  </Button>
+                </div>
                 <div id="partners" className="mt-12">
                   <h3 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-8">
                     Trusted by the World's Best Companies
                   </h3>
                   <LogoCloud />
-                </div>
-                <div className="w-full max-w-7xl mx-auto pt-12 testimonial-slider overflow-hidden relative">
-                    <div className="testimonial-slide-track flex">
-                        {duplicatedTestimonials.map((testimonial, index) => {
-                            const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);
-                            return (
-                                <div key={index} className="testimonial-slide flex-shrink-0 w-[350px] mx-4">
-                                    <Card>
-                                        <CardContent className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
-                                            <Avatar className="w-16 h-16">
-                                                {avatar && <AvatarImage src={avatar.imageUrl} alt={testimonial.name} data-ai-hint={avatar.imageHint} />}
-                                                <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                            </Avatar>
-                                            <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
-                                            <div className="font-semibold">
-                                                <p>{testimonial.name}</p>
-                                                <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                                            </div>
-                                            <StarRating rating={testimonial.rating} />
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            );
-                        })}
-                    </div>
                 </div>
             </div>
         </section>
