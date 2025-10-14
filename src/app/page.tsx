@@ -169,7 +169,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials-section" className="w-full py-12 md:py-24 lg:py-32 bg-background">
+        <section id="testimonials-section" className="w-full pt-0 pb-12 md:pb-24 lg:pb-32 bg-background">
             <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6 lg:gap-12">
                 <div className="space-y-3">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Track Record</h2>
