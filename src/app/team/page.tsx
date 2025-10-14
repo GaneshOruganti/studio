@@ -20,7 +20,7 @@ const teamMembers = [
 ];
 
 export default function TeamPage() {
-    const [activeIndex, setActiveIndex] = useState(Math.floor(teamMembers.length / 2));
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const handleNext = () => {
         setActiveIndex((prev) => (prev + 1) % teamMembers.length);
@@ -31,25 +31,27 @@ export default function TeamPage() {
     };
 
     const getCardStyle = (index: number) => {
-        const offset = (index - activeIndex + teamMembers.length) % teamMembers.length - Math.floor(teamMembers.length / 2);
-        const scale = 1 - Math.abs(offset) * 0.15;
-        const translateX = offset * 40;
-        const rotateY = -offset * 15;
-        const zIndex = teamMembers.length - Math.abs(offset);
+        const offset = (index - activeIndex + teamMembers.length) % teamMembers.length;
+        const normalizedOffset = offset > Math.floor(teamMembers.length / 2) ? offset - teamMembers.length : offset;
 
+        const scale = 1 - Math.abs(normalizedOffset) * 0.15;
+        const translateX = normalizedOffset * 40;
+        const rotateY = -normalizedOffset * 15;
+        const zIndex = teamMembers.length - Math.abs(normalizedOffset);
+        
         return {
             transform: `translateX(${translateX}%) perspective(1000px) rotateY(${rotateY}deg) scale(${scale})`,
             zIndex: zIndex,
             transition: 'transform 0.5s ease, opacity 0.5s ease',
-            opacity: 1 - Math.abs(offset) * 0.3,
+            opacity: 1 - Math.abs(normalizedOffset) * 0.3,
         };
     };
 
     const activeMember = teamMembers[activeIndex];
 
     return (
-        <div className="container py-12 md:py-24">
-            <div className="w-full max-w-6xl mx-auto">
+        <div className="w-full max-w-6xl mx-auto py-12 md:py-24">
+            <div className="container">
                 <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
                     <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
                         Meet Our Team
