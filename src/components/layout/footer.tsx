@@ -116,18 +116,20 @@ export function Footer() {
             </div>
         </div>
 
-        <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-4">
-                <div className="flex items-center gap-2">
-                    <Icons.logo className="h-8 w-8 text-primary" />
-                    <p className="font-bold font-headline text-lg">Branch Edge</p>
+        <div className="border-t border-border/40 pt-8">
+            <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
+                        <Icons.logo className="h-8 w-8 text-primary" />
+                        <p className="font-bold font-headline text-lg">Branch Edge</p>
+                    </div>
+                    <p className="text-sm text-muted-foreground">SR Nagar, Balkampet, Hyderabad, Telangana, 500038</p>
                 </div>
-                <p className="text-sm text-muted-foreground">SR Nagar, Balkampet, Hyderabad, Telangana, 500038</p>
-            </div>
-            
-            <div className="text-center md:text-right text-sm text-muted-foreground">
-                <p>© {new Date().getFullYear()} Branch Edge. All Rights Reserved.</p>
-                <p>Made with ❤️ by Branch Edge</p>
+                
+                <div className="text-center md:text-right text-sm text-muted-foreground">
+                    <p>© {new Date().getFullYear()} Branch Edge. All Rights Reserved.</p>
+                    <p>Made with ❤️ by Branch Edge</p>
+                </div>
             </div>
         </div>
 
