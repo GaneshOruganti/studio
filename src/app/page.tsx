@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, Gamepad2, LineChart, GanttChartSquare } from "lucide-react";
+import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,16 +32,16 @@ const whatWeDo = [
     highlighted: false,
   },
   {
-    name: "Games",
-    icon: Gamepad2,
-    description: "We develop games for various platforms including mobile, desktop, and web.",
-    highlighted: true,
+    name: "Cloud Solutions",
+    icon: DatabaseZap,
+    description: "Scalable and secure cloud infrastructure to power your applications with high availability and performance.",
+    highlighted: false,
   },
   {
-    name: "Content Creation",
-    icon: LineChart,
-    description: "We create content for online branding to enhance your digital presence.",
-    highlighted: false,
+    name: "AI & Data Analytics",
+    icon: BrainCircuit,
+    description: "Leverage AI and data to gain actionable insights, automate processes, and drive business growth.",
+    highlighted: true,
   }
 ];
 
