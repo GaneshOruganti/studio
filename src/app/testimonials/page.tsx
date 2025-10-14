@@ -47,7 +47,7 @@ export default function TestimonialsPage() {
   return (
     <div className="container py-12 md:py-24">
       <div className="w-full max-w-6xl mx-auto">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 services-anim">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             Hear From Our Clients
           </h1>
@@ -56,7 +56,7 @@ export default function TestimonialsPage() {
           </p>
         </div>
         
-        <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider">
+        <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider services-anim">
             <div className="video-testimonial-slide-track flex">
               {duplicatedVideoTestimonials.map((testimonial, i) => (
                 <div key={`${testimonial.id}-${i}`} className="flex-shrink-0 w-[500px] mx-4">
@@ -88,7 +88,7 @@ export default function TestimonialsPage() {
             </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center space-y-4 text-center my-24">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center my-24 services-anim">
           <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">
             What Our Clients Say
           </h2>
@@ -97,7 +97,7 @@ export default function TestimonialsPage() {
           </p>
         </div>
 
-        <div className="w-full max-w-7xl mx-auto testimonial-slider bg-muted/20 py-12 rounded-lg">
+        <div className="w-full max-w-7xl mx-auto testimonial-slider bg-muted/20 py-12 rounded-lg services-anim">
             <div className="testimonial-slide-track flex">
                 {duplicatedWrittenTestimonials.map((testimonial, index) => {
                     const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);

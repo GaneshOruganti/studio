@@ -19,7 +19,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
     <div className="bg-muted/20">
         <div className="container py-12 md:py-24">
             <div className="max-w-4xl mx-auto w-full max-w-6xl">
-                <div className="mb-8">
+                <div className="mb-8 services-anim">
                 <Button variant="outline" asChild>
                     <Link href="/career">
                     <ArrowLeft className="mr-2" />
@@ -29,7 +29,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                 </div>
 
                 <div className="space-y-8">
-                <Card>
+                <Card className="services-card-anim">
                     <CardHeader>
                     <h1 className="text-4xl font-bold font-headline tracking-tighter">{job.title}</h1>
                     <div className="flex flex-wrap items-center gap-4 text-muted-foreground pt-2">
@@ -49,7 +49,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                     </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="services-card-anim" style={{ animationDelay: '100ms' }}>
                     <CardHeader>
                     <CardTitle className="font-headline text-2xl">About Branch Edge</CardTitle>
                     </CardHeader>
@@ -58,7 +58,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                     </CardContent>
                 </Card>
 
-                <Card>
+                <Card className="services-card-anim" style={{ animationDelay: '200ms' }}>
                     <CardHeader>
                     <CardTitle className="font-headline text-2xl">Roles and Responsibilities</CardTitle>
                     </CardHeader>
@@ -72,7 +72,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                 </Card>
 
                 {job.requirements && job.requirements.length > 0 && (
-                  <Card>
+                  <Card className="services-card-anim" style={{ animationDelay: '300ms' }}>
                       <CardHeader>
                           <CardTitle className="font-headline text-2xl">Requirements</CardTitle>
                       </CardHeader>
@@ -86,7 +86,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                   </Card>
                 )}
 
-                <Card>
+                <Card className="services-card-anim" style={{ animationDelay: '400ms' }}>
                     <CardHeader>
                     <CardTitle className="font-headline text-2xl">Perks & Benefits</CardTitle>
                     </CardHeader>
@@ -100,7 +100,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                 </Card>
                 </div>
 
-                <div className="mt-12 text-center">
+                <div className="mt-12 text-center services-anim" style={{ animationDelay: '500ms' }}>
                 <Button size="lg" asChild>
                     <Link href="/contact">
                     Apply Now <ArrowRight className="ml-2" />

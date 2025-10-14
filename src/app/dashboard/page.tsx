@@ -31,11 +31,13 @@ export default function DashboardPage() {
   return (
     <div className="container py-12">
       <div className="w-full max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold font-headline tracking-tighter mb-8">
-          Real-Time Dashboard
-        </h1>
+        <div className="services-anim">
+            <h1 className="text-4xl font-bold font-headline tracking-tighter mb-8">
+            Real-Time Dashboard
+            </h1>
+        </div>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8">
-          <Card>
+          <Card className="services-card-anim" style={{ animationDelay: '100ms' }}>
             <CardHeader>
               <CardTitle>Total Revenue</CardTitle>
               <CardDescription>Last 30 days</CardDescription>
@@ -45,7 +47,7 @@ export default function DashboardPage() {
               <p className="text-xs text-muted-foreground">+20.1% from last month</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="services-card-anim" style={{ animationDelay: '200ms' }}>
             <CardHeader>
               <CardTitle>Subscriptions</CardTitle>
               <CardDescription>Active subscriptions</CardDescription>
@@ -55,7 +57,7 @@ export default function DashboardPage() {
               <p className="text-xs text-muted-foreground">+180.1% from last month</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="services-card-anim" style={{ animationDelay: '300ms' }}>
             <CardHeader>
               <CardTitle>Sales</CardTitle>
               <CardDescription>This month</CardDescription>
@@ -65,7 +67,7 @@ export default function DashboardPage() {
               <p className="text-xs text-muted-foreground">+19% from last month</p>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="services-card-anim" style={{ animationDelay: '400ms' }}>
             <CardHeader>
               <CardTitle>Active Now</CardTitle>
               <CardDescription>Live users on platform</CardDescription>
@@ -77,7 +79,7 @@ export default function DashboardPage() {
           </Card>
         </div>
         <div className="grid gap-8 md:grid-cols-2">
-          <Card>
+          <Card className="services-card-anim" style={{ animationDelay: '500ms' }}>
             <CardHeader>
               <CardTitle>Sales Overview</CardTitle>
               <CardDescription>Monthly sales performance</CardDescription>
@@ -94,7 +96,7 @@ export default function DashboardPage() {
               </ResponsiveContainer>
             </CardContent>
           </Card>
-          <Card>
+          <Card className="services-card-anim" style={{ animationDelay: '600ms' }}>
             <CardHeader>
               <CardTitle>Traffic Sources</CardTitle>
               <CardDescription>Where your users are coming from</CardDescription>

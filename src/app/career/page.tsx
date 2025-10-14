@@ -90,10 +90,18 @@ export default function CareerPage() {
   return (
     <div className="container py-12 md:py-24">
       <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-12 services-anim">
+            <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
+                Join Our Team
+            </h1>
+            <p className="mt-4 max-w-[700px] mx-auto text-muted-foreground md:text-xl">
+                Explore exciting career opportunities at Branch Edge and be part of a team that's shaping the future of technology.
+            </p>
+        </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-12">
           {/* Main Content */}
           <div className="md:col-span-2 lg:col-span-3">
-            <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-8 gap-4">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-8 gap-4 services-anim">
               <div className="flex items-center gap-2 border-b">
                 <Button variant="ghost" onClick={() => switchView('all')} className={cn("rounded-none border-b-2", view === 'all' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground')}>
                   All Jobs ({jobsToList.length})
@@ -120,53 +128,54 @@ export default function CareerPage() {
 
             <div className="grid gap-6">
               {paginatedJobs.length > 0 ? (
-                paginatedJobs.map((job) => (
-                  <Card
-                    key={job.id}
-                    className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex flex-col sm:flex-row justify-between gap-4">
-                        <div className="flex-grow">
-                            <Link href={`/career/${job.id}`} className="block">
-                                <h3 className="text-xl font-bold text-primary hover:underline">{job.title}</h3>
-                            </Link>
-                            <div className="flex flex-wrap items-center gap-4 text-muted-foreground mt-2">
-                                <div className="flex items-center gap-2">
-                                    <MapPin className="h-4 w-4" /> {job.location}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <Briefcase className="h-4 w-4" /> {job.type}
-                                </div>
-                                <div className="flex items-center gap-2">
-                                    <DollarSign className="h-4 w-4" /> {job.salary}
-                                </div>
-                            </div>
+                paginatedJobs.map((job, i) => (
+                  <div key={job.id} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` }}>
+                    <Card
+                      className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                    >
+                      <CardContent className="p-6">
+                        <div className="flex flex-col sm:flex-row justify-between gap-4">
+                          <div className="flex-grow">
+                              <Link href={`/career/${job.id}`} className="block">
+                                  <h3 className="text-xl font-bold text-primary hover:underline">{job.title}</h3>
+                              </Link>
+                              <div className="flex flex-wrap items-center gap-4 text-muted-foreground mt-2">
+                                  <div className="flex items-center gap-2">
+                                      <MapPin className="h-4 w-4" /> {job.location}
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                      <Briefcase className="h-4 w-4" /> {job.type}
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                      <DollarSign className="h-4 w-4" /> {job.salary}
+                                  </div>
+                              </div>
+                          </div>
+                          <div className="flex-shrink-0 flex items-center gap-2">
+                            <Button variant="ghost" size="icon" onClick={() => toggleSaveJob(job.id)}>
+                              <Star className={cn("h-5 w-5", savedJobs.includes(job.id) ? "fill-primary text-primary" : "text-muted-foreground")} />
+                              <span className="sr-only">Save Job</span>
+                            </Button>
+                            <Button asChild>
+                              <Link href={`/career/${job.id}`}>
+                                Apply <ArrowRight className="ml-2" />
+                              </Link>
+                            </Button>
+                          </div>
                         </div>
-                        <div className="flex-shrink-0 flex items-center gap-2">
-                          <Button variant="ghost" size="icon" onClick={() => toggleSaveJob(job.id)}>
-                            <Star className={cn("h-5 w-5", savedJobs.includes(job.id) ? "fill-primary text-primary" : "text-muted-foreground")} />
-                            <span className="sr-only">Save Job</span>
-                          </Button>
-                          <Button asChild>
-                            <Link href={`/career/${job.id}`}>
-                              Apply <ArrowRight className="ml-2" />
-                            </Link>
-                          </Button>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+                      </CardContent>
+                    </Card>
+                  </div>
                 ))
               ) : (
-                <p className="text-center text-muted-foreground col-span-full">
+                <p className="text-center text-muted-foreground col-span-full services-anim">
                   {view === 'saved' ? "You haven't saved any jobs yet." : "No open positions match your criteria."}
                 </p>
               )}
             </div>
 
             {totalPages > 1 && (
-                <div className="flex justify-center items-center gap-4 mt-8">
+                <div className="flex justify-center items-center gap-4 mt-8 services-anim">
                     <Button variant="outline" onClick={() => handlePageChange(currentPage - 1)} disabled={currentPage === 1}>
                         <ArrowLeft className="mr-2" />
                         Previous
@@ -183,7 +192,7 @@ export default function CareerPage() {
           </div>
 
           {/* Sidebar */}
-          <div className="md:col-span-1 lg:col-span-1">
+          <div className="md:col-span-1 lg:col-span-1 services-anim">
             <Card className="sticky top-24">
               <CardHeader>
                 <CardTitle className="font-headline text-2xl">Refine search</CardTitle>

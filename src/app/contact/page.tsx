@@ -10,7 +10,7 @@ export default function ContactPage() {
   return (
     <div className="container py-12 md:py-24">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 services-anim">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             Get in Touch
           </h1>
@@ -19,7 +19,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <Card className="max-w-2xl mx-auto">
+        <Card className="max-w-2xl mx-auto services-card-anim">
           <CardHeader>
             <CardTitle>Contact Us</CardTitle>
             <CardDescription>
