@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap } from "lucide-react";
+import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,8 +42,26 @@ const whatWeDo = [
     name: "AI & Data Analytics",
     icon: BrainCircuit,
     description: "Leverage AI and data to gain actionable insights, automate processes, and drive business growth.",
-    highlighted: true,
-  }
+    highlighted: false,
+  },
+  {
+    name: "Business Analytics",
+    icon: BarChart,
+    description: "Transform raw data into meaningful business intelligence to guide your strategy.",
+    highlighted: false,
+  },
+  {
+    name: "Content Creation",
+    icon: FileText,
+    description: "We create compelling content for online branding to enhance your digital presence.",
+    highlighted: false,
+  },
+  {
+    name: "Digital Marketing",
+    icon: Megaphone,
+    description: "Strategic digital marketing campaigns to grow your audience and boost engagement.",
+    highlighted: false,
+  },
 ];
 
 
@@ -84,15 +102,12 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-8 py-12 lg:grid-cols-4 lg:gap-8">
+            <div className="mx-auto grid max-w-7xl items-start gap-8 py-12 lg:grid-cols-4 md:grid-cols-2">
               {whatWeDo.map((item, i) => (
                 <div key={item.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
-                  <Card className={`h-full text-center transition-all duration-300 ${item.highlighted
-                      ? 'bg-card shadow-xl scale-105 hover:shadow-primary/20'
-                      : 'bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105'
-                    }`}>
+                  <Card className={`h-full text-center transition-all duration-300 bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105`}>
                     <CardContent className="p-6 flex flex-col items-center gap-4">
-                      <div className={`p-4 rounded-lg mb-4 ${item.highlighted ? 'bg-primary/10' : 'bg-card'}`}>
+                      <div className={`p-4 rounded-lg mb-4 bg-card`}>
                          <item.icon className="h-8 w-8 text-primary" />
                       </div>
                       <h3 className="font-headline text-xl font-bold">{item.name}</h3>
