@@ -284,6 +284,134 @@ export const jobOpenings: Job[] = [
       "Educate the team on security awareness to maintain a strong security posture."
     ],
     perks: ["Security conference budget (e.g., Black Hat, DEF CON)", "Advanced security certifications (e.g., CISSP, OSCP)", "Latest security software", "Ethical hacking opportunities"],
+  },
+  {
+    id: "software-development-intern",
+    title: "Software Development Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Work on real-world coding projects, contribute to web/app development, and learn modern frameworks while working alongside senior developers.",
+    rolesAndResponsibilities: [
+      "Contribute to feature development and bug fixing on active projects.",
+      "Learn and apply modern coding practices and software architecture.",
+      "Collaborate with the engineering team in an agile environment.",
+      "Assist in writing and maintaining technical documentation."
+    ],
+    perks: ["Mentorship from senior engineers", "Hands-on project experience", "Flexible work hours", "Potential for future employment"],
+  },
+  {
+    id: "ai-data-science-intern",
+    title: "AI & Data Science Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Assist with building intelligent models, data analysis, machine learning experiments, and automation for company products and R&D.",
+    rolesAndResponsibilities: [
+      "Assist in building, training, and testing AI/ML models.",
+      "Perform data collection, cleaning, and analysis.",
+      "Contribute to machine learning experiments and R&D projects.",
+      "Help automate data processing and reporting tasks."
+    ],
+    perks: ["Work with large datasets and cutting-edge models", "Mentorship from data scientists", "Gain practical AI/ML skills", "Academic credit support"],
+  },
+  {
+    id: "ui-ux-design-intern",
+    title: "UI/UX Design Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Help design intuitive user interfaces, create wireframes and prototypes, and participate in user testing to enhance product experiences.",
+    rolesAndResponsibilities: [
+      "Collaborate with designers to create intuitive and engaging interfaces.",
+      "Develop wireframes, mockups, and high-fidelity prototypes.",
+      "Participate in user research and usability testing sessions.",
+      "Contribute to the evolution of our design system."
+    ],
+    perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
+  },
+  {
+    id: "devops-cloud-engineering-intern",
+    title: "DevOps & Cloud Engineering Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Learn about automation tools, cloud infrastructure, CI/CD pipeline management, and participate in efficient software deployment.",
+    rolesAndResponsibilities: [
+      "Support the automation of software deployments and infrastructure management.",
+      "Assist in maintaining CI/CD pipelines for various projects.",
+      "Monitor cloud infrastructure for performance and reliability.",
+      "Learn about infrastructure as code and other DevOps best practices."
+    ],
+    perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
+  },
+  {
+    id: "product-management-intern",
+    title: "Product Management Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Support product lifecycle activities, do market/user research, collect feedback, assist with roadmap planning, and coordinate between tech and business teams.",
+    rolesAndResponsibilities: [
+      "Support product managers in defining product strategy and roadmaps.",
+      "Conduct market research and competitive analysis.",
+      "Gather and analyze user feedback to inform product decisions.",
+      "Coordinate between engineering, design, and marketing teams."
+    ],
+    perks: ["Learn the full product development lifecycle", "Gain strategic business experience", "Mentorship from product leaders", "Impact product direction"],
+  },
+  {
+    id: "cybersecurity-intern",
+    title: "Cybersecurity Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Assist in auditing systems, monitoring network activity, and learning about the latest strategies in digital protection and compliance.",
+    rolesAndResponsibilities: [
+      "Participate in vulnerability assessments and security audits.",
+      "Assist in monitoring network activity and identifying potential threats.",
+      "Help develop and enforce security policies and procedures.",
+      "Learn about compliance standards and security best practices."
+    ],
+    perks: ["Gain experience in a high-demand field", "Work with advanced security tools", "Mentorship from cybersecurity experts", "Understand real-world security challenges"],
+  },
+  {
+    id: "digital-marketing-intern",
+    title: "Digital Marketing Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Help develop online campaigns, manage social media channels, and analyze performance data to drive brand awareness and user engagement.",
+    rolesAndResponsibilities: [
+      "Assist with planning and executing digital marketing campaigns.",
+      "Help manage social media channels and create engaging content.",
+      "Analyze marketing data to measure campaign performance.",
+      "Contribute to SEO, content marketing, and brand outreach efforts."
+    ],
+    perks: ["Hands-on marketing campaign experience", "Learn analytics and reporting tools", "Creative and dynamic work environment", "Mentorship from marketing professionals"],
+  },
+  {
+    id: "customer-success-intern",
+    title: "Customer Success Intern",
+    category: "Internship",
+    location: "Remote",
+    type: "Internship",
+    salary: "Paid",
+    description: "Support onboarding and assisting new clients, preparing help documentation, gathering user feedback, and collaborating with support teams.",
+    rolesAndResponsibilities: [
+      "Assist with onboarding new clients and ensuring their success.",
+      "Engage with users to provide support and gather feedback.",
+      "Help create and maintain help documentation and tutorials.",
+      "Collaborate with the customer success team to improve the user experience."
+    ],
+    perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   }
 ];
 
