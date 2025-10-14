@@ -15,82 +15,86 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
   }
 
   return (
-    <div className="container py-12 md:py-24">
-      <div className="max-w-4xl mx-auto">
-        <div className="mb-8">
-          <Button variant="outline" asChild>
-            <Link href="/career">
-              <ArrowLeft className="mr-2" />
-              Back to Careers
-            </Link>
-          </Button>
+    <div className="bg-muted/20">
+        <div className="container py-12 md:py-24">
+            <div className="max-w-4xl mx-auto">
+                <div className="mb-8">
+                <Button variant="outline" asChild>
+                    <Link href="/career">
+                    <ArrowLeft className="mr-2" />
+                    Back to Careers
+                    </Link>
+                </Button>
+                </div>
+
+                <div className="space-y-8">
+                <Card>
+                    <CardHeader>
+                    <h1 className="text-4xl font-bold font-headline tracking-tighter">{job.title}</h1>
+                    <div className="flex flex-wrap items-center gap-4 text-muted-foreground pt-2">
+                        <div className="flex items-center gap-2">
+                            <MapPin className="h-4 w-4 text-primary" /> {job.location}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Briefcase className="h-4 w-4 text-primary" /> {job.type}
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <DollarSign className="h-4 w-4 text-primary" /> {job.salary}
+                        </div>
+                    </div>
+                    </CardHeader>
+                    <CardContent>
+                    <p className="text-lg text-muted-foreground">{job.description}</p>
+                    </CardContent>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                    <CardTitle className="font-headline text-2xl">About Branch Edge</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <p className="text-muted-foreground">{aboutCompany}</p>
+                    </CardContent>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                    <CardTitle className="font-headline text-2xl">Roles and Responsibilities</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                        {job.rolesAndResponsibilities.map((item, index) => (
+                        <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                    </CardContent>
+                </Card>
+
+                <Card>
+                    <CardHeader>
+                    <CardTitle className="font-headline text-2xl">Perks & Benefits</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                    <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-muted-foreground">
+                        {job.perks.map((perk, index) => (
+                        <li key={index}>{perk}</li>
+                        ))}
+                    </ul>
+                    </CardContent>
+                </Card>
+                </div>
+
+                <div className="mt-12 text-center">
+                <Button size="lg" asChild>
+                    <Link href="/contact">
+                    Apply Now <ArrowRight className="ml-2" />
+                    </Link>
+                </Button>
+                </div>
+            </div>
         </div>
-
-        <div className="space-y-8">
-          <Card>
-            <CardHeader>
-              <h1 className="text-4xl font-bold font-headline tracking-tighter">{job.title}</h1>
-              <div className="flex flex-wrap items-center gap-4 text-muted-foreground pt-2">
-                <Badge variant="secondary" className="flex items-center gap-1 text-base">
-                  <MapPin className="h-4 w-4" /> {job.location}
-                </Badge>
-                <Badge variant="secondary" className="flex items-center gap-1 text-base">
-                  <Briefcase className="h-4 w-4" /> {job.type}
-                </Badge>
-                <Badge variant="secondary" className="flex items-center gap-1 text-base">
-                  <DollarSign className="h-4 w-4" /> {job.salary}
-                </Badge>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p className="text-lg text-muted-foreground">{job.description}</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">About Branch Edge</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">{aboutCompany}</p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">Roles and Responsibilities</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                {job.rolesAndResponsibilities.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="font-headline text-2xl">Perks & Benefits</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="list-disc list-inside grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2 text-muted-foreground">
-                {job.perks.map((perk, index) => (
-                  <li key={index}>{perk}</li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="mt-12 text-center">
-          <Button size="lg" asChild>
-            <Link href="/contact">
-              Apply Now <ArrowRight className="ml-2" />
-            </Link>
-          </Button>
-        </div>
-      </div>
     </div>
   );
 }
+
+    
