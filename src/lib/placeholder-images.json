@@ -53,6 +53,12 @@
       "description": "Abstract image for analytics service",
       "imageUrl": "https://picsum.photos/seed/203/600/400",
       "imageHint": "data chart"
+    },
+    {
+      "id": "about-us-image",
+      "description": "A placeholder image for the about us page showing a professional team collaborating",
+      "imageUrl": "https://picsum.photos/seed/301/800/600",
+      "imageHint": "team collaboration"
     }
   ]
 }
