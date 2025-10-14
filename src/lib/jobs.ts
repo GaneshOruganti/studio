@@ -9,6 +9,7 @@ export type Job = {
     salary: string;
     description: string;
     rolesAndResponsibilities: string[];
+    requirements: string[];
     perks: string[];
 };
 
@@ -23,11 +24,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Drives technology vision, identifies new product opportunities, leads R&D, and champions a culture of continuous advancement. Collaborates with founders and stakeholders to translate bold ideas into scalable roadmaps.",
     rolesAndResponsibilities: [
-        "Drive the overall technology vision and long-term innovation strategy.",
-        "Identify and evaluate new product opportunities and market trends.",
-        "Lead the Research & Development (R&D) department.",
-        "Champion a culture of continuous advancement and experimentation.",
-        "Collaborate with founders and key stakeholders to align technology with business goals."
+        "Define and champion the technical vision and innovation roadmap.",
+        "Lead R&D initiatives, inspiring teams to perform cutting-edge development.",
+        "Bridge company vision with technology strategy, driving scalable solutions.",
+        "Evaluate emerging technologies and integrate them strategically.",
+        "Collaborate with executive stakeholders to align product and business goals."
+    ],
+    requirements: [
+        "Proven technology leadership with 10+ years in software innovation.",
+        "Strong knowledge of AI, cloud, security, and software architecture.",
+        "Excellent communication and leadership skills.",
+        "Experience in startup or high-growth environments preferred.",
+        "Advanced degree in Computer Science or related technical field."
     ],
     perks: ["Executive Leadership Role", "Significant Equity Options", "Board-level Influence", "Innovation Budget"],
   },
@@ -40,11 +48,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Designs and implements AI algorithms and intelligent software modules. Works with cross-functional teams to integrate AI into products that address real-world business and user needs at speed.",
     rolesAndResponsibilities: [
-        "Design, build, and implement custom AI algorithms and models.",
-        "Integrate AI/ML capabilities into new and existing products.",
-        "Work with product managers to define AI requirements for user needs.",
-        "Optimize models for performance, scalability, and speed.",
-        "Stay current with the latest advancements in AI and machine learning."
+        "Develop and optimize AI/ML models for client and internal product use.",
+        "Work closely with data scientists and developers on AI application deployments.",
+        "Ensure robustness, scalability, and real-time performance of AI features.",
+        "Research and adopt new AI frameworks, platforms, and approaches.",
+        "Troubleshoot issues and improve model accuracy via validation and testing."
+    ],
+    requirements: [
+        "Strong programming skills in Python, TensorFlow, PyTorch, or similar.",
+        "Experience with data preprocessing, model training, and deployment.",
+        "Background in machine learning, deep learning, and statistical analysis.",
+        "Degree in CS, Data Science, or equivalent practical experience.",
+        "Familiarity with cloud AI services (Google AI, AWS SageMaker, Azure ML) is a plus."
     ],
     perks: ["Access to cutting-edge AI hardware/software", "Conference attendance budget", "Publication opportunities", "Collaborative research projects"],
   },
@@ -57,11 +72,17 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Coordinates agile project delivery, ensures teams unblock quickly, manages timelines, quality checks, and resource allocation, always optimizing for the shortest time from idea to live product.",
     rolesAndResponsibilities: [
-        "Coordinate and manage agile project delivery from conception to launch.",
-        "Identify and remove blockers to accelerate team performance.",
-        "Oversee project timelines, quality assurance, and resource allocation.",
-        "Optimize workflows for maximum efficiency and speed.",
-        "Report on project status and velocity to stakeholders."
+        "Drive agile development processes ensuring timely delivery.",
+        "Manage sprint planning, backlog grooming, and team communications.",
+        "Identify and remove workflow blockers across teams.",
+        "Maintain documentation and release schedules.",
+        "Collaborate with product, design, and engineering teams to align priorities."
+    ],
+    requirements: [
+      "Experience in Agile/Scrum methodologies and project management tools (Jira, Trello).",
+      "Strong organizational and communication skills.",
+      "Proven track record in a product delivery or project manager role.",
+      "Ability to work in fast-paced, evolving environments."
     ],
     perks: ["Agile/Scrum Master certification sponsorship", "High-impact cross-functional role", "Performance bonuses", "Flexible work hours"],
   },
@@ -74,11 +95,17 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Envisions and crafts next-generation digital user journeys. Conducts research, designs prototypes, and iterates on design based on analytics and feedback to ensure delightful, intuitive, and future-focused experiences.",
     rolesAndResponsibilities: [
-        "Envision and design next-generation user experiences and interfaces.",
-        "Conduct user research, usability testing, and data analysis.",
-        "Create wireframes, high-fidelity prototypes, and interactive mockups.",
-        "Iterate on designs based on user feedback and performance metrics.",
-        "Champion a future-focused, user-centric design culture."
+        "Lead innovation in user experience design using emerging trends.",
+        "Develop wireframes, prototypes, and usability test plans.",
+        "Collaborate with product owners and engineers for seamless implementation.",
+        "Analyze user research data and iterate on design decisions.",
+        "Promote accessible and inclusive design principles."
+    ],
+    requirements: [
+        "Expertise in UX/UI tools like Figma, Sketch, Adobe XD.",
+        "Experience conducting user research and data-driven design.",
+        "Knowledge of current design trends and willingness to experiment.",
+        "Portfolio demonstrating innovative and effective UX design work."
     ],
     perks: ["Top-tier design hardware/software", "Creative and experimental projects", "Design leadership opportunities", "Mentorship programs"],
   },
@@ -91,11 +118,18 @@ export const jobOpenings: Job[] = [
     salary: "Competitive",
     description: "Automates deployments, maintains CI/CD pipelines, manages cloud infrastructure, and implements best practices for ultra-fast, reliable, and secure software releases at scale.",
     rolesAndResponsibilities: [
-      "Automate and streamline the software deployment process.",
-      "Maintain and improve CI/CD pipelines for speed and reliability.",
-      "Manage and scale cloud infrastructure on platforms like AWS, GCP, or Azure.",
-      "Implement infrastructure as code (IaC) using tools like Terraform or Pulumi.",
-      "Ensure system reliability, security, and performance at scale."
+      "Set up and optimize CI/CD pipelines and automated deployment frameworks.",
+      "Monitor cloud infrastructure and troubleshoot performance issues.",
+      "Implement security practices in deployment processes.",
+      "Scale infrastructure to support rapid feature releases.",
+      "Collaborate with development and QA teams to ensure reliability."
+    ],
+    requirements: [
+        "Strong proficiency with cloud platforms (AWS, GCP, Azure).",
+        "Experience with infrastructure as code tools (Terraform, Ansible).",
+        "Knowledge in containerization (Docker, Kubernetes).",
+        "Understanding of scripting languages (Python, Bash).",
+        "Excellent problem-solving and communication skills."
     ],
     perks: ["Certification courses (e.g., CKA, AWS DevOps)", "On-call flexibility", "Access to the latest DevOps tools", "Infrastructure budget"],
   },
@@ -114,6 +148,7 @@ export const jobOpenings: Job[] = [
       "Gather and relay customer feedback to product and development teams.",
       "Develop strategies to exceed client goals and drive long-term value."
     ],
+    requirements: [],
     perks: ["Customer-facing leadership", "Bonus structure based on retention", "Travel opportunities", "Health and wellness stipend"],
   },
   {
@@ -131,6 +166,7 @@ export const jobOpenings: Job[] = [
       "Create thought leadership content (blogs, whitepapers, webinars).",
       "Position the company as an industry leader and top employer brand."
     ],
+    requirements: [],
     perks: ["Content creation budget", "Social media management tools", "Public speaking opportunities", "Flexible content strategy"],
   },
   {
@@ -148,6 +184,7 @@ export const jobOpenings: Job[] = [
       "Develop and enforce security policies and best practices.",
       "Educate the team on security awareness to maintain a strong security posture."
     ],
+    requirements: [],
     perks: ["Security conference budget (e.g., Black Hat, DEF CON)", "Advanced security certifications (e.g., CISSP, OSCP)", "Latest security software", "Ethical hacking opportunities"],
   },
   {
@@ -164,6 +201,7 @@ export const jobOpenings: Job[] = [
       "Monitor for, investigate, and respond to security incidents.",
       "Develop and enforce data protection policies and procedures."
     ],
+    requirements: [],
     perks: ["Advanced security training", "Budget for security tools", "Career growth in a critical field", "Contribution to a secure product"],
   },
   {
@@ -180,6 +218,7 @@ export const jobOpenings: Job[] = [
         "Guide the engineering team on AI model deployment and optimization.",
         "Evaluate and integrate new AI technologies and frameworks."
     ],
+    requirements: [],
     perks: ["Lead innovative AI projects", "Work with a talented AI team", "Access to state-of-the-art MLOps tools", "Shape the future of our AI products"],
   },
   {
@@ -196,6 +235,7 @@ export const jobOpenings: Job[] = [
         "Prioritize features and initiatives based on business and user impact.",
         "Collaborate with cross-functional teams to ensure successful product launches."
     ],
+    requirements: [],
     perks: ["High-level strategic impact", "Leadership and mentorship role", "Direct influence on company direction", "Competitive bonus structure"],
   },
   {
@@ -212,6 +252,7 @@ export const jobOpenings: Job[] = [
         "Research and prototype with new technologies and frameworks.",
         "Write clean, maintainable, and well-tested code."
     ],
+    requirements: [],
     perks: ["Work on a variety of challenging projects", "Flexible technology stack", "Professional development budget", "Opportunities for open-source contributions"],
   },
   {
@@ -228,6 +269,7 @@ export const jobOpenings: Job[] = [
         "Provide technical assistance and strategic guidance.",
         "Gather and relay customer feedback to the product team."
     ],
+    requirements: [],
     perks: ["Build strong client relationships", "Directly impact customer satisfaction", "Performance-based bonuses", "Professional growth opportunities"],
   },
   {
@@ -244,6 +286,7 @@ export const jobOpenings: Job[] = [
         "Establish and maintain a comprehensive design system.",
         "Drive user research and testing to inform design decisions."
     ],
+    requirements: [],
     perks: ["Lead a creative team", "Shape the visual identity of our products", "Access to top design tools", "Opportunities for creative freedom"],
   },
   {
@@ -260,6 +303,7 @@ export const jobOpenings: Job[] = [
         "Oversee the software development lifecycle from planning to deployment.",
         "Foster a culture of collaboration, innovation, and continuous improvement."
     ],
+    requirements: [],
     perks: ["Leadership and mentorship opportunities", "Influence over technical direction", "Team performance bonuses", "Professional management training"],
   },
   {
@@ -276,6 +320,7 @@ export const jobOpenings: Job[] = [
         "Oversee the CI/CD pipeline and deployment processes.",
         "Champion DevOps best practices across the organization."
     ],
+    requirements: [],
     perks: ["Lead a critical engineering function", "Budget for advanced tooling", "Strategic role in technical operations", "Flexible on-call schedule"],
   },
   {
@@ -292,6 +337,7 @@ export const jobOpenings: Job[] = [
         "Oversee both manual and automated testing efforts.",
         "Collaborate with developers to ensure product quality from start to finish."
     ],
+    requirements: [],
     perks: ["Own the quality assurance process", "Access to modern testing frameworks", "Critical role in product delivery", "Opportunities for certification"],
   },
   {
@@ -308,6 +354,7 @@ export const jobOpenings: Job[] = [
         "Provide strategic guidance to help customers achieve their goals.",
         "Serve as the primary liaison between customers and internal teams."
     ],
+    requirements: [],
     perks: ["Build and manage key client relationships", "Directly contribute to customer retention", "Competitive commission and bonus structure", "Professional development opportunities"],
   },
   {
@@ -324,8 +371,10 @@ export const jobOpenings: Job[] = [
         "Champion a positive and inclusive company culture.",
         "Advise leadership on talent management and organizational development."
     ],
+    requirements: [],
     perks: ["Shape the company culture", "Lead a critical business function", "Strategic role with leadership visibility", "Budget for wellness and culture initiatives"],
   },
+  
   // Internship Roles
   {
     id: "software-development-intern",
@@ -341,6 +390,7 @@ export const jobOpenings: Job[] = [
       "Collaborate with the engineering team in an agile environment.",
       "Assist in writing and maintaining technical documentation."
     ],
+    requirements: [],
     perks: ["Mentorship from senior engineers", "Hands-on project experience", "Flexible work hours", "Potential for future employment"],
   },
   {
@@ -357,6 +407,7 @@ export const jobOpenings: Job[] = [
       "Contribute to machine learning experiments and R&D projects.",
       "Help automate data processing and reporting tasks."
     ],
+    requirements: [],
     perks: ["Work with large datasets and cutting-edge models", "Mentorship from data scientists", "Gain practical AI/ML skills", "Academic credit support"],
   },
   {
@@ -373,6 +424,7 @@ export const jobOpenings: Job[] = [
       "Participate in user research and usability testing sessions.",
       "Contribute to the evolution of our design system."
     ],
+    requirements: [],
     perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
   },
   {
@@ -389,6 +441,7 @@ export const jobOpenings: Job[] = [
       "Monitor cloud infrastructure for performance and reliability.",
       "Learn about infrastructure as code and other DevOps best practices."
     ],
+    requirements: [],
     perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
   },
   {
@@ -405,6 +458,7 @@ export const jobOpenings: Job[] = [
       "Gather and analyze user feedback to inform product decisions.",
       "Coordinate between engineering, design, and marketing teams."
     ],
+    requirements: [],
     perks: ["Learn the full product development lifecycle", "Gain strategic business experience", "Mentorship from product leaders", "Impact product direction"],
   },
   {
@@ -421,6 +475,7 @@ export const jobOpenings: Job[] = [
       "Help develop and enforce security policies and procedures.",
       "Learn about compliance standards and security best practices."
     ],
+    requirements: [],
     perks: ["Gain experience in a high-demand field", "Work with advanced security tools", "Mentorship from cybersecurity experts", "Understand real-world security challenges"],
   },
   {
@@ -437,6 +492,7 @@ export const jobOpenings: Job[] = [
       "Analyze marketing data to measure campaign performance.",
       "Contribute to SEO, content marketing, and brand outreach efforts."
     ],
+    requirements: [],
     perks: ["Hands-on marketing campaign experience", "Learn analytics and reporting tools", "Creative and dynamic work environment", "Mentorship from marketing professionals"],
   },
   {
@@ -453,6 +509,7 @@ export const jobOpenings: Job[] = [
       "Help create and maintain help documentation and tutorials.",
       "Collaborate with the customer success team to improve the user experience."
     ],
+    requirements: [],
     perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   },
   {
@@ -467,6 +524,7 @@ export const jobOpenings: Job[] = [
       "Contribute to web/app development.",
       "Learn modern frameworks while working alongside senior developers."
     ],
+    requirements: [],
     perks: ["Mentorship from senior engineers", "Hands-on project experience", "Flexible work hours", "Potential for future employment"],
   },
   {
@@ -482,6 +540,7 @@ export const jobOpenings: Job[] = [
       "Perform data analysis.",
       "Explore new machine learning techniques."
     ],
+    requirements: [],
     perks: ["Work with large datasets and cutting-edge models", "Mentorship from data scientists", "Gain practical AI/ML skills", "Academic credit support"],
   },
   {
@@ -497,22 +556,8 @@ export const jobOpenings: Job[] = [
       "Work on user research.",
       "Contribute to UX/UI projects."
     ],
+    requirements: [],
     perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
-  },
-  {
-    id: "devops-intern",
-    title: "DevOps Intern",
-    category: "DevOps",
-    location: "Remote",
-    type: "Internship",
-    salary: "Paid",
-    description: "Support the automation of deployments, maintain cloud infrastructure, and monitor reliability and performance.",
-    rolesAndResponsibilities: [
-      "Support the automation of deployments.",
-      "Maintain cloud infrastructure.",
-      "Monitor reliability and performance."
-    ],
-    perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
   },
   {
     id: "business-analytics-intern",
@@ -527,22 +572,8 @@ export const jobOpenings: Job[] = [
       "Build dashboards.",
       "Deliver insights that support decision-making."
     ],
+    requirements: [],
     perks: ["Develop strong analytical skills", "Work with business intelligence tools", "Present findings to leadership", "Data-driven decision making"],
-  },
-  {
-    id: "digital-marketing-intern-2",
-    title: "Digital Marketing Intern",
-    category: "Marketing",
-    location: "Remote",
-    type: "Internship",
-    salary: "Paid",
-    description: "Assist with campaign planning, content creation, and brand outreach across channels.",
-    rolesAndResponsibilities: [
-      "Assist with campaign planning.",
-      "Create content for various platforms.",
-      "Support brand outreach and engagement.",
-    ],
-    perks: ["Hands-on marketing campaign experience", "Learn analytics and reporting tools", "Creative and dynamic work environment", "Mentorship from marketing professionals"],
   },
   {
     id: "customer-experience-intern",
@@ -557,6 +588,7 @@ export const jobOpenings: Job[] = [
       "Prepare documentation.",
       "Help in onboarding and troubleshooting customer issues."
     ],
+    requirements: [],
     perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   }
 ];

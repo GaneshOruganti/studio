@@ -71,6 +71,21 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                     </CardContent>
                 </Card>
 
+                {job.requirements && job.requirements.length > 0 && (
+                  <Card>
+                      <CardHeader>
+                          <CardTitle className="font-headline text-2xl">Requirements</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                          <ul className="list-disc list-inside space-y-2 text-muted-foreground">
+                              {job.requirements.map((item, index) => (
+                                  <li key={index}>{item}</li>
+                              ))}
+                          </ul>
+                      </CardContent>
+                  </Card>
+                )}
+
                 <Card>
                     <CardHeader>
                     <CardTitle className="font-headline text-2xl">Perks & Benefits</CardTitle>
