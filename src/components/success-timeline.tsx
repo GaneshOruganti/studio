@@ -67,8 +67,8 @@ const TimelineNode = ({
     offset: ["start end", "end start"],
   });
 
-  const x = useTransform(scrollYProgress, [0.3, 0.4], [-100, 0]);
-  const opacity = useTransform(scrollYProgress, [0.3, 0.4], [0, 1]);
+  const x = useTransform(scrollYProgress, [0.3, 0.35], [-100, 0]);
+  const opacity = useTransform(scrollYProgress, [0.3, 0.35], [0, 1]);
 
   return (
     <motion.div
