@@ -3,7 +3,6 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { TypewriterEffect } from "@/components/typewriter-effect";
 
 const coreValues = [
     {
@@ -63,7 +62,7 @@ export default function AboutPage() {
                 </h1>
                 <div className="space-y-4 text-muted-foreground text-lg">
                     {texts.map((text, i) => (
-                        <TypewriterEffect key={i} text={text} />
+                        <p key={i} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>{text}</p>
                     ))}
                 </div>
             </div>
