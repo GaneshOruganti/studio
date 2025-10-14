@@ -151,7 +151,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="mx-auto grid max-w-7xl justify-center gap-8 py-12 sm:grid-cols-2 md:grid-cols-3">
-                {services.map((service, i) => (
+                {services.slice(0, 6).map((service, i) => (
                   <div key={service.name} className="relative group services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
                      <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
                     <Card className="h-full bg-background transition-all duration-200 relative">
@@ -169,6 +169,14 @@ export default function Home() {
                     </Card>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8 text-center">
+                <Button asChild size="lg" className="font-bold animate-pulse hover:animate-none">
+                  <Link href="/services">
+                    Explore All Our Services
+                    <ArrowRight className="ml-2" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>
