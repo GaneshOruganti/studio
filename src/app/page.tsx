@@ -101,7 +101,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2 services-anim">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm font-semibold text-primary">Our Expertise</div>
+                <div className="inline-block rounded-full bg-muted px-4 py-2 text-sm font-semibold text-primary">Our Expertise</div>
                 <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">What We Do</h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                   We specialize in creating innovative digital solutions across multiple domains to help businesses thrive in the modern digital landscape.
