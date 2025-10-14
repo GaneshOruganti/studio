@@ -28,7 +28,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 w-full pt-4">
-      <div className="container px-4 md:px-6">
+      <div className="container px-8 md:px-12">
         <div className="w-full flex items-center justify-between p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
           <Link href="/" className="flex items-center gap-2 px-3">
             <Icons.logo className="h-6 w-6 text-primary" />
