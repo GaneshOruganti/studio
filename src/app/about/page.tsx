@@ -73,17 +73,30 @@ export default function AboutPage() {
         <div className="py-12 md:py-24 bg-muted/20">
             <div className="container">
                 <div className="text-center mb-12 services-anim">
-                    <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Vision</h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To be a global leader in digital transformation, recognized for pioneering innovative technology solutions that empower businesses and shape a smarter, more connected future.</p>
-                </div>
-                <div className="text-center mb-20 services-anim">
                     <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Mission</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To accelerate our clients' success by delivering cutting-edge, agile, and scalable digital solutions with unmatched speed and quality.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {coreValues.map((value, i) => (
-                        <div key={value.title} className="services-card-anim lg:col-span-1 md:col-span-1" style={{ animationDelay: `${i * 150}ms`, gridColumn: i >= 3 ? 'span 1 / span 1' : undefined, justifySelf: 'center' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                    {coreValues.slice(0, 3).map((value, i) => (
+                        <div key={value.title} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>
+                           <Card className="h-full bg-background/50 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full max-w-sm mx-auto">
+                             <CardHeader className="flex flex-row items-center gap-4">
+                               <div className="p-3 bg-primary/10 rounded-full">
+                                 <value.icon className="w-6 h-6 text-primary" />
+                               </div>
+                               <CardTitle className="font-headline text-xl">{value.title}</CardTitle>
+                             </CardHeader>
+                             <CardContent>
+                               <p className="text-muted-foreground">{value.description}</p>
+                             </CardContent>
+                           </Card>
+                        </div>
+                    ))}
+                </div>
+                <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center lg:w-2/3 lg:mx-auto">
+                     {coreValues.slice(3).map((value, i) => (
+                        <div key={value.title} className="services-card-anim" style={{ animationDelay: `${(i + 3) * 150}ms` }}>
                            <Card className="h-full bg-background/50 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full max-w-sm mx-auto">
                              <CardHeader className="flex flex-row items-center gap-4">
                                <div className="p-3 bg-primary/10 rounded-full">
