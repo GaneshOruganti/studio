@@ -58,7 +58,7 @@ export default function PartnerPage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="grid gap-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="+91 98765 43210" />
+                  <Input id="phone" type="tel" placeholder="1234567890" />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="location">Location</Label>
