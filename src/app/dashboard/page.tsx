@@ -1,15 +1,16 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import { Bar, BarChart, CartesianGrid, Line, LineChart, Pie, PieChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-const salesData = [
-  { name: "Jan", sales: Math.floor(Math.random() * 2000) + 1000 },
-  { name: "Feb", sales: Math.floor(Math.random() * 2000) + 1000 },
-  { name: "Mar", sales: Math.floor(Math.random() * 2000) + 1000 },
-  { name: "Apr", sales: Math.floor(Math.random() * 2000) + 1000 },
-  { name: "May", sales: Math.floor(Math.random() * 2000) + 1000 },
-  { name: "Jun", sales: Math.floor(Math.random() * 2000) + 1000 },
+const initialSalesData = [
+  { name: "Jan", sales: 0 },
+  { name: "Feb", sales: 0 },
+  { name: "Mar", sales: 0 },
+  { name: "Apr", sales: 0 },
+  { name: "May", sales: 0 },
+  { name: "Jun", sales: 0 },
 ];
 
 const trafficData = [
@@ -20,6 +21,12 @@ const trafficData = [
 ];
 
 export default function DashboardPage() {
+  const [salesData, setSalesData] = useState(initialSalesData);
+
+  useEffect(() => {
+    setSalesData(initialSalesData.map(d => ({ ...d, sales: Math.floor(Math.random() * 2000) + 1000 })));
+  }, []);
+
   return (
     <div className="container py-12">
       <h1 className="text-4xl font-bold font-headline tracking-tighter mb-8">
