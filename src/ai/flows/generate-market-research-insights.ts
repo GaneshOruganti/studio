@@ -82,6 +82,8 @@ const prompt = ai.definePrompt({
   Content: {content}
 
   Always cite your sources.
+  
+  IMPORTANT: Do not use any markdown formatting in your response. For example, do not use asterisks for bullet points.
   `,
   prompt: `User Input: {{{prompt}}}`, // Directly use user input in the prompt.
   config: {
