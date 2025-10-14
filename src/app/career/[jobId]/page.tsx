@@ -18,7 +18,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
   return (
     <div className="bg-muted/20">
         <div className="container py-12 md:py-24">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto w-full max-w-6xl">
                 <div className="mb-8">
                 <Button variant="outline" asChild>
                     <Link href="/career">

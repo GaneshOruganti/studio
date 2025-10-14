@@ -1,3 +1,4 @@
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
@@ -45,80 +46,82 @@ const StarRating = ({ rating }: { rating: number }) => {
 export default function TestimonialsPage() {
   return (
     <div className="container py-12 md:py-24">
-      <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-        <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
-          Hear From Our Clients
-        </h1>
-        <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-          Watch our valued clients share their success stories and experiences working with Branch Edge.
-        </p>
-      </div>
-      
-      <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider">
-          <div className="video-testimonial-slide-track flex">
-            {duplicatedVideoTestimonials.map((testimonial, i) => (
-              <div key={`${testimonial.id}-${i}`} className="flex-shrink-0 w-[500px] mx-4">
-                <Card className="h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
-                  <CardContent className="p-0">
-                    <div className="aspect-video overflow-hidden rounded-t-lg">
-                      <iframe
-                        className="w-full h-full"
-                        src={`https://www.youtube.com/embed/${testimonial.id}`}
-                        title={testimonial.title}
-                        frameBorder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                      ></iframe>
-                    </div>
-                  </CardContent>
-                  <CardHeader>
-                    <div className="flex gap-4">
-                      <Quote className="h-6 w-6 text-primary flex-shrink-0" />
-                      <div>
-                        <CardTitle className="font-headline text-xl mb-1">{testimonial.title}</CardTitle>
-                        <p className="text-muted-foreground font-medium">{testimonial.speaker}</p>
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+          <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
+            Hear From Our Clients
+          </h1>
+          <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Watch our valued clients share their success stories and experiences working with Branch Edge.
+          </p>
+        </div>
+        
+        <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider">
+            <div className="video-testimonial-slide-track flex">
+              {duplicatedVideoTestimonials.map((testimonial, i) => (
+                <div key={`${testimonial.id}-${i}`} className="flex-shrink-0 w-[500px] mx-4">
+                  <Card className="h-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1">
+                    <CardContent className="p-0">
+                      <div className="aspect-video overflow-hidden rounded-t-lg">
+                        <iframe
+                          className="w-full h-full"
+                          src={`https://www.youtube.com/embed/${testimonial.id}`}
+                          title={testimonial.title}
+                          frameBorder="0"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        ></iframe>
                       </div>
-                    </div>
-                  </CardHeader>
-                </Card>
-              </div>
-            ))}
-          </div>
-      </div>
-
-      <div className="flex flex-col items-center justify-center space-y-4 text-center my-24">
-        <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">
-          What Our Clients Say
-        </h2>
-        <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-          Read reviews from businesses who have transformed with our help.
-        </p>
-      </div>
-
-      <div className="w-full max-w-7xl mx-auto testimonial-slider bg-muted/20 py-12 rounded-lg">
-          <div className="testimonial-slide-track flex">
-              {duplicatedWrittenTestimonials.map((testimonial, index) => {
-                  const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);
-                  return (
-                      <div key={index} className="testimonial-slide flex-shrink-0 w-[350px] mx-4">
-                          <Card>
-                              <CardContent className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
-                                  <Avatar className="w-16 h-16">
-                                      {avatar && <AvatarImage src={avatar.imageUrl} alt={testimonial.name} data-ai-hint={avatar.imageHint} />}
-                                      <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                  </Avatar>
-                                  <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
-                                  <div className="font-semibold">
-                                      <p>{testimonial.name}</p>
-                                      <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                                  </div>
-                                  <StarRating rating={testimonial.rating} />
-                              </CardContent>
-                          </Card>
+                    </CardContent>
+                    <CardHeader>
+                      <div className="flex gap-4">
+                        <Quote className="h-6 w-6 text-primary flex-shrink-0" />
+                        <div>
+                          <CardTitle className="font-headline text-xl mb-1">{testimonial.title}</CardTitle>
+                          <p className="text-muted-foreground font-medium">{testimonial.speaker}</p>
+                        </div>
                       </div>
-                  );
-              })}
-          </div>
+                    </CardHeader>
+                  </Card>
+                </div>
+              ))}
+            </div>
+        </div>
+
+        <div className="flex flex-col items-center justify-center space-y-4 text-center my-24">
+          <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">
+            What Our Clients Say
+          </h2>
+          <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+            Read reviews from businesses who have transformed with our help.
+          </p>
+        </div>
+
+        <div className="w-full max-w-7xl mx-auto testimonial-slider bg-muted/20 py-12 rounded-lg">
+            <div className="testimonial-slide-track flex">
+                {duplicatedWrittenTestimonials.map((testimonial, index) => {
+                    const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);
+                    return (
+                        <div key={index} className="testimonial-slide flex-shrink-0 w-[350px] mx-4">
+                            <Card>
+                                <CardContent className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
+                                    <Avatar className="w-16 h-16">
+                                        {avatar && <AvatarImage src={avatar.imageUrl} alt={testimonial.name} data-ai-hint={avatar.imageHint} />}
+                                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
+                                    </Avatar>
+                                    <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
+                                    <div className="font-semibold">
+                                        <p>{testimonial.name}</p>
+                                        <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                                    </div>
+                                    <StarRating rating={testimonial.rating} />
+                                </CardContent>
+                            </Card>
+                        </div>
+                    );
+                })}
+            </div>
+        </div>
       </div>
     </div>
   );

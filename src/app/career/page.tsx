@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useState } from "react";
@@ -90,7 +89,7 @@ export default function CareerPage() {
 
   return (
     <div className="container py-12 md:py-24">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-12">
           {/* Main Content */}
           <div className="md:col-span-2 lg:col-span-3">

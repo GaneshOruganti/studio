@@ -105,92 +105,98 @@ export default function Home() {
 
         <section id="what-we-do" className="w-full py-12 md:py-24 lg:py-32 bg-background">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2 services-anim">
-                <div className="inline-block rounded-full bg-muted px-4 py-2 text-sm font-semibold text-primary">Our Expertise</div>
-                <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">What We Do</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  We build the innovative digital solutions that help businesses like yours succeed. From smart software to standout branding, we're here to help you grow.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-7xl items-start gap-8 py-12 lg:grid-cols-4 md:grid-cols-2">
-              {whatWeDo.map((item, i) => (
-                <div key={item.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
-                  <Card className={`h-full text-center transition-all duration-300 bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105`}>
-                    <CardContent className="p-6 flex flex-col items-center gap-4">
-                      <div className={`p-4 rounded-lg mb-4 bg-card`}>
-                         <item.icon className="h-8 w-8 text-primary" />
-                      </div>
-                      <h3 className="font-headline text-xl font-bold">{item.name}</h3>
-                      <p className="text-muted-foreground text-sm">{item.description}</p>
-                    </CardContent>
-                  </Card>
+            <div className="w-full max-w-6xl mx-auto">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2 services-anim">
+                  <div className="inline-block rounded-full bg-muted px-4 py-2 text-sm font-semibold text-primary">Our Expertise</div>
+                  <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">What We Do</h2>
+                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    We build the innovative digital solutions that help businesses like yours succeed. From smart software to standout branding, we're here to help you grow.
+                  </p>
                 </div>
-              ))}
+              </div>
+              <div className="mx-auto grid max-w-7xl items-start gap-8 py-12 lg:grid-cols-4 md:grid-cols-2">
+                {whatWeDo.map((item, i) => (
+                  <div key={item.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
+                    <Card className={`h-full text-center transition-all duration-300 bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105`}>
+                      <CardContent className="p-6 flex flex-col items-center gap-4">
+                        <div className={`p-4 rounded-lg mb-4 bg-card`}>
+                           <item.icon className="h-8 w-8 text-primary" />
+                        </div>
+                        <h3 className="font-headline text-xl font-bold">{item.name}</h3>
+                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         <section id="services" className="w-full py-12 md:py-24 lg:py-32 bg-muted/20">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2 services-anim">
-                <div className="inline-block rounded-full bg-background px-4 py-2 text-sm font-semibold text-primary shadow-sm">
-                  <Star className="inline-block h-4 w-4 mr-2 text-yellow-400 fill-yellow-400" />
-                  Complete Solutions
+            <div className="w-full max-w-6xl mx-auto">
+              <div className="flex flex-col items-center justify-center space-y-4 text-center">
+                <div className="space-y-2 services-anim">
+                  <div className="inline-block rounded-full bg-background px-4 py-2 text-sm font-semibold text-primary shadow-sm">
+                    <Star className="inline-block h-4 w-4 mr-2 text-yellow-400 fill-yellow-400" />
+                    Complete Solutions
+                  </div>
+                  <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Our Services</h2>
+                  <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                    Comprehensive technology solutions to meet all your business needs and drive digital transformation.
+                  </p>
                 </div>
-                <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-5xl">Our Services</h2>
-                <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                  Comprehensive technology solutions to meet all your business needs and drive digital transformation.
-                </p>
               </div>
-            </div>
-            <div className="mx-auto grid max-w-7xl justify-center gap-8 py-12 sm:grid-cols-2 md:grid-cols-3">
-              {services.map((service, i) => (
-                <div key={service.name} className="relative group services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
-                   <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
-                  <Card className="h-full bg-background transition-all duration-200 relative">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-4">
-                        <div className="p-3 rounded-lg bg-muted">
-                           <service.icon className="h-6 w-6 text-primary" />
+              <div className="mx-auto grid max-w-7xl justify-center gap-8 py-12 sm:grid-cols-2 md:grid-cols-3">
+                {services.map((service, i) => (
+                  <div key={service.name} className="relative group services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
+                     <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
+                    <Card className="h-full bg-background transition-all duration-200 relative">
+                      <CardContent className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="p-3 rounded-lg bg-muted">
+                             <service.icon className="h-6 w-6 text-primary" />
+                          </div>
+                          <div className="flex-grow">
+                            <h3 className="font-bold text-lg">{service.name}</h3>
+                            <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
+                          </div>
                         </div>
-                        <div className="flex-grow">
-                          <h3 className="font-bold text-lg">{service.name}</h3>
-                          <p className="text-muted-foreground text-sm mt-1">{service.description}</p>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-              ))}
+                      </CardContent>
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         <section id="testimonials-section" className="w-full pt-0 pb-12 md:pb-24 lg:pb-32 bg-background">
             <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6 lg:gap-12">
-                <div className="space-y-3">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Track Record</h2>
-                    <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        Don't just take our word for it. Our results and client feedback showcase our commitment to excellence.
-                    </p>
-                </div>
-                <div className="w-full">
-                    <SuccessCounters />
-                </div>
-                <div className="mt-8">
-                  <Button asChild>
-                    <Link href="/testimonials">View Our Testimonials</Link>
-                  </Button>
-                </div>
-                <div id="partners" className="mt-12">
-                  <h3 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-8">
-                    Trusted by the World's Best Companies
-                  </h3>
-                  <LogoCloud />
-                </div>
+              <div className="w-full max-w-6xl mx-auto">
+                  <div className="space-y-3">
+                      <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Track Record</h2>
+                      <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                          Don't just take our word for it. Our results and client feedback showcase our commitment to excellence.
+                      </p>
+                  </div>
+                  <div className="w-full mt-8">
+                      <SuccessCounters />
+                  </div>
+                  <div className="mt-8">
+                    <Button asChild>
+                      <Link href="/testimonials">View Our Testimonials</Link>
+                    </Button>
+                  </div>
+                  <div id="partners" className="mt-12">
+                    <h3 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-8">
+                      Trusted by the World's Best Companies
+                    </h3>
+                    <LogoCloud />
+                  </div>
+              </div>
             </div>
         </section>
       </main>

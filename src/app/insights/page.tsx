@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useFormState, useFormStatus } from 'react-dom';
@@ -27,7 +28,7 @@ export default function InsightsPage() {
 
   return (
     <div className="container py-12">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             AI-Powered Insights
@@ -37,7 +38,7 @@ export default function InsightsPage() {
           </p>
         </div>
 
-        <form action={dispatch}>
+        <form action={dispatch} className="max-w-3xl mx-auto">
           <Card>
             <CardHeader>
               <CardTitle>Market Research Tool</CardTitle>
@@ -65,7 +66,7 @@ export default function InsightsPage() {
         </form>
 
         {state?.message === 'An error occurred while generating insights.' && (
-          <Alert variant="destructive" className="mt-8">
+          <Alert variant="destructive" className="mt-8 max-w-3xl mx-auto">
             <Terminal className="h-4 w-4" />
             <AlertTitle>Error</AlertTitle>
             <AlertDescription>
@@ -75,7 +76,7 @@ export default function InsightsPage() {
         )}
 
         {state?.data && (
-          <Card className="mt-8">
+          <Card className="mt-8 max-w-3xl mx-auto">
             <CardHeader>
               <CardTitle>Generated Insights</CardTitle>
             </CardHeader>

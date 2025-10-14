@@ -24,7 +24,7 @@ import { Handshake } from "lucide-react";
 export default function PartnerPage() {
   return (
     <div className="container py-12 md:py-24">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             Partner With Us
@@ -35,7 +35,7 @@ export default function PartnerPage() {
           </p>
         </div>
 
-        <Card className="shadow-lg hover:shadow-primary/20 transition-shadow duration-300">
+        <Card className="shadow-lg hover:shadow-primary/20 transition-shadow duration-300 max-w-3xl mx-auto">
           <CardHeader>
             <CardTitle>Partnership Opportunities</CardTitle>
             <CardDescription>
