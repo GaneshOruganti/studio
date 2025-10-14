@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -10,6 +11,10 @@ const logos = [
   { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png", alt: "Company 5" },
   { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png", alt: "Company 6" },
   { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png", alt: "Company 7" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/TATA_Group_Logo.svg/1280px-TATA_Group_Logo.svg.png", alt: "Tata" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Reliance_Industries_Limited_Logo.svg/1200px-Reliance_Industries_Limited_Logo.svg.png", alt: "Reliance" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Infosys_logo.svg/1200px-Infosys_logo.svg.png", alt: "Infosys" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Mahindra_Group_logo.svg/1280px-Mahindra_Group_logo.svg.png", alt: "Mahindra" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
