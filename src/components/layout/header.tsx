@@ -37,25 +37,25 @@ export function Header() {
                 Branch Edge
               </span>
             </Link>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "transition-colors hover:text-foreground/90 rounded-full px-3 py-1 text-sm font-medium",
-                    pathname === item.href
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "text-foreground/60"
-                  )}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </nav>
           </div>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  "transition-colors hover:text-foreground/90 rounded-full px-3 py-1 text-sm font-medium",
+                  pathname === item.href
+                    ? "bg-primary text-primary-foreground shadow-sm"
+                    : "text-foreground/60"
+                )}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
 
           <div className="flex items-center gap-2 px-3">
             <ThemeToggle />
@@ -93,16 +93,6 @@ export function Header() {
                 </SheetContent>
               </Sheet>
             </div>
-            {/* 
-            <nav className="hidden md:flex items-center gap-2">
-              <Button variant="ghost" asChild>
-                <Link href="/login">Login</Link>
-              </Button>
-              <Button asChild>
-                <Link href="/signup">Sign Up</Link>
-              </Button>
-            </nav>
-            */}
           </div>
         </div>
       </div>
