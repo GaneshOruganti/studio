@@ -1,5 +1,6 @@
 
-import { getJobById, aboutCompany } from "../page";
+
+import { getJobById, aboutCompany } from "@/lib/jobs";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -96,5 +97,3 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
     </div>
   );
 }
-
-    
