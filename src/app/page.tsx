@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone, Palette, Layers, UserCog, Database, Search, Bot, PieChart, Briefcase } from "lucide-react";
+import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone, Palette, Layers, UserCog, Database, Search, Bot, PieChart, Briefcase, ShoppingCart } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -20,6 +20,9 @@ const services = [
   { name: "Digital Marketing/Branding", icon: Megaphone, description: "Strategic digital marketing campaigns and brand development to boost your online presence." },
   { name: "Business Software", icon: Briefcase, description: "Custom enterprise software solutions that streamline operations and boost productivity." },
   { name: "Mobile Applications", icon: AppWindow, description: "Native and cross-platform mobile apps for iOS and Android platforms." },
+  { name: "Cloud Solutions", icon: DatabaseZap, description: "Scalable and secure cloud hosting and infrastructure management." },
+  { name: "UI/UX Design", icon: Palette, description: "Crafting intuitive and engaging user interfaces for a seamless user experience."},
+  { name: "E-commerce Solutions", icon: ShoppingCart, description: "Building robust e-commerce platforms to drive online sales and growth." },
 ];
 
 const whatWeDo = [
