@@ -98,7 +98,7 @@ export const jobOpenings = [
   }
 ];
 
-export const aboutCompany = "Branch Edge is a leader in innovative technology solutions, committed to driving success for our clients. We foster a collaborative and inclusive environment where creativity and growth are encouraged. Join us to be a part of a team that's shaping the future of technology.";
+export const aboutCompany = "At Branch Edge, we are dedicated to delivering next-generation software and AI solutions with unrivaled speed and quality. Our mission is to empower industries and communities with transformative digital tools that accelerate progress, whether in education, real estate, government, or beyond. By combining cutting-edge technology, agile delivery, and a passion for innovation, we act as a digital catalyst—helping organizations thrive in a rapidly changing world. Our commitment to integrity, creativity, and client success positions us as a trusted partner for the future, wherever technology paves the way.";
 
 export function getJobById(id: string) {
     return jobOpenings.find(job => job.id === id);
