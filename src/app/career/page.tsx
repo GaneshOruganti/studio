@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, MapPin, Briefcase, ExternalLink, DollarSign, Search, Plus, X, ArrowLeft } from "lucide-react";
+import { ArrowRight, MapPin, Briefcase, ExternalLink, DollarSign, Search, Plus, X, ArrowLeft, Star } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -113,7 +113,7 @@ export default function CareerPage() {
                   >
                     <CardContent className="p-6">
                       <div className="flex flex-col sm:flex-row justify-between gap-4">
-                        <div>
+                        <div className="flex-grow">
                           <Link href={`/career/${job.id}`} className="block">
                             <h3 className="text-xl font-bold text-primary hover:underline">{job.title}</h3>
                           </Link>
@@ -122,7 +122,11 @@ export default function CareerPage() {
                             <span>{job.location}</span>
                           </div>
                         </div>
-                        <div className="flex-shrink-0">
+                        <div className="flex-shrink-0 flex items-center gap-2">
+                          <Button variant="ghost" size="icon">
+                            <Star className="h-5 w-5" />
+                            <span className="sr-only">Save Job</span>
+                          </Button>
                           <Button asChild>
                             <Link href={`/career/${job.id}`}>
                               Apply <ArrowRight className="ml-2" />
