@@ -45,7 +45,6 @@ const WavyPath = () => (
       fill="none"
       stroke="hsl(var(--primary))"
       strokeWidth="2"
-      strokeDasharray="8 8"
     />
   </svg>
 );

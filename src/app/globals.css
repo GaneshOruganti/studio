@@ -173,8 +173,9 @@ body {
   }
 
   .timeline-container svg path {
-      animation: draw-line 5s linear forwards;
+      animation: draw-line linear forwards;
       animation-timeline: view();
+      animation-range: entry 25% cover 40%;
       stroke-dashoffset: 1;
       stroke-dasharray: 1;
   }
@@ -226,4 +227,5 @@ body {
   animation-timeline: view();
   animation-range: entry 25% cover 20%;
 }
+
 
