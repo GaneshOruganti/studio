@@ -19,17 +19,11 @@ const companyLinks = [
   { name: "Partner With Us", href: "/partner" },
 ];
 
-const quickLinks = [
-    { name: "AI Insights", href: "/insights" },
-    { name: "Login", href: "/login" },
-    { name: "Sign Up", href: "/signup" },
-];
-
 export function Footer() {
   return (
     <footer className="border-t border-border/40 py-12 bg-background">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
           {/* Services Column */}
           <div>
             <h4 className="font-bold font-headline text-lg mb-4">Services</h4>
@@ -49,20 +43,6 @@ export function Footer() {
             <h4 className="font-bold font-headline text-lg mb-4">Company</h4>
             <ul className="space-y-2">
               {companyLinks.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Quick Links Column */}
-          <div>
-            <h4 className="font-bold font-headline text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.name}
