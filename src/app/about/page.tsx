@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
@@ -72,7 +74,7 @@ export default function AboutPage() {
 
         <div className="py-12 md:py-24 bg-muted/20">
             <div className="container">
-                <div className="text-center mb-12 services-anim">
+                <div className="text-center mb-16 services-anim">
                     <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Vision</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To be a global leader in digital transformation, shaping the future of industries through relentless innovation and technological excellence.</p>
                 </div>

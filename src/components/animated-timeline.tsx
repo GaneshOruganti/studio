@@ -3,7 +3,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MessageSquare, Phone, Users, Zap } from "lucide-react";
+import { MessageSquare, Phone, Users, Zap, Award, Target, Rocket, Handshake } from "lucide-react";
 
 const timelineItems = [
   {
@@ -15,19 +15,19 @@ const timelineItems = [
   {
     title: "Strategy & Planning",
     description: "Crafting a detailed roadmap for success.",
-    icon: Zap,
+    icon: Target,
     position: { top: "65%", left: "35%" },
   },
   {
     title: "Development & Execution",
     description: "Bringing the vision to life with precision.",
-    icon: Users,
+    icon: Rocket,
     position: { top: "15%", left: "65%" },
   },
   {
     title: "Launch & Support",
     description: "Ensuring a smooth rollout and ongoing success.",
-    icon: Phone,
+    icon: Handshake,
     position: { top: "65%", left: "90%" },
   },
 ];
@@ -63,7 +63,6 @@ const TimelineNode = ({
     offset: ["start end", "end start"],
   });
   
-  // Animate from left (-100px) to its final position (0)
   const x = useTransform(scrollYProgress, [0.3, 0.7], [-100, 0]);
   const opacity = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
 

@@ -1,6 +1,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { BrainCircuit, UserCog, Database, Bot, Search, FileText, Megaphone, Briefcase, AppWindow, DatabaseZap, Palette, ShoppingCart } from "lucide-react";
+import { AnimatedTimeline } from "@/components/animated-timeline";
 
 const services = [
   { name: "AI & ML Solutions", icon: BrainCircuit, description: "Artificial intelligence and machine learning solutions to automate and optimize processes." },
@@ -50,6 +51,14 @@ export default function ServicesPage() {
               </Card>
             </div>
           ))}
+        </div>
+
+        <div className="mt-24">
+            <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Our Process</h2>
+                <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">A glimpse into how we bring your ideas to life.</p>
+            </div>
+            <AnimatedTimeline />
         </div>
       </div>
     </div>
