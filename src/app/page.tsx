@@ -1,7 +1,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone } from "lucide-react";
+import { ArrowRight, BarChart, Cloud, Code, Shield, TrendingUp, UserCheck, Star, AppWindow, GanttChartSquare, BrainCircuit, DatabaseZap, FileText, Megaphone, Palette } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -60,6 +60,12 @@ const whatWeDo = [
     name: "Digital Marketing",
     icon: Megaphone,
     description: "Strategic digital marketing campaigns to grow your audience and boost engagement.",
+    highlighted: false,
+  },
+  {
+    name: "Logo & Brand Design",
+    icon: Palette,
+    description: "Crafting memorable logos and brand identities that tell your story and captivate your audience.",
     highlighted: false,
   },
 ];
