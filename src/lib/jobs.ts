@@ -1,5 +1,18 @@
 
-export const jobOpenings = [
+
+export type Job = {
+    id: string;
+    title: string;
+    category: string;
+    location: string;
+    type: string;
+    salary: string;
+    description: string;
+    rolesAndResponsibilities: string[];
+    perks: string[];
+};
+
+export const jobOpenings: Job[] = [
   {
     id: "innovation-solutions-engineer",
     title: "Innovation Solutions Engineer",

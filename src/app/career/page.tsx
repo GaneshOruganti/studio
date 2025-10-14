@@ -6,27 +6,26 @@ import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, MapPin, Briefcase, ExternalLink, DollarSign, Search, Plus, X, ArrowLeft, Star } from "lucide-react";
+import { ArrowRight, MapPin, Search, X, ArrowLeft, Star } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { jobOpenings } from "@/lib/jobs";
+import { jobOpenings, type Job } from "@/lib/jobs";
+import { cn } from "@/lib/utils";
 
+type View = "all" | "saved";
 
 export default function CareerPage() {
   const [keyword, setKeyword] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
+  const [savedJobs, setSavedJobs] = useState<string[]>([]);
+  const [view, setView] = useState<View>("all");
   const jobsPerPage = 8;
 
   const jobCategories = [...Array.from(new Set(jobOpenings.map(job => job.category)))];
@@ -53,18 +52,28 @@ export default function CareerPage() {
     setCurrentPage(1);
   };
 
-  const filteredJobs = jobOpenings.filter(job => {
+  const toggleSaveJob = (jobId: string) => {
+    setSavedJobs(prev => 
+      prev.includes(jobId) ? prev.filter(id => id !== jobId) : [...prev, jobId]
+    );
+  };
+
+  const allFilteredJobs = jobOpenings.filter(job => {
     const keywordMatch = keyword === "" || job.title.toLowerCase().includes(keyword.toLowerCase()) || job.description.toLowerCase().includes(keyword.toLowerCase());
     const categoryMatch = selectedCategories.length === 0 || selectedCategories.includes(job.category);
     const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(job.type);
     return keywordMatch && categoryMatch && typeMatch;
   });
 
+  const jobsToShow = view === 'saved'
+    ? allFilteredJobs.filter(job => savedJobs.includes(job.id))
+    : allFilteredJobs;
+
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
-  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+  const currentJobs = jobsToShow.slice(indexOfFirstJob, indexOfLastJob);
 
-  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+  const totalPages = Math.ceil(jobsToShow.length / jobsPerPage);
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
@@ -77,6 +86,11 @@ export default function CareerPage() {
       setCurrentPage(currentPage - 1);
     }
   };
+  
+  const switchView = (newView: View) => {
+    setView(newView);
+    setCurrentPage(1);
+  };
 
   return (
     <div className="container py-12 md:py-24">
@@ -85,9 +99,14 @@ export default function CareerPage() {
           {/* Main Content */}
           <div className="md:col-span-2 lg:col-span-3">
             <div className="flex flex-col sm:flex-row justify-between sm:items-center mb-8 gap-4">
-              <h1 className="text-3xl font-bold font-headline tracking-tighter">
-                We found {filteredJobs.length} jobs
-              </h1>
+              <div className="flex items-center gap-2 border-b">
+                <Button variant="ghost" onClick={() => switchView('all')} className={cn("rounded-none border-b-2", view === 'all' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground')}>
+                  All Jobs ({allFilteredJobs.length})
+                </Button>
+                <Button variant="ghost" onClick={() => switchView('saved')} className={cn("rounded-none border-b-2", view === 'saved' ? 'border-primary text-primary' : 'border-transparent text-muted-foreground')}>
+                  Saved Jobs ({savedJobs.length})
+                </Button>
+              </div>
               <div className="flex items-center gap-2">
                 <span className="text-sm font-medium text-muted-foreground">Sort by</span>
                 <Select defaultValue="relevancy">
@@ -123,8 +142,8 @@ export default function CareerPage() {
                           </div>
                         </div>
                         <div className="flex-shrink-0 flex items-center gap-2">
-                          <Button variant="ghost" size="icon">
-                            <Star className="h-5 w-5" />
+                          <Button variant="ghost" size="icon" onClick={() => toggleSaveJob(job.id)}>
+                            <Star className={cn("h-5 w-5", savedJobs.includes(job.id) ? "fill-primary text-primary" : "text-muted-foreground")} />
                             <span className="sr-only">Save Job</span>
                           </Button>
                           <Button asChild>
@@ -138,7 +157,9 @@ export default function CareerPage() {
                   </Card>
                 ))
               ) : (
-                <p className="text-center text-muted-foreground col-span-full">No open positions match your criteria.</p>
+                <p className="text-center text-muted-foreground col-span-full">
+                  {view === 'saved' ? "You haven't saved any jobs yet." : "No open positions match your criteria."}
+                </p>
               )}
             </div>
 
