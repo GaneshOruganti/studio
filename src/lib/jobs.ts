@@ -462,12 +462,18 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Work on real-world coding projects, contribute to web/app development, and learn modern frameworks while working alongside senior developers.",
     rolesAndResponsibilities: [
-      "Contribute to feature development and bug fixing on active projects.",
-      "Learn and apply modern coding practices and software architecture.",
-      "Collaborate with the engineering team in an agile environment.",
-      "Assist in writing and maintaining technical documentation."
+      "Assist in coding, debugging, and testing software applications.",
+      "Collaborate with software engineers on feature development.",
+      "Apply user-centered design principles and agile processes.",
+      "Participate in team meetings and code reviews.",
+      "Learn and implement best practices in programming and software engineering."
     ],
-    requirements: [],
+    requirements: [
+      "Currently enrolled in a BSc or MSc program in Computer Science or related field.",
+      "Basic knowledge of at least one programming language (Python, Java, JavaScript, etc.).",
+      "Understanding of software development lifecycle and agile methodology.",
+      "Eagerness to learn, problem-solving skills, and ability to work in a team."
+    ],
     perks: ["Mentorship from senior engineers", "Hands-on project experience", "Flexible work hours", "Potential for future employment"],
   },
   {
@@ -479,12 +485,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Assist with building intelligent models, data analysis, machine learning experiments, and automation for company products and R&D.",
     rolesAndResponsibilities: [
-      "Assist in building, training, and testing AI/ML models.",
-      "Perform data collection, cleaning, and analysis.",
-      "Contribute to machine learning experiments and R&D projects.",
-      "Help automate data processing and reporting tasks."
+      "Support the development and training of AI and machine learning models.",
+      "Assist with data collection, cleaning, and analysis.",
+      "Conduct experiments on algorithms and evaluate model performance.",
+      "Collaborate with AI engineers and data scientists on research tasks."
     ],
-    requirements: [],
+    requirements: [
+      "Currently studying Computer Science, Data Science, Statistics, or related fields.",
+      "Familiarity with Python, R, or similar programming languages.",
+      "Basic knowledge of machine learning concepts and libraries (TensorFlow, PyTorch).",
+      "Analytical mindset and strong mathematical skills."
+    ],
     perks: ["Work with large datasets and cutting-edge models", "Mentorship from data scientists", "Gain practical AI/ML skills", "Academic credit support"],
   },
   {
@@ -496,12 +507,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Help design intuitive user interfaces, create wireframes and prototypes, and participate in user testing to enhance product experiences.",
     rolesAndResponsibilities: [
-      "Collaborate with designers to create intuitive and engaging interfaces.",
-      "Develop wireframes, mockups, and high-fidelity prototypes.",
-      "Participate in user research and usability testing sessions.",
-      "Contribute to the evolution of our design system."
+      "Create wireframes, prototypes, and visual designs under guidance.",
+      "Participate in user research and usability testing.",
+      "Help maintain design consistency and improve user experience.",
+      "Work closely with product managers and developers."
     ],
-    requirements: [],
+    requirements: [
+      "Enrolled in Design, Human-Computer Interaction, or a related program.",
+      "Familiarity with design tools like Figma, Sketch, or Adobe XD.",
+      "Good understanding of user-centered design principles.",
+      "Creative thinker with attention to detail."
+    ],
     perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
   },
   {
@@ -513,12 +529,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Learn about automation tools, cloud infrastructure, CI/CD pipeline management, and participate in efficient software deployment.",
     rolesAndResponsibilities: [
-      "Support the automation of software deployments and infrastructure management.",
-      "Assist in maintaining CI/CD pipelines for various projects.",
-      "Monitor cloud infrastructure for performance and reliability.",
-      "Learn about infrastructure as code and other DevOps best practices."
+      "Assist in automating deployment pipelines and infrastructure monitoring.",
+      "Support cloud environment setup and maintenance (AWS, GCP, or Azure).",
+      "Join incident management and troubleshoot system issues.",
+      "Work with DevOps engineers to optimize CI/CD workflows."
     ],
-    requirements: [],
+    requirements: [
+      "Studying Computer Science, IT, or related disciplines.",
+      "Basic understanding of cloud platforms, scripting, and Linux commands.",
+      "Interest in automation and system infrastructure.",
+      "Strong problem-solving skills."
+    ],
     perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
   },
   {
@@ -530,12 +551,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Support product lifecycle activities, do market/user research, collect feedback, assist with roadmap planning, and coordinate between tech and business teams.",
     rolesAndResponsibilities: [
-      "Support product managers in defining product strategy and roadmaps.",
-      "Conduct market research and competitive analysis.",
-      "Gather and analyze user feedback to inform product decisions.",
-      "Coordinate between engineering, design, and marketing teams."
+      "Support product lifecycle activities including market research and documentation.",
+      "Assist in feature prioritization and roadmap tracking.",
+      "Coordinate communication across engineering, design, and marketing teams.",
+      "Participate in sprint planning and client feedback sessions."
     ],
-    requirements: [],
+    requirements: [
+      "Pursuing degree in Business, Technology, or related areas.",
+      "Strong communication and organizational skills.",
+      "Interest in technology products and business strategies.",
+      "Ability to multitask and work in a fast-paced setting."
+    ],
     perks: ["Learn the full product development lifecycle", "Gain strategic business experience", "Mentorship from product leaders", "Impact product direction"],
   },
   {
@@ -547,12 +573,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Assist in auditing systems, monitoring network activity, and learning about the latest strategies in digital protection and compliance.",
     rolesAndResponsibilities: [
-      "Participate in vulnerability assessments and security audits.",
-      "Assist in monitoring network activity and identifying potential threats.",
-      "Help develop and enforce security policies and procedures.",
-      "Learn about compliance standards and security best practices."
+      "Help conduct security audits and vulnerability assessments.",
+      "Monitor network traffic and assist in threat detection.",
+      "Support incident response procedures and documentation.",
+      "Learn and apply security best practices under mentorship."
     ],
-    requirements: [],
+    requirements: [
+      "Enrolled in Cybersecurity, Computer Science, or related programs.",
+      "Basic knowledge of network security, firewalls, and encryption.",
+      "Analytical thinking and attention to detail.",
+      "Willingness to learn and follow security protocols."
+    ],
     perks: ["Gain experience in a high-demand field", "Work with advanced security tools", "Mentorship from cybersecurity experts", "Understand real-world security challenges"],
   },
   {
@@ -564,12 +595,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Help develop online campaigns, manage social media channels, and analyze performance data to drive brand awareness and user engagement.",
     rolesAndResponsibilities: [
-      "Assist with planning and executing digital marketing campaigns.",
-      "Help manage social media channels and create engaging content.",
-      "Analyze marketing data to measure campaign performance.",
-      "Contribute to SEO, content marketing, and brand outreach efforts."
+      "Assist in creating and managing online marketing campaigns.",
+      "Manage social media accounts and engage with communities.",
+      "Analyze traffic data and prepare performance reports.",
+      "Support content creation for blogs, videos, and emails."
     ],
-    requirements: [],
+    requirements: [
+      "Studying Marketing, Communications, or related fields.",
+      "Familiarity with social media platforms and digital marketing tools.",
+      "Good writing and communication skills.",
+      "Creative mindset and eagerness to learn."
+    ],
     perks: ["Hands-on marketing campaign experience", "Learn analytics and reporting tools", "Creative and dynamic work environment", "Mentorship from marketing professionals"],
   },
   {
@@ -581,12 +617,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Support onboarding and assisting new clients, preparing help documentation, gathering user feedback, and collaborating with support teams.",
     rolesAndResponsibilities: [
-      "Assist with onboarding new clients and ensuring their success.",
-      "Engage with users to provide support and gather feedback.",
-      "Help create and maintain help documentation and tutorials.",
-      "Collaborate with the customer success team to improve the user experience."
+      "Support onboarding of new clients and product adoption.",
+      "Assist with user training materials and support tickets.",
+      "Collect and analyze customer feedback for team review.",
+      "Help maintain CRM records and customer communications."
     ],
-    requirements: [],
+    requirements: [
+      "Pursuing degree in Business, Communications, or related areas.",
+      "Strong interpersonal and customer service skills.",
+      "Detail-oriented and organized.",
+      "Willingness to engage with clients and internal teams."
+    ],
     perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   },
   {
@@ -598,10 +639,18 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Work on feature development, bug fixing, and learn modern coding practices alongside the engineering team.",
     rolesAndResponsibilities: [
-      "Contribute to web/app development.",
-      "Learn modern frameworks while working alongside senior developers."
+      "Assist in coding, debugging, and testing software applications.",
+      "Collaborate with software engineers on feature development.",
+      "Apply user-centered design principles and agile processes.",
+      "Participate in team meetings and code reviews.",
+      "Learn and implement best practices in programming and software engineering."
     ],
-    requirements: [],
+    requirements: [
+      "Currently enrolled in a BSc or MSc program in Computer Science or related field.",
+      "Basic knowledge of at least one programming language (Python, Java, JavaScript, etc.).",
+      "Understanding of software development lifecycle and agile methodology.",
+      "Eagerness to learn, problem-solving skills, and ability to work in a team."
+    ],
     perks: ["Mentorship from senior engineers", "Hands-on project experience", "Flexible work hours", "Potential for future employment"],
   },
   {
@@ -613,11 +662,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Assist in building and testing AI models, perform data analysis, and explore new machine learning techniques.",
     rolesAndResponsibilities: [
-      "Assist in building and testing AI models.",
-      "Perform data analysis.",
-      "Explore new machine learning techniques."
+      "Support the development and training of AI and machine learning models.",
+      "Assist with data collection, cleaning, and analysis.",
+      "Conduct experiments on algorithms and evaluate model performance.",
+      "Collaborate with AI engineers and data scientists on research tasks."
     ],
-    requirements: [],
+    requirements: [
+      "Currently studying Computer Science, Data Science, Statistics, or related fields.",
+      "Familiarity with Python, R, or similar programming languages.",
+      "Basic knowledge of machine learning concepts and libraries (TensorFlow, PyTorch).",
+      "Analytical mindset and strong mathematical skills."
+    ],
     perks: ["Work with large datasets and cutting-edge models", "Mentorship from data scientists", "Gain practical AI/ML skills", "Academic credit support"],
   },
   {
@@ -629,11 +684,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Collaborate with designers to create intuitive interfaces, work on user research, and contribute to UX/UI projects.",
     rolesAndResponsibilities: [
-      "Collaborate with designers to create intuitive interfaces.",
-      "Work on user research.",
-      "Contribute to UX/UI projects."
+      "Assist senior designers in creating product mockups and user flows.",
+      "Participate in user research and incorporate feedback into designs.",
+      "Ensure consistency with brand and usability standards.",
+      "Collaborate closely with development and product teams."
     ],
-    requirements: [],
+    requirements: [
+      "Studying Design, Industrial Design, or a related discipline.",
+      "Experience with design software (Photoshop, Illustrator, Figma).",
+      "Keen eye for detail and aesthetics.",
+      "Good communication and collaboration skills."
+    ],
     perks: ["Build a professional design portfolio", "Mentorship from experienced designers", "Access to premium design tools", "Creative and collaborative environment"],
   },
   {
@@ -645,11 +706,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Support the automation of deployments, maintain cloud infrastructure, and monitor reliability and performance.",
     rolesAndResponsibilities: [
-      "Support the automation of deployments.",
-      "Maintain cloud infrastructure.",
-      "Monitor reliability and performance."
+      "Assist in automating deployment pipelines and infrastructure monitoring.",
+      "Support cloud environment setup and maintenance (AWS, GCP, or Azure).",
+      "Join incident management and troubleshoot system issues.",
+      "Work with DevOps engineers to optimize CI/CD workflows."
     ],
-    requirements: [],
+    requirements: [
+      "Studying Computer Science, IT, or related disciplines.",
+      "Basic understanding of cloud platforms, scripting, and Linux commands.",
+      "Interest in automation and system infrastructure.",
+      "Strong problem-solving skills."
+    ],
     perks: ["Hands-on experience with AWS, GCP, or Azure", "Learn industry-standard DevOps tools", "Mentorship from senior DevOps engineers", "Contribute to mission-critical systems"],
   },
   {
@@ -661,11 +728,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Analyze product and business data, build dashboards, and deliver insights that support decision-making.",
     rolesAndResponsibilities: [
-      "Analyze product and business data.",
-      "Build dashboards.",
-      "Deliver insights that support decision-making."
+      "Analyze business data and generate actionable insights.",
+      "Build dashboards and visual reports for stakeholders.",
+      "Support strategic decision-making with quantitative analysis.",
+      "Collaborate with product and sales teams on data projects."
     ],
-    requirements: [],
+    requirements: [
+      "Enrolled in Statistics, Business Analytics, Economics, or related courses.",
+      "Proficient in Excel, SQL, and data visualization tools (Tableau, PowerBI).",
+      "Strong analytical and critical thinking skills.",
+      "Ability to communicate data findings effectively."
+    ],
     perks: ["Develop strong analytical skills", "Work with business intelligence tools", "Present findings to leadership", "Data-driven decision making"],
   },
   {
@@ -677,11 +750,17 @@ export const jobOpenings: Job[] = [
     salary: "Paid",
     description: "Engage with users, prepare documentation, and help in onboarding and troubleshooting customer issues.",
     rolesAndResponsibilities: [
-      "Engage with users.",
-      "Prepare documentation.",
-      "Help in onboarding and troubleshooting customer issues."
+      "Help collect and analyze customer feedback.",
+      "Support improvements in customer service processes.",
+      "Assist in preparing user guides and FAQs.",
+      "Participate in client interaction under supervision."
     ],
-    requirements: [],
+    requirements: [
+      "Pursuing degrees in Communications, Business, or related fields.",
+      "Excellent communication and empathy skills.",
+      "Detail-oriented and proactive.",
+      "Comfortable working with client-facing teams."
+    ],
     perks: ["Develop strong communication and client-facing skills", "Directly impact user satisfaction", "Work in a supportive team environment", "Learn about the SaaS business model"],
   }
 ];
@@ -691,5 +770,3 @@ export const aboutCompany = "At Branch Edge, we are dedicated to delivering next
 export function getJobById(id: string) {
     return jobOpenings.find(job => job.id === id);
 }
-
-    
