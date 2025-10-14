@@ -12,7 +12,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, MapPin, Briefcase, ExternalLink, DollarSign, Search, Plus, X } from "lucide-react";
+import { ArrowRight, MapPin, Briefcase, ExternalLink, DollarSign, Search, Plus, X, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -26,6 +26,8 @@ export default function CareerPage() {
   const [keyword, setKeyword] = useState("");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 8;
 
   const jobCategories = [...Array.from(new Set(jobOpenings.map(job => job.category)))];
   const jobTypes = [...Array.from(new Set(jobOpenings.map(job => job.type)))];
@@ -34,18 +36,21 @@ export default function CareerPage() {
     setSelectedCategories(prev => 
       prev.includes(category) ? prev.filter(c => c !== category) : [...prev, category]
     );
+    setCurrentPage(1);
   };
 
   const handleTypeChange = (type: string) => {
     setSelectedTypes(prev =>
       prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
     );
+    setCurrentPage(1);
   };
 
   const clearFilters = () => {
     setKeyword("");
     setSelectedCategories([]);
     setSelectedTypes([]);
+    setCurrentPage(1);
   };
 
   const filteredJobs = jobOpenings.filter(job => {
@@ -54,6 +59,24 @@ export default function CareerPage() {
     const typeMatch = selectedTypes.length === 0 || selectedTypes.includes(job.type);
     return keywordMatch && categoryMatch && typeMatch;
   });
+
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+
+  const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
   return (
     <div className="container py-12 md:py-24">
@@ -82,8 +105,8 @@ export default function CareerPage() {
             </div>
 
             <div className="grid gap-6">
-              {filteredJobs.length > 0 ? (
-                filteredJobs.map((job) => (
+              {currentJobs.length > 0 ? (
+                currentJobs.map((job) => (
                   <Card
                     key={job.id}
                     className="transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
@@ -114,6 +137,20 @@ export default function CareerPage() {
                 <p className="text-center text-muted-foreground col-span-full">No open positions match your criteria.</p>
               )}
             </div>
+
+            {totalPages > 1 && (
+              <div className="flex justify-center items-center mt-8 gap-4">
+                <Button onClick={handlePrevPage} disabled={currentPage === 1}>
+                  <ArrowLeft className="mr-2" /> Previous
+                </Button>
+                <span className="text-sm text-muted-foreground">
+                  Page {currentPage} of {totalPages}
+                </span>
+                <Button onClick={handleNextPage} disabled={currentPage === totalPages}>
+                  Next <ArrowRight className="ml-2" />
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}
@@ -130,7 +167,10 @@ export default function CareerPage() {
                       id="keyword" 
                       placeholder="Enter keyword"
                       value={keyword}
-                      onChange={(e) => setKeyword(e.target.value)}
+                      onChange={(e) => {
+                        setKeyword(e.target.value)
+                        setCurrentPage(1);
+                      }}
                       className="rounded-r-none focus:z-10"
                     />
                     <Button className="rounded-l-none" aria-label="Search">
