@@ -1,3 +1,4 @@
+
 import { Icons } from "@/components/icons";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
@@ -19,18 +20,24 @@ const companyLinks = [
   { name: "Partner With Us", href: "/partner" },
 ];
 
+const policyLinks = [
+    { name: "Terms of Use", href: "#" },
+    { name: "Privacy", href: "#" },
+    { name: "Security", href: "#" },
+]
+
 export function Footer() {
   return (
     <footer className="border-t border-border/40 py-12 bg-background">
       <div className="container">
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Services Column */}
           <div>
             <h4 className="font-bold font-headline text-lg mb-4">Services</h4>
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
@@ -44,11 +51,25 @@ export function Footer() {
             <ul className="space-y-2">
               {companyLinks.map((link) => (
                 <li key={link.name}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
                     {link.name}
                   </Link>
                 </li>
               ))}
+            </ul>
+          </div>
+          
+          {/* Consumer Policy Column */}
+          <div>
+            <h4 className="font-bold font-headline text-lg mb-4">Consumer Policy</h4>
+             <ul className="space-y-2">
+                {policyLinks.map((link) => (
+                    <li key={link.name}>
+                        <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors text-sm">
+                            {link.name}
+                        </Link>
+                    </li>
+                ))}
             </ul>
           </div>
 
@@ -58,14 +79,14 @@ export function Footer() {
             <div className="space-y-2 text-muted-foreground">
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 shrink-0 text-primary" />
-                  <a href="mailto:contact@branchedge.com" className="hover:text-primary transition-colors">contact@branchedge.com</a>
+                  <a href="mailto:contact@branchedge.com" className="hover:text-primary transition-colors text-sm">contact@branchedge.com</a>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 shrink-0 text-primary" />
-                  <a href="tel:+1234567890" className="hover:text-primary transition-colors">(123) 456-7890</a>
+                  <a href="tel:+1234567890" className="hover:text-primary transition-colors text-sm">(123) 456-7890</a>
                 </div>
             </div>
-            <div className="mt-4">
+            <div className="mt-6">
                 <h4 className="font-bold font-headline text-lg mb-4">Follow Us</h4>
                 <div className="flex items-center gap-4">
                   <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -93,29 +114,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-border/40 pt-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <div className="flex items-center gap-4">
-                    <Icons.logo className="h-12 w-12 text-primary" />
-                    <div>
-                        <p className="font-bold font-headline text-lg">Branch Edge Head Office:</p>
-                        <p className="text-muted-foreground text-sm">123 Innovation Drive, Tech City, 12345</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 className="font-bold font-headline text-lg mb-2">Consumer Policy</h4>
-                     <ul className="space-y-1">
-                        <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Terms of Use</Link></li>
-                        <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Privacy</Link></li>
-                        <li><Link href="#" className="text-muted-foreground hover:text-primary transition-colors text-sm">Security</Link></li>
-                    </ul>
-                </div>
-                
-                <div className="md:text-right text-sm text-muted-foreground">
-                    <p>© {new Date().getFullYear()} Branch Edge. All Rights Reserved.</p>
-                    <p>Made with ❤️ by Branch Edge</p>
-                </div>
+        <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+                <Icons.logo className="h-8 w-8 text-primary" />
+                <p className="font-bold font-headline text-lg">Branch Edge</p>
+            </div>
+            
+            <div className="text-center md:text-right text-sm text-muted-foreground">
+                <p>© {new Date().getFullYear()} Branch Edge. All Rights Reserved.</p>
+                <p>Made with ❤️ by Branch Edge</p>
             </div>
         </div>
 
