@@ -170,6 +170,29 @@ body {
     animation: video-testimonial-scroll 80s linear infinite;
     width: calc(520px * 8);
   }
+
+  .team-card-container {
+    perspective: 1000px;
+  }
+
+  .team-card {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+
+  .team-card-container:hover .team-card {
+    transform: rotateY(180deg);
+  }
+
+  .team-card-front,
+  .team-card-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .team-card-back {
+    transform: rotateY(180deg);
+  }
 }
 
 @keyframes scroll {
