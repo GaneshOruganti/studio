@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -170,6 +171,13 @@ body {
     animation: video-testimonial-scroll 80s linear infinite;
     width: calc(520px * 8);
   }
+
+  .timeline-container svg path {
+      animation: draw-line 5s linear forwards;
+      animation-timeline: view();
+      stroke-dashoffset: 1;
+      stroke-dasharray: 1;
+  }
 }
 
 @keyframes scroll {
@@ -201,6 +209,12 @@ body {
   }
 }
 
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
 .services-anim {
   animation: reveal-up 1s cubic-bezier(0.25, 1, 0.5, 1) both;
   animation-timeline: view();
@@ -212,3 +226,4 @@ body {
   animation-timeline: view();
   animation-range: entry 25% cover 20%;
 }
+

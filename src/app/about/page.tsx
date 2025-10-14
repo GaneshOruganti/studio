@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AnimatedTimeline } from "@/components/animated-timeline";
 
 const coreValues = [
     {
@@ -71,17 +72,19 @@ export default function AboutPage() {
 
         <div className="py-12 md:py-24 bg-muted/20">
             <div className="container">
-                <div className="text-center mb-16 services-anim">
+                <div className="text-center mb-12 services-anim">
                     <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Vision</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To be a global leader in digital transformation, shaping the future of industries through relentless innovation and technological excellence.</p>
                 </div>
 
-                <div className="text-center mb-12 services-anim">
+                <div className="text-center mb-16 services-anim">
                     <h2 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">Our Mission</h2>
                     <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">To accelerate our clients' success by delivering cutting-edge, agile, and scalable digital solutions with unmatched speed and quality.</p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
+                <AnimatedTimeline />
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center mt-24">
                     {coreValues.slice(0, 3).map((value, i) => (
                         <div key={value.title} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>
                            <Card className="h-full bg-background/50 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full max-w-sm mx-auto">
