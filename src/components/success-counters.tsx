@@ -61,7 +61,7 @@ const Counter = ({ label, value, suffix, isRating }: { label: string, value: num
 
     return (
         <div ref={ref} className="text-center">
-            <p className="text-4xl md:text-5xl font-bold font-headline text-primary">
+            <p className="text-3xl md:text-4xl font-bold font-headline text-primary">
                 {displayValue}{suffix}
             </p>
             <p className="text-sm md:text-base text-muted-foreground">{label}</p>
