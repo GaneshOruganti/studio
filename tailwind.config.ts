@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -13,6 +14,7 @@ export default {
         body: ['"Open Sans"', 'sans-serif'],
         headline: ['Poppins', 'sans-serif'],
         code: ['monospace'],
+        brandmark: ['"Brandmark Sans"', 'sans-serif'],
       },
       colors: {
         background: 'hsl(var(--background))',

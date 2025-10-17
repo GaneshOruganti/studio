@@ -34,7 +34,7 @@ export function Header() {
             <div className="flex items-center gap-4">
               <Link href="/" className="flex items-center gap-2 px-3">
                 <Icons.logo className="h-6 w-6 text-primary" />
-                <span className="hidden font-bold sm:inline-block font-headline">
+                <span className="hidden font-bold sm:inline-block font-brandmark">
                   Speedopus
                 </span>
               </Link>
@@ -73,7 +73,7 @@ export function Header() {
                   <SheetContent side="left" className="pr-0">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
                       <Icons.logo className="h-6 w-6 text-primary" />
-                      <span className="font-bold font-headline">Speedopus</span>
+                      <span className="font-bold font-brandmark">Speedopus</span>
                     </Link>
                     <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
                       <div className="flex flex-col space-y-3">
