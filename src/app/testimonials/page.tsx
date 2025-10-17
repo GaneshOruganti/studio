@@ -20,6 +20,8 @@ const writtenTestimonials = [
   { name: "Sarah Lee", company: "DataDriven LLC", quote: "The analytics they provided gave us the clarity we needed to scale our operations effectively.", avatarId: "testimonial-avatar-4", rating: 4.7 },
   { name: "Michael Chen", company: "CloudScape", quote: "Their expertise in cloud solutions has been a game-changer for our infrastructure. Highly recommended!", avatarId: "testimonial-avatar-5", rating: 5.0 },
   { name: "Emily White", company: "Growthify", quote: "Our SEO rankings have skyrocketed since we started working with them. Incredible results!", avatarId: "testimonial-avatar-6", rating: 4.9 },
+  { name: "Chris Green", company: "NextGen Edu", quote: "The mobile app they developed for us has received overwhelmingly positive feedback from our students.", avatarId: "testimonial-avatar-2", rating: 5.0 },
+  { name: "Jessica Brown", company: "Realty Pros", quote: "Their CRM solution has streamlined our entire sales process. It's been a fantastic investment.", avatarId: "testimonial-avatar-1", rating: 4.8 },
 ];
 
 const duplicatedWrittenTestimonials = [...writtenTestimonials, ...writtenTestimonials];
