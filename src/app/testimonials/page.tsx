@@ -52,14 +52,14 @@ export default function TestimonialsPage() {
   return (
     <div className="container py-12 md:py-24">
       <div className="w-full max-w-6xl mx-auto">
-        <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 services-anim">
+        {/* <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 services-anim">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             Hear From Our Clients
           </h1>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             Watch our valued clients share their success stories and experiences working with Speedopus.
           </p>
-        </div>
+        </div> */}
         
         {/* <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider services-anim">
             <div className="video-testimonial-slide-track flex">
@@ -93,7 +93,7 @@ export default function TestimonialsPage() {
             </div>
         </div> */}
 
-        <div className="flex flex-col items-center justify-center space-y-4 text-center my-24 services-anim">
+        <div className="flex flex-col items-center justify-center space-y-4 text-center my-12 services-anim">
           <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">
             What Our Clients Say
           </h2>
