@@ -13,6 +13,10 @@ const videoTestimonials = [
 const duplicatedVideoTestimonials = [...videoTestimonials, ...videoTestimonials];
 
 const writtenTestimonials = [
+  { name: "Priya Sharma", company: "Google", quote: "Speedopus's AI solutions have revolutionized our data analytics. Their team's expertise is unmatched.", avatarId: "testimonial-avatar-1", rating: 5.0 },
+  { name: "Amit Singh", company: "Meta", quote: "The cloud infrastructure they built for us is robust and scalable. A fantastic partner for growth.", avatarId: "testimonial-avatar-2", rating: 4.9 },
+  { name: "Sunita Patel", company: "Amazon", quote: "Their e-commerce solutions have significantly boosted our online sales. Highly recommend their services.", avatarId: "testimonial-avatar-4", rating: 4.8 },
+  { name: "Rajesh Kumar", company: "Microsoft", quote: "The custom software they developed has streamlined our operations and improved productivity. Exceptional work!", avatarId: "testimonial-avatar-5", rating: 5.0 },
   { name: "Jane Doe", company: "Innovate Inc.", quote: "Speedopus transformed our digital presence. Their team is professional, and the results speak for themselves.", avatarId: "testimonial-avatar-1", rating: 4.8 },
   { name: "John Smith", company: "Solutions Co.", quote: "The best tech partner we've ever worked with. Their insights and execution are top-notch.", avatarId: "testimonial-avatar-2", rating: 5.0 },
   { name: "Alex Ray", company: "Creative Minds", quote: "Working with Speedopus was a breeze. They understood our vision and delivered beyond our expectations.", avatarId: "testimonial-avatar-3", rating: 4.9 },
