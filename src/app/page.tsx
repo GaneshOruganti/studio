@@ -195,7 +195,7 @@ export default function Home() {
                       <SuccessCounters />
                   </div>
                   <div className="mt-12 text-center">
-                    <h3 className="text-2xl font-bold font-headline tracking-tighter mb-6">Trusted by the World's Best Companies</h3>
+                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl mb-6">Trusted by the World's Best Companies</h2>
                     <LogoCloud />
                   </div>
                   <div className="mt-8">
