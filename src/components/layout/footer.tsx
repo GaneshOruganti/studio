@@ -2,6 +2,7 @@
 import { Icons } from "@/components/icons";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
+import { Logo } from "../logo";
 
 const serviceLinks = [
   { name: "Web/App Development", href: "/services" },
@@ -120,8 +121,8 @@ export function Footer() {
             <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
-                        <Icons.logo className="h-8 w-8 text-primary" />
-                        <p className="font-bold font-headline text-lg">Speedopus</p>
+                        <Icons.logo className="h-8 w-8" />
+                        <Logo />
                     </div>
                     <p className="text-sm text-muted-foreground">SR Nagar, Balkampet, Hyderabad, Telangana, 500038</p>
                 </div>

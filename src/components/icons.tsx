@@ -9,9 +9,9 @@ export const Icons = {
       fill="none"
       {...props}
     >
-      <circle cx="50" cy="50" r="50" fill="#EF4444"/>
-      <path d="M62.5 37.5C62.5 30.5964 56.9036 25 50 25C43.0964 25 37.5 30.5964 37.5 37.5V43.75C37.5 47.2018 34.7018 50 31.25 50H25" stroke="white" strokeWidth="10" strokeLinecap="round"/>
-      <path d="M37.5 62.5C37.5 69.4036 43.0964 75 50 75C56.9036 75 62.5 69.4036 62.5 62.5V56.25C62.5 52.7982 65.2982 50 68.75 50H75" stroke="white" strokeWidth="10" strokeLinecap="round"/>
+      <rect width="100" height="100" rx="20" fill="hsl(var(--primary))"/>
+      <path d="M62 25H42C33.7157 25 27 31.7157 27 40V60C27 68.2843 33.7157 75 42 75H62C70.2843 75 77 68.2843 77 60V40C77 31.7157 70.2843 25 62 25Z" fill="hsl(var(--primary))"/>
+      <path d="M50 37.5L55.1769 44.8231L63.5 42.5L57.5 49.5L63.5 56.5L55.1769 54.1769L50 61.5L44.8231 54.1769L36.5 56.5L42.5 49.5L36.5 42.5L44.8231 44.8231L50 37.5Z" fill="white"/>
     </svg>
   ),
 };
