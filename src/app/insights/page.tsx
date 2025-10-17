@@ -1,7 +1,8 @@
 
 "use client";
 
-import { useFormState, useFormStatus } from 'react-dom';
+import { useActionState } from 'react';
+import { useFormStatus } from 'react-dom';
 import { getInsights, type InsightsState } from '@/lib/actions';
 
 import { Button } from "@/components/ui/button";
@@ -24,7 +25,7 @@ function SubmitButton() {
 
 export default function InsightsPage() {
   const initialState: InsightsState = { message: '' };
-  const [state, dispatch] = useFormState(getInsights, initialState);
+  const [state, dispatch] = useActionState(getInsights, initialState);
 
   return (
     <div className="container py-12">
