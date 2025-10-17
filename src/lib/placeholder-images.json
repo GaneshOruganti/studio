@@ -57,8 +57,8 @@
     {
       "id": "about-us-image",
       "description": "A placeholder image for the about us page showing a professional team collaborating",
-      "imageUrl": "https://picsum.photos/seed/301/800/600",
-      "imageHint": "team collaboration"
+      "imageUrl": "https://picsum.photos/seed/302/800/600",
+      "imageHint": "office workspace"
     }
   ]
 }
