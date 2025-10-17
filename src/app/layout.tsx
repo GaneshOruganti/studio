@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Speedopus',
+  title: 'Speedopus India',
   description: 'Driving innovation and modernity with cutting-edge technology services.',
 };
 
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="https://i.postimg.cc/HWQ6Y1W8/Red-White-Simple-Company-Technology-Logo-1.png" type="image/png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@700&family=Brandmark+Sans:wght@400;700&display=swap" rel="stylesheet" />

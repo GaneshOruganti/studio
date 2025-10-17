@@ -51,7 +51,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
 
                 <Card className="services-card-anim" style={{ animationDelay: '100ms' }}>
                     <CardHeader>
-                    <CardTitle className="font-headline text-2xl">About Speedopus</CardTitle>
+                    <CardTitle className="font-headline text-2xl">About Speedopus India</CardTitle>
                     </CardHeader>
                     <CardContent>
                     <p className="text-muted-foreground">{aboutCompany}</p>

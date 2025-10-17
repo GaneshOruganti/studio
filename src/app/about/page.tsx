@@ -37,7 +37,7 @@ const coreValues = [
 
 export default function AboutPage() {
   const texts = [
-      "At Speedopus, innovation drives everything we do. We specialize in delivering cutting-edge technology solutions including custom websites, e-commerce, AI-powered products, analytics, SEO, and cloud hosting with unmatched speed and quality.",
+      "At Speedopus India, innovation drives everything we do. We specialize in delivering cutting-edge technology solutions including custom websites, e-commerce, AI-powered products, analytics, SEO, and cloud hosting with unmatched speed and quality.",
       "Our mission is to empower businesses across education, real estate, government, and more through agile, secure, and scalable digital solutions tailored to their unique needs. We go beyond technology by partnering with clients to accelerate growth, improve experiences, and unlock new potential.",
       "With a team rooted in creativity, integrity, and deep technical expertise, we continuously explore emerging technologies to shape the future of digital transformation. Join us on a journey of innovation, where your success is our priority."
   ];

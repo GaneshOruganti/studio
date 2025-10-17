@@ -125,8 +125,8 @@ export function Footer() {
                 </div>
                 
                 <div className="text-center md:text-right text-sm text-muted-foreground">
-                    <p>© {new Date().getFullYear()} Speedopus. All Rights Reserved.</p>
-                    <p>Made with ❤️ by Speedopus</p>
+                    <p>© {new Date().getFullYear()} Speedopus India. All Rights Reserved.</p>
+                    <p>Made with ❤️ by Speedopus India</p>
                 </div>
             </div>
         </div>

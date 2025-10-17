@@ -57,7 +57,7 @@ export default function TeamPage() {
                         Meet Our Team
                     </h1>
                     <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                        The passionate individuals behind Speedopus, driving innovation and excellence.
+                        The passionate individuals behind Speedopus India, driving innovation and excellence.
                     </p>
                 </div>
 

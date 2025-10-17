@@ -40,7 +40,7 @@ export default function PartnerPage() {
             <CardTitle>Partnership Opportunities</CardTitle>
             <CardDescription>
               Fill out the form below to explore partnership opportunities with
-              Speedopus.
+              Speedopus India.
             </CardDescription>
           </CardHeader>
           <CardContent>

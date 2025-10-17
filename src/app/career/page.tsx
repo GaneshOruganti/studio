@@ -95,7 +95,7 @@ export default function CareerPage() {
                 Join Our Team
             </h1>
             <p className="mt-4 max-w-[700px] mx-auto text-muted-foreground md:text-xl">
-                Explore exciting career opportunities at Speedopus and be part of a team that's shaping the future of technology.
+                Explore exciting career opportunities at Speedopus India and be part of a team that's shaping the future of technology.
             </p>
         </div>
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-12">
