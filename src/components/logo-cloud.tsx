@@ -4,13 +4,13 @@
 import Image from 'next/image';
 
 const logos = [
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/1.png", alt: "Company 1" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/2.png", alt: "Company 2" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/3.png", alt: "Company 3" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png", alt: "Company 4" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png", alt: "Company 5" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png", alt: "Company 6" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png", alt: "Wipro" },
+  { src: "https://picsum.photos/seed/logo1/150/100", alt: "Tech Corp" },
+  { src: "https://picsum.photos/seed/logo2/150/100", alt: "Innovate Co" },
+  { src: "https://picsum.photos/seed/logo3/150/100", alt: "Solutions Inc" },
+  { src: "https://picsum.photos/seed/logo4/150/100", alt: "Data Systems" },
+  { src: "https://picsum.photos/seed/logo5/150/100", alt: "Future Tech" },
+  { src: "https://picsum.photos/seed/logo6/150/100", alt: "Cloud Works" },
+  { src: "https://picsum.photos/seed/logo7/150/100", alt: "Quantum Leap" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
@@ -26,7 +26,7 @@ export function LogoCloud() {
               height="100" 
               width="150" 
               alt={logo.alt}
-              className="object-contain" 
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100" 
             />
           </div>
         ))}

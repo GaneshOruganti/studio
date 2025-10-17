@@ -21,9 +21,9 @@ const companyLinks = [
 ];
 
 const policyLinks = [
-    { name: "Terms of Use", href: "#" },
-    { name: "Privacy", href: "#" },
-    { name: "Security", href: "#" },
+    { name: "Terms of Use", href: "/terms" },
+    { name: "Privacy", href: "/privacy" },
+    { name: "Security", href: "/security" },
 ]
 
 export function Footer() {
