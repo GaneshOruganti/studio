@@ -87,7 +87,7 @@ export default function Home() {
           <div className="relative z-10 container px-4 md:px-6">
             <div className="max-w-3xl mx-auto space-y-4">
               <h1 className="font-headline text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl text-primary">
-                Branch Edge
+                Speedopus
               </h1>
               <p className="text-lg md:text-xl text-muted-foreground">
                 Driving innovation and modernity with cutting-edge technology services.

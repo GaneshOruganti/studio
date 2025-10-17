@@ -80,7 +80,7 @@ export function Footer() {
                 <div className="space-y-4">
                     <div className="flex items-center gap-3">
                     <Mail className="h-5 w-5 shrink-0 text-primary" />
-                    <a href="mailto:contact@branchedge.com" className="hover:text-primary transition-colors text-sm">contact@branchedge.com</a>
+                    <a href="mailto:contact@speedopus.com" className="hover:text-primary transition-colors text-sm">contact@speedopus.com</a>
                     </div>
                     <div className="flex items-center gap-3">
                     <Phone className="h-5 w-5 shrink-0 text-primary" />
@@ -121,14 +121,14 @@ export function Footer() {
                 <div className="flex items-center gap-4">
                     <div className="flex items-center gap-2">
                         <Icons.logo className="h-8 w-8 text-primary" />
-                        <p className="font-bold font-headline text-lg">Branch Edge</p>
+                        <p className="font-bold font-headline text-lg">Speedopus</p>
                     </div>
                     <p className="text-sm text-muted-foreground">SR Nagar, Balkampet, Hyderabad, Telangana, 500038</p>
                 </div>
                 
                 <div className="text-center md:text-right text-sm text-muted-foreground">
-                    <p>© {new Date().getFullYear()} Branch Edge. All Rights Reserved.</p>
-                    <p>Made with ❤️ by Branch Edge</p>
+                    <p>© {new Date().getFullYear()} Speedopus. All Rights Reserved.</p>
+                    <p>Made with ❤️ by Speedopus</p>
                 </div>
             </div>
         </div>

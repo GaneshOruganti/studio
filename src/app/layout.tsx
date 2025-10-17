@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
-  title: 'Branch Edge',
+  title: 'Speedopus',
   description: 'Driving innovation and modernity with cutting-edge technology services.',
 };
 

@@ -5,7 +5,7 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Quote, Star } from "lucide-react";
 
 const videoTestimonials = [
-  { id: "VIDEO_ID_1", title: "Transformative Results with Branch Edge", speaker: "Jane Doe, CEO of Innovate Inc." },
+  { id: "VIDEO_ID_1", title: "Transformative Results with Speedopus", speaker: "Jane Doe, CEO of Innovate Inc." },
   { id: "VIDEO_ID_2", title: "A Partnership That Drives Growth", speaker: "John Smith, CTO of Solutions Co." },
   { id: "VIDEO_ID_3", title: "Exceeding Expectations Every Time", speaker: "Alex Ray, Director at Creative Minds" },
   { id: "dQw4w9WgXcQ", title: "Never Gonna Give You Up", speaker: "Rick Astley" },
@@ -14,9 +14,9 @@ const videoTestimonials = [
 const duplicatedVideoTestimonials = [...videoTestimonials, ...videoTestimonials];
 
 const writtenTestimonials = [
-  { name: "Jane Doe", company: "Innovate Inc.", quote: "Branch Edge transformed our digital presence. Their team is professional, and the results speak for themselves.", avatarId: "testimonial-avatar-1", rating: 4.8 },
+  { name: "Jane Doe", company: "Innovate Inc.", quote: "Speedopus transformed our digital presence. Their team is professional, and the results speak for themselves.", avatarId: "testimonial-avatar-1", rating: 4.8 },
   { name: "John Smith", company: "Solutions Co.", quote: "The best tech partner we've ever worked with. Their insights and execution are top-notch.", avatarId: "testimonial-avatar-2", rating: 5.0 },
-  { name: "Alex Ray", company: "Creative Minds", quote: "Working with Branch Edge was a breeze. They understood our vision and delivered beyond our expectations.", avatarId: "testimonial-avatar-3", rating: 4.9 },
+  { name: "Alex Ray", company: "Creative Minds", quote: "Working with Speedopus was a breeze. They understood our vision and delivered beyond our expectations.", avatarId: "testimonial-avatar-3", rating: 4.9 },
   { name: "Sarah Lee", company: "DataDriven LLC", quote: "The analytics they provided gave us the clarity we needed to scale our operations effectively.", avatarId: "testimonial-avatar-4", rating: 4.7 },
   { name: "Michael Chen", company: "CloudScape", quote: "Their expertise in cloud solutions has been a game-changer for our infrastructure. Highly recommended!", avatarId: "testimonial-avatar-5", rating: 5.0 },
   { name: "Emily White", company: "Growthify", quote: "Our SEO rankings have skyrocketed since we started working with them. Incredible results!", avatarId: "testimonial-avatar-6", rating: 4.9 },
@@ -52,7 +52,7 @@ export default function TestimonialsPage() {
             Hear From Our Clients
           </h1>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            Watch our valued clients share their success stories and experiences working with Branch Edge.
+            Watch our valued clients share their success stories and experiences working with Speedopus.
           </p>
         </div>
         
