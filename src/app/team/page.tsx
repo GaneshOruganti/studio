@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 const teamMembers = [
-    { name: "John Doe", role: "CEO & Founder", avatarId: "testimonial-avatar-2", social: { linkedin: "#", instagram: "#" }, contribution: "John leads the company with a vision for innovation and excellence, driving the team to create cutting-edge solutions." },
+    { name: "Ganesh Oruganti", role: "Founder & CEO", avatarId: "testimonial-avatar-2", social: { linkedin: "#", instagram: "#" }, contribution: "Ganesh leads the company with a vision for innovation and excellence, driving the team to create cutting-edge solutions." },
     { name: "Jane Smith", role: "Chief Technology Officer", avatarId: "testimonial-avatar-1", social: { linkedin: "#", instagram: "#" }, contribution: "Jane architects our technology stack, ensuring our products are scalable, secure, and built on the latest technologies." },
     { name: "Alex Johnson", role: "Lead Developer", avatarId: "testimonial-avatar-3", social: { linkedin: "#", instagram: "#" }, contribution: "Alex guides the development team, turning complex requirements into robust and efficient software solutions." },
     { name: "Emily White", role: "UX/UI Designer", avatarId: "testimonial-avatar-6", social: { linkedin: "#", instagram: "#" }, contribution: "Emily crafts intuitive and beautiful user experiences, making sure our products are a joy to use." },
