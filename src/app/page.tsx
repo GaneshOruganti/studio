@@ -199,8 +199,8 @@ export default function Home() {
                       <Link href="/testimonials">View Our Testimonials</Link>
                     </Button>
                   </div>
-                  <div className="mt-12 text-center">
-                    <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl mb-6">Trusted by the World's Best Companies</h2>
+                  <div className="mt-24 text-center">
+                    <h2 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-6">Trusted by the World's Best Companies</h2>
                     <LogoCloud />
                   </div>
               </div>
