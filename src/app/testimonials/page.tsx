@@ -61,7 +61,7 @@ export default function TestimonialsPage() {
           </p>
         </div>
         
-        <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider services-anim">
+        {/* <div className="w-full max-w-full mx-auto pt-12 video-testimonial-slider services-anim">
             <div className="video-testimonial-slide-track flex">
               {duplicatedVideoTestimonials.map((testimonial, i) => (
                 <div key={`${testimonial.id}-${i}`} className="flex-shrink-0 w-[500px] mx-4">
@@ -91,7 +91,7 @@ export default function TestimonialsPage() {
                 </div>
               ))}
             </div>
-        </div>
+        </div> */}
 
         <div className="flex flex-col items-center justify-center space-y-4 text-center my-24 services-anim">
           <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">
