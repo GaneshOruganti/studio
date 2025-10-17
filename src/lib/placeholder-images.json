@@ -56,9 +56,9 @@
     },
     {
       "id": "about-us-image",
-      "description": "A placeholder image for the about us page showing an abstract technology design",
-      "imageUrl": "https://picsum.photos/seed/401/800/600",
-      "imageHint": "technology abstract"
+      "description": "An image of a vibrant, bioluminescent underwater city where organic and futuristic technology coexist.",
+      "imageUrl": "https://picsum.photos/seed/402/800/600",
+      "imageHint": "bioluminescent city"
     }
   ]
 }
