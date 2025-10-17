@@ -36,7 +36,6 @@ const coreValues = [
 ]
 
 export default function AboutPage() {
-  const aboutImage = PlaceHolderImages.find(p => p.id === 'about-us-image');
   const texts = [
       "At Speedopus, innovation drives everything we do. We specialize in delivering cutting-edge technology solutions including custom websites, e-commerce, AI-powered products, analytics, SEO, and cloud hosting with unmatched speed and quality.",
       "Our mission is to empower businesses across education, real estate, government, and more through agile, secure, and scalable digital solutions tailored to their unique needs. We go beyond technology by partnering with clients to accelerate growth, improve experiences, and unlock new potential.",
@@ -46,29 +45,18 @@ export default function AboutPage() {
   return (
     <div className="w-full max-w-6xl mx-auto">
         <div className="container py-12 md:py-24">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-96 md:h-[500px] w-full">
-                {aboutImage && (
-                <Image
-                    src={aboutImage.imageUrl}
-                    alt={aboutImage.description}
-                    data-ai-hint={aboutImage.imageHint}
-                    fill
-                    className="object-cover rounded-3xl"
-                />
-                )}
-            </div>
-            <div className="space-y-6">
-                <p className="font-semibold text-primary">Who We Are?</p>
-                <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">
-                About Us
-                </h1>
-                <div className="space-y-4 text-muted-foreground text-lg">
-                    {texts.map((text, i) => (
-                        <p key={i} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>{text}</p>
-                    ))}
+            <div className="text-center">
+                <div className="space-y-6">
+                    <p className="font-semibold text-primary">Who We Are?</p>
+                    <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">
+                    About Us
+                    </h1>
+                    <div className="space-y-4 text-muted-foreground text-lg max-w-3xl mx-auto">
+                        {texts.map((text, i) => (
+                            <p key={i} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>{text}</p>
+                        ))}
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
 
