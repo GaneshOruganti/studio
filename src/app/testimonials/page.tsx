@@ -102,15 +102,13 @@ export default function TestimonialsPage() {
         <div className="w-full max-w-7xl mx-auto testimonial-slider bg-muted/20 py-12 rounded-lg services-anim">
             <div className="testimonial-slide-track flex">
                 {duplicatedWrittenTestimonials.map((testimonial, index) => {
-                    const avatar = PlaceHolderImages.find(img => img.id === testimonial.avatarId);
                     return (
                         <div key={index} className="testimonial-slide flex-shrink-0 w-[350px] mx-4">
                             <Card>
                                 <CardContent className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
-                                    <Avatar className="w-16 h-16">
-                                        {avatar && <AvatarImage src={avatar.imageUrl} alt={testimonial.name} data-ai-hint={avatar.imageHint} />}
-                                        <AvatarFallback>{testimonial.name.charAt(0)}</AvatarFallback>
-                                    </Avatar>
+                                    <div className="p-3 bg-background rounded-full border shadow-sm">
+                                      <Quote className="h-6 w-6 text-primary" />
+                                    </div>
                                     <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
                                     <div className="font-semibold">
                                         <p>{testimonial.name}</p>
