@@ -4,13 +4,13 @@
 import Image from 'next/image';
 
 const logos = [
-  { src: "https://picsum.photos/seed/logo1/150/100", alt: "Tech Corp" },
-  { src: "https://picsum.photos/seed/logo2/150/100", alt: "Innovate Co" },
-  { src: "https://picsum.photos/seed/logo3/150/100", alt: "Solutions Inc" },
-  { src: "https://picsum.photos/seed/logo4/150/100", alt: "Data Systems" },
-  { src: "https://picsum.photos/seed/logo5/150/100", alt: "Future Tech" },
-  { src: "https://picsum.photos/seed/logo6/150/100", alt: "Cloud Works" },
-  { src: "https://picsum.photos/seed/logo7/150/100", alt: "Quantum Leap" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg", alt: "Google" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/a/ab/Meta-Logo.svg", alt: "Meta" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg", alt: "Amazon" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/e/e8/Microsoft_logo_%282012%29.svg", alt: "Microsoft" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg", alt: "Apple" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/9/95/Salesforce.com_logo.svg", alt: "Salesforce" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/TATA_Logo.svg/1280px-TATA_Logo.svg.png", alt: "Tata" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
