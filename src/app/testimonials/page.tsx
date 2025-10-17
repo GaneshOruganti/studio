@@ -1,8 +1,7 @@
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { PlaceHolderImages } from "@/lib/placeholder-images";
-import { Quote, Star } from "lucide-react";
+import { Sparkles, Star, Quote } from "lucide-react";
 
 const videoTestimonials = [
   { id: "VIDEO_ID_1", title: "Transformative Results with Speedopus", speaker: "Jane Doe, CEO of Innovate Inc." },
@@ -75,15 +74,15 @@ export default function TestimonialsPage() {
                         ></iframe>
                       </div>
                     </CardContent>
-                    <CardHeader>
+                    <div className="p-6">
                       <div className="flex gap-4">
                         <Quote className="h-6 w-6 text-primary flex-shrink-0" />
                         <div>
-                          <CardTitle className="font-headline text-xl mb-1">{testimonial.title}</CardTitle>
+                          <h3 className="font-headline text-xl mb-1 font-bold">{testimonial.title}</h3>
                           <p className="text-muted-foreground font-medium">{testimonial.speaker}</p>
                         </div>
                       </div>
-                    </CardHeader>
+                    </div>
                   </Card>
                 </div>
               ))}
@@ -107,7 +106,7 @@ export default function TestimonialsPage() {
                             <Card>
                                 <CardContent className="flex flex-col items-center justify-center p-6 space-y-4 text-center">
                                     <div className="p-3 bg-background rounded-full border shadow-sm">
-                                      <Quote className="h-6 w-6 text-primary" />
+                                      <Sparkles className="h-6 w-6 text-primary" />
                                     </div>
                                     <blockquote className="text-lg italic">"{testimonial.quote}"</blockquote>
                                     <div className="font-semibold">
