@@ -201,7 +201,9 @@ export default function Home() {
                   </div>
                   <div className="mt-24 text-center">
                     <h2 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-6">Trusted by the World's Best Companies</h2>
-                    <LogoCloud />
+                    <div className="mt-8">
+                        <LogoCloud />
+                    </div>
                   </div>
               </div>
             </div>
