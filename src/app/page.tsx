@@ -194,6 +194,10 @@ export default function Home() {
                   <div className="w-full mt-8">
                       <SuccessCounters />
                   </div>
+                  <div className="mt-12 text-center">
+                    <h3 className="text-2xl font-bold font-headline tracking-tighter mb-6">Trusted by the World's Best Companies</h3>
+                    <LogoCloud />
+                  </div>
                   <div className="mt-8">
                     <Button asChild>
                       <Link href="/testimonials">View Our Testimonials</Link>
