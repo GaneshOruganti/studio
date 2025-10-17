@@ -191,17 +191,17 @@ export default function Home() {
                           Don't just take our word for it. Our results and client feedback showcase our commitment to excellence.
                       </p>
                   </div>
+                  <div className="my-6">
+                    <Button asChild>
+                      <Link href="/testimonials">View Our Testimonials</Link>
+                    </Button>
+                  </div>
                   <div className="w-full mt-8">
                       <SuccessCounters />
                   </div>
                   <div className="mt-12 text-center">
                     <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl mb-6">Trusted by the World's Best Companies</h2>
                     <LogoCloud />
-                  </div>
-                  <div className="mt-8">
-                    <Button asChild>
-                      <Link href="/testimonials">View Our Testimonials</Link>
-                    </Button>
                   </div>
               </div>
             </div>
