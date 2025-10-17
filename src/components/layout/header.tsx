@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -8,7 +7,6 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Icons } from "@/components/icons";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Logo } from "../logo";
 
@@ -34,10 +32,7 @@ export function Header() {
           <div className="w-full flex items-center justify-between p-1 rounded-full border bg-card/80 shadow-sm hover:shadow-primary/20 hover:shadow-lg transition-shadow duration-300">
             <div className="flex items-center gap-2">
               <Link href="/" className="flex items-center gap-2 px-3">
-                <Icons.logo className="h-6 w-6" />
-                <div className="hidden sm:inline-block">
-                  <Logo />
-                </div>
+                <Logo />
               </Link>
             </div>
             
@@ -73,7 +68,6 @@ export function Header() {
                   </SheetTrigger>
                   <SheetContent side="left" className="pr-0">
                     <Link href="/" className="mr-6 flex items-center space-x-2">
-                      <Icons.logo className="h-6 w-6" />
                       <Logo />
                     </Link>
                     <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
