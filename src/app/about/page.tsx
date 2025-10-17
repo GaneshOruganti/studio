@@ -47,8 +47,8 @@ export default function AboutPage() {
         <div className="container py-12 md:py-24">
             <div className="text-center">
                 <div className="space-y-6">
-                    <p className="font-semibold text-primary">Who We Are?</p>
-                    <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">
+                    <p className="font-semibold text-primary services-anim">Who We Are?</p>
+                    <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl services-anim">
                     About Us
                     </h1>
                     <div className="space-y-4 text-muted-foreground text-lg max-w-3xl mx-auto">
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 </div>
                 
                 <div className="mt-24">
-                    <div className="text-center mb-12">
+                    <div className="text-center mb-12 services-anim">
                         <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl">Our Track Record</h2>
                         <p className="mt-4 max-w-2xl mx-auto text-muted-foreground md:text-xl">A proven history of delivering excellence and driving success.</p>
                     </div>
