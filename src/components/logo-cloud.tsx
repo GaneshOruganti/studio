@@ -10,7 +10,7 @@ const logos = [
   { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/4.png", alt: "Company 4" },
   { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/5.png", alt: "Company 5" },
   { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/6.png", alt: "Company 6" },
-  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png", alt: "Company 7" },
+  { src: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/557257/7.png", alt: "Wipro" },
 ];
 
 const duplicatedLogos = [...logos, ...logos];
