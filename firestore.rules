@@ -1,0 +1,31 @@
+/**
+ * @file Firestore Security Rules
+ * @core_philosophy This ruleset allows anyone to submit contact form data.
+ * @data_structure Contact form submissions are stored in the `/contactFormSubmissions/{contactFormSubmissionId}` collection.
+ * @key_security_decisions Anyone can submit a contact form, but other operations are disallowed.
+ * @denormalization None: No user context exists, so denormalization is not required.
+ * @structural_segregation No segregation is used.
+ */
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /**
+     * @description Allows anyone to submit a contact form.
+     * @path /contactFormSubmissions/{contactFormSubmissionId}
+     * @allow (create) Anyone can create a new contact form submission.
+     * @deny (get) No one can read a contact form submission.
+     * @deny (list) No one can list contact form submissions.
+     * @deny (update) No one can update a contact form submission.
+     * @deny (delete) No one can delete a contact form submission.
+     * @principle Allows unauthenticated creation; restricts all other operations.
+     */
+    match /contactFormSubmissions/{contactFormSubmissionId} {
+      allow get: if false;
+      allow list: if false;
+      allow create: if true;
+      allow update: if false;
+      allow delete: if false;
+    }
+  }
+}
