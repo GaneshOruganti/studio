@@ -6,6 +6,7 @@ import { Footer } from '@/components/layout/footer';
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from '@/components/theme-provider';
 import { FirebaseClientProvider } from '@/firebase';
+import { open_sans, poppins } from '@/app/fonts';
 
 export const metadata: Metadata = {
   title: 'Speedopus India',
@@ -21,11 +22,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="https://i.postimg.cc/HWQ6Y1W8/Red-White-Simple-Company-Technology-Logo-1.png" type="image/png" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Poppins:wght@700&family=Brandmark+Sans:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased min-h-screen bg-background text-foreground')}>
+      <body className={cn('font-body antialiased min-h-screen bg-background text-foreground', open_sans.variable, poppins.variable)}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
