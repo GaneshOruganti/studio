@@ -26,28 +26,28 @@ export default function ServicesPage() {
     <div className="container py-12 md:py-24">
       <div className="w-full max-w-6xl mx-auto">
         <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-          <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
+          <h1 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">
             Our Services
           </h1>
           <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
             A complete suite of technological solutions to build, grow, and scale your business. We are your partners in innovation.
           </p>
         </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, i) => (
             <div key={service.name} className="relative group services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
               <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-0 group-hover:opacity-75 transition duration-200"></div>
               <Card className="h-full bg-background transition-all duration-200 relative">
                 <CardHeader className="flex-shrink-0">
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary/10 p-2 rounded-full">
-                        <service.icon className="h-6 w-6 text-primary" />
+                  <div className="flex items-center gap-3">
+                    <div className="bg-primary/10 p-1.5 rounded-full">
+                        <service.icon className="h-5 w-5 text-primary" />
                     </div>
-                    <CardTitle className="font-headline text-xl">{service.name}</CardTitle>
+                    <CardTitle className="font-headline text-lg">{service.name}</CardTitle>
                   </div>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-sm text-muted-foreground">
+                <CardContent className="flex-grow pt-0">
+                  <p className="text-xs text-muted-foreground">
                     {service.description}
                   </p>
                 </CardContent>
