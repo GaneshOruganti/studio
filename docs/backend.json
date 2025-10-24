@@ -6,10 +6,6 @@
       "type": "object",
       "description": "Represents a contact form submission from a user.",
       "properties": {
-        "id": {
-          "type": "string",
-          "description": "Unique identifier for the contact form submission."
-        },
         "name": {
           "type": "string",
           "description": "The name of the person submitting the form."
@@ -18,10 +14,6 @@
           "type": "string",
           "description": "The email address of the person submitting the form.",
           "format": "email"
-        },
-        "subject": {
-          "type": "string",
-          "description": "The subject of the contact form submission."
         },
         "message": {
           "type": "string",
@@ -34,10 +26,8 @@
         }
       },
       "required": [
-        "id",
         "name",
         "email",
-        "subject",
         "message",
         "submissionDate"
       ]
@@ -50,24 +40,11 @@
     ]
   },
   "firestore": {
-    "structure": [
-      {
-        "path": "/contactFormSubmissions/{contactFormSubmissionId}",
-        "definition": {
-          "entityName": "ContactFormSubmission",
-          "schema": {
-            "$ref": "#/backend/entities/ContactFormSubmission"
-          },
-          "description": "Stores contact form submission data.",
-          "params": [
-            {
-              "name": "contactFormSubmissionId",
-              "description": "The unique identifier for the contact form submission document."
-            }
-          ]
-        }
-      }
-    ],
-    "reasoning": "Given the requirement to store contact form submissions without user authentication, a simple collection is sufficient. Since there's no user context, denormalization is not applicable here. The structure is designed to be straightforward, and security rules can be configured to allow only 'create' operations on the `contactFormSubmissions` collection, preventing unauthorized access or modification. This approach also inherently supports secure `list` operations as no sensitive data or access restrictions based on user roles are present."
+    "/contactSubmissions/{submissionId}": {
+      "schema": {
+        "$ref": "#/entities/ContactFormSubmission"
+      },
+      "description": "Stores contact form submissions from the website."
+    }
   }
 }

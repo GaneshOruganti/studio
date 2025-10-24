@@ -4,6 +4,8 @@ import {
   generateMarketResearchInsights,
   type MarketResearchInput,
 } from '@/ai/flows/generate-market-research-insights';
+import { initializeFirebase } from '@/firebase';
+import { addDoc, collection } from 'firebase/firestore';
 import {z} from 'zod';
 
 const insightsFormSchema = z.object({
@@ -81,12 +83,12 @@ export async function submitContactForm(
   }
 
   try {
-    // Here you would typically send an email.
-    // For this example, we'll just log the data to the console.
-    console.log('New contact form submission:');
-    console.log('Name:', validatedFields.data.name);
-    console.log('Email:', validatedFields.data.email);
-    console.log('Message:', validatedFields.data.message);
+    const { firestore } = initializeFirebase();
+    const submission = {
+      ...validatedFields.data,
+      submissionDate: new Date(),
+    };
+    await addDoc(collection(firestore, 'contactSubmissions'), submission);
 
     return {
       message: 'Your message has been sent successfully!',
@@ -94,7 +96,7 @@ export async function submitContactForm(
   } catch (error) {
     console.error('Error submitting contact form:', error);
     return {
-      message: 'An error occurred. Please try again.',
+      message: 'An error occurred while saving your message. Please try again.',
     };
   }
 }
