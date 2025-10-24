@@ -40,14 +40,14 @@ export default function ServicesPage() {
               <Card className="h-full bg-background transition-all duration-200 relative">
                 <CardHeader className="flex-shrink-0">
                   <div className="flex items-center gap-4">
-                    <div className="bg-primary/10 p-3 rounded-full">
-                        <service.icon className="h-8 w-8 text-primary" />
+                    <div className="bg-primary/10 p-2 rounded-full">
+                        <service.icon className="h-6 w-6 text-primary" />
                     </div>
-                    <CardTitle className="font-headline text-2xl">{service.name}</CardTitle>
+                    <CardTitle className="font-headline text-xl">{service.name}</CardTitle>
                   </div>
                 </CardHeader>
                 <CardContent className="flex-grow">
-                  <p className="text-base text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">
                     {service.description}
                   </p>
                 </CardContent>
