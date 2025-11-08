@@ -17,9 +17,9 @@ const navItems = [
   { name: "AI Insights", href: "/insights" },
   { name: "Testimonials", href: "/testimonials" },
   { name: "Partner", href: "/partner" },
-  // { name: "Our Team", href: "/team" },
+  { name: "Our Team", href: "/team" },
   { name: "Career", href: "/career" },
-  { name: "Contact", href: "/contact" },
+  { "name": "Contact", "href": "/contact" },
 ];
 
 export function Header() {
