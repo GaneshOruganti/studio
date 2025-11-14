@@ -23,10 +23,16 @@ const trafficData = [
 
 export default function DashboardPage() {
   const [salesData, setSalesData] = useState(initialSalesData);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     setSalesData(initialSalesData.map(d => ({ ...d, sales: Math.floor(Math.random() * 2000) + 1000 })));
   }, []);
+
+  if (!isClient) {
+    return null;
+  }
 
   return (
     <div className="container py-12">
