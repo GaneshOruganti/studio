@@ -87,6 +87,7 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
 
   .logo-slider {
