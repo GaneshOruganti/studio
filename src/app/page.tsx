@@ -116,7 +116,7 @@ export default function Home() {
 
         <section id="testimonials-section" className="w-full pt-12 pb-12 md:pb-24 lg:pb-32 bg-background">
             <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6 lg:gap-12">
-              <div className="w-full max-w-6xl mx-auto">
+              <div className="w-full max-w-6xl mx-auto px-4 sm:px-0">
                   <div className="space-y-3 services-anim">
                       <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Track Record</h2>
                       <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
