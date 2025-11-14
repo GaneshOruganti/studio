@@ -132,7 +132,7 @@ export default function Home() {
                     </Button>
                   </div>
                   <div className="mt-24 text-center services-anim">
-                    <h2 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-6">Trusted by the World's Best Companies</h2>
+                    <h2 className="text-xl font-bold font-headline tracking-tighter sm:text-3xl mb-6">Trusted by the World's Best Companies</h2>
                     <div className="mt-8">
                         <LogoCloud />
                     </div>

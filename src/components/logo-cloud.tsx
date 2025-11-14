@@ -23,8 +23,8 @@ export function LogoCloud() {
           <div key={index} className="logo-slide">
             <Image 
               src={logoSrc} 
-              height="100" 
-              width="250" 
+              height="80" 
+              width="200" 
               alt={`Client Logo ${index + 1}`}
               className="object-contain" 
             />
