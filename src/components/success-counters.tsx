@@ -60,11 +60,11 @@ const Counter = ({ label, value, suffix, isRating }: { label: string, value: num
     const displayValue = isRating ? count.toFixed(1) : count;
 
     return (
-        <div ref={ref} className="text-center flex-shrink-0 w-36 sm:w-44">
-            <p className="text-3xl sm:text-4xl font-bold font-headline text-primary">
+        <div ref={ref} className="text-center flex-shrink-0 w-28 sm:w-44">
+            <p className="text-2xl sm:text-4xl font-bold font-headline text-primary">
                 {displayValue}{suffix}
             </p>
-            <p className="text-xs sm:text-sm text-muted-foreground whitespace-normal">
+            <p className="text-[10px] sm:text-sm text-muted-foreground whitespace-normal">
                 {label}
             </p>
         </div>
