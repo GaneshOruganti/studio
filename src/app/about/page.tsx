@@ -53,7 +53,7 @@ export default function AboutPage() {
             <div className="text-center">
                 <div className="space-y-6 services-anim">
                     <p className="font-semibold text-primary">Who We Are?</p>
-                    <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">
+                    <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
                     About Us
                     </h1>
                     <div className="space-y-4 text-muted-foreground text-lg max-w-3xl mx-auto">
