@@ -1,26 +1,9 @@
 "use client";
 
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import Image from "next/image";
 
 export function Logo() {
-  const { theme } = useTheme();
-  const [isClient, setIsClient] = useState(false);
-
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
-  if (!isClient) {
-    // Render nothing on the server to prevent a mismatch
-    return null;
-  }
-
-  const darkThemeLogo = "https://i.postimg.cc/pLk4JhpS/Red-White-Simple-Company-Technology-Logo-5.png";
-  const lightThemeLogo = "https://i.postimg.cc/3RksR8rV/Red-White-Simple-Company-Technology-Logo-6.png";
-
-  const logoSrc = theme === 'dark' ? darkThemeLogo : lightThemeLogo;
+  const logoSrc = "https://i.postimg.cc/pLk4JhpS/Red-White-Simple-Company-Technology-Logo-5.png";
 
   return (
     <Image 
