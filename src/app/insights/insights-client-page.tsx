@@ -88,7 +88,7 @@ export default function InsightsClientPage() {
               <Lightbulb className="w-5 h-5 mr-2 text-primary" />
               Need inspiration? Try one of these:
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 gap-3">
               {sampleQuestions.map((question, i) => (
                 <Button 
                   key={i} 
