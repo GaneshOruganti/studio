@@ -5,7 +5,7 @@ import { ArrowRight, Star } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { SuccessCounters } from "@/components/success-counters";
+import { TrackRecord } from "@/components/track-record";
 import { InteractiveHeroDynamic } from "@/components/interactive-hero-dynamic";
 import { LogoCloud } from "@/components/logo-cloud";
 import { services, whatWeDo } from "@/lib/services";
@@ -124,7 +124,7 @@ export default function Home() {
                       </p>
                   </div>
                   <div className="w-full mt-8 services-anim">
-                      <SuccessCounters />
+                      <TrackRecord />
                   </div>
                   <div className="my-6 services-anim">
                     <Button asChild>
