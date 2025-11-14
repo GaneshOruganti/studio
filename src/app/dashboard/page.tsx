@@ -38,7 +38,7 @@ export default function DashboardPage() {
     <div className="container py-12">
       <div className="w-full max-w-6xl mx-auto">
         <div className="services-anim">
-            <h1 className="text-4xl font-bold font-headline tracking-tighter mb-8">
+            <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl mb-8">
             Real-Time Dashboard
             </h1>
         </div>
