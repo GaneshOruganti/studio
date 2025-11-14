@@ -12,11 +12,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send } from "lucide-react";
 import { submitContactForm, type ContactFormState } from '@/lib/actions';
 import { useToast } from '@/hooks/use-toast';
-import { type Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: "Contact Us",
-};
 
 function SubmitButton() {
   const { pending } = useFormStatus();
