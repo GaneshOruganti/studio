@@ -4,7 +4,7 @@ import { getJobById, aboutCompany } from "@/lib/jobs";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, MapPin, Briefcase, DollarSign, ArrowRight } from "lucide-react";
+import { ArrowLeft, MapPin, Briefcase, DollarSign, Mail } from "lucide-react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
@@ -101,11 +101,11 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
                 </div>
 
                 <div className="mt-12 text-center services-anim" style={{ animationDelay: '500ms' }}>
-                <Button size="lg" asChild>
-                    <Link href="/contact">
-                    Apply Now <ArrowRight className="ml-2" />
-                    </Link>
-                </Button>
+                    <Button size="lg" asChild>
+                        <a href={`mailto:contact@speedopus.com?subject=Application for ${job.title}`}>
+                        Mail your CV <Mail className="ml-2" />
+                        </a>
+                    </Button>
                 </div>
             </div>
         </div>
