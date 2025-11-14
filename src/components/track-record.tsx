@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Award, Users, TrendingUp, Briefcase, Star, Smile, Calendar } from "lucide-react";
+import { Award, Briefcase, Calendar, Star, Smile, TrendingUp } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 const stats = [
@@ -29,6 +29,11 @@ const stats = [
         icon: Star,
         value: "4.9/5.0",
         label: "Customer Reviews",
+    },
+    {
+        icon: TrendingUp,
+        value: "100%",
+        label: "Success Rate",
     },
 ];
 
