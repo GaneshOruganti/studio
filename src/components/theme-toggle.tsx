@@ -17,16 +17,13 @@ export function ThemeToggle() {
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark")
   }
-  
-  if (!isClient) {
-    return <div className="h-10 w-10" />
-  }
 
   return (
     <Button 
       variant="ghost" 
       size="icon" 
       onClick={toggleTheme}
+      disabled={!isClient}
       className="rounded-full hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_15px_hsl(var(--primary))] transition-all duration-300"
     >
       <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
