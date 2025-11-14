@@ -60,21 +60,24 @@ const Counter = ({ label, value, suffix, isRating }: { label: string, value: num
     const displayValue = isRating ? count.toFixed(1) : count;
 
     return (
-        <div ref={ref} className="text-center">
-            <p className="text-2xl sm:text-3xl md:text-4xl font-bold font-headline text-primary">
+        <div ref={ref} className="text-center flex-shrink-0 w-36 sm:w-auto">
+            <p className="text-3xl sm:text-4xl md:text-4xl font-bold font-headline text-primary">
                 {displayValue}{suffix}
             </p>
-            <p className="text-sm md:text-base text-muted-foreground">{label}</p>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground whitespace-normal">
+                {label}
+            </p>
         </div>
     );
 };
 
 export function SuccessCounters() {
     return (
-        <div className="grid grid-cols-2 gap-y-8 gap-x-4 sm:grid-cols-3 lg:grid-cols-5 md:gap-8">
+        <div className="flex gap-8 overflow-x-auto pb-4 lg:grid lg:grid-cols-5 lg:overflow-visible lg:pb-0">
             {counters.map(counter => (
                 <Counter key={counter.label} {...counter} />
             ))}
         </div>
     );
 }
+
