@@ -102,7 +102,7 @@ export default function JobDetailsPage({ params }: { params: { jobId: string } }
 
                 <div className="mt-12 text-center services-anim" style={{ animationDelay: '500ms' }}>
                     <Button size="lg" asChild>
-                        <a href={`mailto:contact@speedopus.com?subject=Application for ${job.title}`}>
+                        <a href={`mailto:hr@speedopus.com?subject=Application for ${job.title}`}>
                         Mail your CV <Mail className="ml-2" />
                         </a>
                     </Button>
