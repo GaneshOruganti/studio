@@ -71,8 +71,17 @@ const Counter = ({ label, value, suffix, isRating }: { label: string, value: num
 
 export function SuccessCounters() {
     return (
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
-            {counters.map(counter => (
+        <div className="grid grid-cols-2 gap-y-8 gap-x-4 sm:grid-cols-3 md:grid-cols-5 md:gap-8">
+            {counters.slice(0, 2).map(counter => (
+                <Counter key={counter.label} {...counter} />
+            ))}
+            <div className="sm:hidden col-span-2 flex justify-center">
+                <Counter {...counters[2]} />
+            </div>
+            <div className="hidden sm:block">
+                <Counter {...counters[2]} />
+            </div>
+            {counters.slice(3).map(counter => (
                 <Counter key={counter.label} {...counter} />
             ))}
         </div>
