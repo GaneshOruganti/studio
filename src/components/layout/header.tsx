@@ -10,17 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Logo } from "../logo";
-
-const navItems = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "AI Insights", href: "/insights" },
-  { name: "Testimonials", href: "/testimonials" },
-  { name: "Partner", href: "/partner" },
-  { name: "Career", href: "/career" },
-  { "name": "Contact", "href": "/contact" },
-];
+import { navItems } from "@/lib/nav-links";
 
 export function Header() {
   const pathname = usePathname();
