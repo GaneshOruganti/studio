@@ -23,16 +23,26 @@ const trafficData = [
 
 export default function DashboardPage() {
   const [salesData, setSalesData] = useState(initialSalesData);
-  const [isClient, setIsClient] = useState(false);
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true);
+    // This effect runs only on the client, after the initial render.
+    setIsClient(true)
     setSalesData(initialSalesData.map(d => ({ ...d, sales: Math.floor(Math.random() * 2000) + 1000 })));
-  }, []);
+  }, [])
 
   if (!isClient) {
-    return null;
+    return (
+      <div className="container py-12">
+        <div className="w-full max-w-6xl mx-auto">
+            <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl mb-8">
+              Real-Time Dashboard
+            </h1>
+        </div>
+      </div>
+    );
   }
+
 
   return (
     <div className="container py-12">
