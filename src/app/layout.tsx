@@ -13,7 +13,8 @@ export const metadata: Metadata = {
     default: 'Speedopus India | Driving Innovation with Technology',
     template: '%s | Speedopus India',
   },
-  description: 'Driving innovation and modernity with cutting-edge technology services including AI, Cloud, and custom software development.',
+  description: 'Driving innovation and modernity with cutting-edge technology services including AI & ML Solutions, Custom Software Development, and Cloud & DevOps.',
+  keywords: ['AI solutions', 'custom software', 'cloud hosting', 'devops', 'digital marketing', 'Speedopus India'],
 };
 
 export default function RootLayout({

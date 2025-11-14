@@ -2,7 +2,6 @@
 "use client";
 
 import Image from "next/image";
-import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SuccessTimeline } from "@/components/success-timeline";
@@ -10,6 +9,7 @@ import { type Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About Us",
+    description: "Learn about Speedopus India's mission, vision, and the core values that drive our commitment to innovation and client success.",
 };
 
 const coreValues = [
@@ -80,7 +80,7 @@ export default function AboutPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
                     {coreValues.slice(0, 3).map((value, i) => (
                         <div key={value.title} className="services-card-anim" style={{ animationDelay: `${i * 150}ms` }}>
-                           <Card className="h-full bg-background/50 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full max-w-sm mx-auto">
+                           <Card className="h-full bg-background/50">
                              <CardHeader className="flex flex-row items-center gap-4">
                                <div className="p-3 bg-primary/10 rounded-full">
                                  <value.icon className="w-6 h-6 text-primary" />
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center lg:w-2/3 lg:mx-auto">
                      {coreValues.slice(3).map((value, i) => (
                         <div key={value.title} className="services-card-anim" style={{ animationDelay: `${(i + 3) * 150}ms` }}>
-                           <Card className="h-full bg-background/50 rounded-2xl shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full max-w-sm mx-auto">
+                           <Card className="h-full bg-background/50">
                              <CardHeader className="flex flex-row items-center gap-4">
                                <div className="p-3 bg-primary/10 rounded-full">
                                  <value.icon className="w-6 h-6 text-primary" />
