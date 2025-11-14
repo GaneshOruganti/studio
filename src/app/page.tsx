@@ -30,59 +30,31 @@ const services = [
 
 const whatWeDo = [
   {
-    name: "Business Software",
+    name: "Custom Software & Apps",
     icon: GanttChartSquare,
-    description: "Custom enterprise software solutions that streamline operations and boost productivity.",
-    highlighted: false,
-  },
-  {
-    name: "Mobile Applications",
-    icon: AppWindow,
-    description: "Native and cross-platform mobile apps for iOS and Android platforms.",
-    highlighted: false,
-  },
-  {
-    name: "Cloud Solutions",
-    icon: DatabaseZap,
-    description: "Scalable and secure cloud infrastructure to power your applications with high availability and performance.",
-    highlighted: false,
+    description: "Enterprise software and mobile applications to streamline operations and boost productivity.",
   },
   {
     name: "AI & Data Analytics",
     icon: BrainCircuit,
     description: "Leverage AI and data to gain actionable insights, automate processes, and drive business growth.",
-    highlighted: false,
   },
   {
-    name: "Business Analytics",
-    icon: BarChart,
-    description: "Transform raw data into meaningful business intelligence to guide your strategy.",
-    highlighted: false,
+    name: "Cloud & DevOps",
+    icon: DatabaseZap,
+    description: "Scalable cloud infrastructure and CI/CD pipelines for high availability and performance.",
   },
   {
-    name: "Content Creation",
-    icon: FileText,
-    description: "We create compelling content for online branding to enhance your digital presence.",
-    highlighted: false,
-  },
-  {
-    name: "Digital Marketing",
+    name: "Branding & Marketing",
     icon: Megaphone,
-    description: "Strategic digital marketing campaigns to grow your audience and boost engagement.",
-    highlighted: false,
-  },
-  {
-    name: "Logo & Brand Design",
-    icon: Palette,
-    description: "Crafting memorable logos and brand identities that tell your story and captivate your audience.",
-    highlighted: false,
+    description: "Strategic digital marketing, SEO, and brand design to grow your audience and captivate customers.",
   },
 ];
 
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-dvh overflow-x-hidden">
+    <div className="flex flex-col min-h-dvh">
       <main className="flex-1">
         <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
           <InteractiveHeroDynamic />
@@ -121,9 +93,9 @@ export default function Home() {
               <div className="mx-auto grid max-w-7xl items-start gap-8 py-12 lg:grid-cols-4 md:grid-cols-2">
                 {whatWeDo.map((item, i) => (
                   <div key={item.name} className="services-card-anim" style={{ animationDelay: `${i * 100}ms` } as React.CSSProperties}>
-                    <Card className={`h-full text-center transition-all duration-300 bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105`}>
+                    <Card className="h-full text-center transition-all duration-300 bg-transparent border-0 shadow-none hover:bg-card hover:shadow-lg hover:shadow-primary/20 hover:scale-105">
                       <CardContent className="p-6 flex flex-col items-center gap-4">
-                        <div className={`p-4 rounded-lg mb-4 bg-card`}>
+                        <div className="p-4 rounded-lg mb-4 bg-card">
                            <item.icon className="h-8 w-8 text-primary" />
                         </div>
                         <h3 className="font-headline text-xl font-bold">{item.name}</h3>
@@ -172,8 +144,8 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <div className="mt-8 text-center">
-                <Button asChild size="lg" className="font-bold animate-pulse hover:animate-none">
+              <div className="mt-8 text-center services-anim">
+                <Button asChild size="lg" className="font-bold">
                   <Link href="/services">
                     Explore All Our Services
                     <ArrowRight className="ml-2" />
@@ -184,24 +156,24 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="testimonials-section" className="w-full pt-0 pb-12 md:pb-24 lg:pb-32 bg-background">
+        <section id="testimonials-section" className="w-full pt-12 pb-12 md:pb-24 lg:pb-32 bg-background">
             <div className="container grid items-center justify-center gap-8 px-4 text-center md:px-6 lg:gap-12">
               <div className="w-full max-w-6xl mx-auto">
-                  <div className="space-y-3">
+                  <div className="space-y-3 services-anim">
                       <h2 className="text-3xl font-bold font-headline tracking-tighter sm:text-4xl md:text-5xl">Our Track Record</h2>
                       <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                           Don't just take our word for it. Our results and client feedback showcase our commitment to excellence.
                       </p>
                   </div>
-                  <div className="w-full mt-8">
+                  <div className="w-full mt-8 services-anim">
                       <SuccessCounters />
                   </div>
-                  <div className="my-6">
+                  <div className="my-6 services-anim">
                     <Button asChild>
                       <Link href="/testimonials">View Our Testimonials</Link>
                     </Button>
                   </div>
-                  <div className="mt-24 text-center">
+                  <div className="mt-24 text-center services-anim">
                     <h2 className="text-2xl font-bold font-headline tracking-tighter sm:text-3xl mb-6">Trusted by the World's Best Companies</h2>
                     <div className="mt-8">
                         <LogoCloud />

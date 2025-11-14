@@ -12,6 +12,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Loader2, Send } from "lucide-react";
 import { submitContactForm, type ContactFormState } from '@/lib/actions';
 import { useToast } from '@/hooks/use-toast';
+import { type Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Contact Us",
+};
 
 function SubmitButton() {
   const { pending } = useFormStatus();
@@ -45,8 +50,8 @@ export default function ContactPage() {
   }, [state, toast]);
 
   return (
-    <div className="container py-12 md:py-24">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
+      <div className="container py-12 md:py-24">
         <div className="text-center mb-12 services-anim">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             Get in Touch

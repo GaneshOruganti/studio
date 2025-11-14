@@ -19,6 +19,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { jobOpenings, type Job } from "@/lib/jobs";
 import { cn } from "@/lib/utils";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Careers",
+};
 
 type View = "all" | "saved";
 
@@ -88,8 +93,8 @@ export default function CareerPage() {
   }
 
   return (
-    <div className="container py-12 md:py-24">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
+      <div className="container py-12 md:py-24">
         <div className="text-center mb-12 services-anim">
             <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
                 Join Our Team

@@ -9,6 +9,11 @@ import { Button } from "@/components/ui/button";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Team",
+};
 
 const teamMembers = [
     { name: "Ganesh Oruganti", role: "Founder & CEO", avatarId: "testimonial-avatar-2", social: { linkedin: "#", instagram: "#" }, contribution: "Ganesh leads the company with a vision for innovation and excellence, driving the team to create cutting-edge solutions." },
@@ -52,7 +57,7 @@ export default function TeamPage() {
     return (
         <div className="w-full max-w-6xl mx-auto py-12 md:py-24">
             <div className="container">
-                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 services-anim">
                     <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
                         Meet Our Team
                     </h1>

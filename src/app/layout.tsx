@@ -9,8 +9,11 @@ import { FirebaseClientProvider } from '@/firebase';
 import { open_sans, poppins } from '@/app/fonts';
 
 export const metadata: Metadata = {
-  title: 'Speedopus India',
-  description: 'Driving innovation and modernity with cutting-edge technology services.',
+  title: {
+    default: 'Speedopus India | Driving Innovation with Technology',
+    template: '%s | Speedopus India',
+  },
+  description: 'Driving innovation and modernity with cutting-edge technology services including AI, Cloud, and custom software development.',
 };
 
 export default function RootLayout({

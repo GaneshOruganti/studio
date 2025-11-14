@@ -6,6 +6,11 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Handshake, Heart, Lightbulb, Rocket, ShieldCheck } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { SuccessTimeline } from "@/components/success-timeline";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About Us",
+};
 
 const coreValues = [
     {
@@ -38,17 +43,17 @@ const coreValues = [
 export default function AboutPage() {
   const texts = [
       "At Speedopus India, innovation drives everything we do. We specialize in delivering cutting-edge technology solutions including custom websites, e-commerce, AI-powered products, analytics, SEO, and cloud hosting with unmatched speed and quality.",
-      "Our mission is to empower businesses across education, real estate, government, and more through agile, secure, and scalable digital solutions tailored to their unique needs. We go beyond technology by partnering with clients to accelerate growth, improve experiences, and unlock new potential.",
-      "With a team rooted in creativity, integrity, and deep technical expertise, we continuously explore emerging technologies to shape the future of digital transformation. Join us on a journey of innovation, where your success is our priority."
+      "Our mission is to empower businesses by delivering agile, secure, and scalable digital solutions tailored to their unique needs. We go beyond technology by partnering with clients to accelerate growth, improve experiences, and unlock new potential.",
+      "With a team rooted in creativity, integrity, and deep technical expertise, we continuously explore emerging technologies to shape the future of digital transformation. Join us on a journey of innovation where your success is our priority."
   ];
 
   return (
     <div className="w-full max-w-6xl mx-auto">
         <div className="container py-12 md:py-24">
             <div className="text-center">
-                <div className="space-y-6">
-                    <p className="font-semibold text-primary services-anim">Who We Are?</p>
-                    <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl services-anim">
+                <div className="space-y-6 services-anim">
+                    <p className="font-semibold text-primary">Who We Are?</p>
+                    <h1 className="text-4xl font-bold font-headline tracking-tighter text-primary sm:text-5xl">
                     About Us
                     </h1>
                     <div className="space-y-4 text-muted-foreground text-lg max-w-3xl mx-auto">

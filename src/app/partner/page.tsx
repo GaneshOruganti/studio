@@ -20,11 +20,16 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Handshake } from "lucide-react";
+import { type Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Partner With Us",
+};
 
 export default function PartnerPage() {
   return (
-    <div className="container py-12 md:py-24">
-      <div className="max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto">
+      <div className="container py-12 md:py-24">
         <div className="text-center mb-12 services-anim">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
             Partner With Us
@@ -37,7 +42,7 @@ export default function PartnerPage() {
 
         <Card className="shadow-lg hover:shadow-primary/20 transition-shadow duration-300 max-w-3xl mx-auto services-card-anim">
           <CardHeader>
-            <CardTitle>Partnership Opportunities</CardTitle>
+            <CardTitle>Partnership Application</CardTitle>
             <CardDescription>
               Fill out the form below to explore partnership opportunities with
               Speedopus India.
