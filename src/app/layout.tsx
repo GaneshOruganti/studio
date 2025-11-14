@@ -35,7 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <FirebaseClientProvider>
-            <div className="relative flex min-h-dvh flex-col">
+            <div className="relative flex min-h-dvh flex-col overflow-x-hidden">
               <Header />
               <div className="flex-1">{children}</div>
               <Footer />
