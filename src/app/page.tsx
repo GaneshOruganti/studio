@@ -80,7 +80,7 @@ const whatWeDo = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-dvh">
+    <div className="flex flex-col min-h-dvh overflow-x-hidden">
       <main className="flex-1">
         <section className="relative w-full h-[60vh] md:h-[80vh] flex items-center justify-center text-center overflow-hidden">
           <InteractiveHeroDynamic />

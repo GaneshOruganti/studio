@@ -50,7 +50,7 @@ const StarRating = ({ rating }: { rating: number }) => {
 
 export default function TestimonialsPage() {
   return (
-    <div className="container py-12 md:py-24">
+    <div className="container py-12 md:py-24 overflow-x-hidden">
       <div className="w-full max-w-6xl mx-auto">
         {/* <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12 services-anim">
           <h1 className="text-4xl font-bold font-headline tracking-tighter sm:text-5xl md:text-6xl">
