@@ -1,6 +1,7 @@
 
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
@@ -14,6 +15,11 @@ import { navItems } from "@/lib/nav-links";
 
 export function Header() {
   const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 w-full pt-4">
@@ -48,37 +54,39 @@ export function Header() {
               <ThemeToggle />
 
               {/* Mobile Navigation */}
-              <div className="md:hidden">
-                <Sheet>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Menu className="h-5 w-5" />
-                      <span className="sr-only">Toggle Menu</span>
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="left" className="pr-0">
-                    <Link href="/" className="mr-6 flex items-center space-x-2">
-                      <Logo />
-                    </Link>
-                    <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
-                      <div className="flex flex-col space-y-3">
-                        {navItems.map((item) => (
-                          <Link
-                            key={item.name}
-                            href={item.href}
-                            className={cn(
-                              "transition-colors hover:text-foreground/80",
-                              pathname === item.href ? "text-foreground" : "text-foreground/60"
-                            )}
-                          >
-                            {item.name}
-                          </Link>
-                        ))}
+              {isClient && (
+                <div className="md:hidden">
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <Button variant="ghost" size="icon">
+                        <Menu className="h-5 w-5" />
+                        <span className="sr-only">Toggle Menu</span>
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="left" className="pr-0">
+                      <Link href="/" className="mr-6 flex items-center space-x-2">
+                        <Logo />
+                      </Link>
+                      <div className="my-4 h-[calc(100vh-8rem)] pb-10 pl-6">
+                        <div className="flex flex-col space-y-3">
+                          {navItems.map((item) => (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className={cn(
+                                "transition-colors hover:text-foreground/80",
+                                pathname === item.href ? "text-foreground" : "text-foreground/60"
+                              )}
+                            >
+                              {item.name}
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  </SheetContent>
-                </Sheet>
-              </div>
+                    </SheetContent>
+                  </Sheet>
+                </div>
+              )}
             </div>
           </div>
         </div>
