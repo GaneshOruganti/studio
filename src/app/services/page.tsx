@@ -1,13 +1,15 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { BrainCircuit, UserCog, Database, Bot, Search, FileText, Megaphone, Briefcase, AppWindow, DatabaseZap, Palette, ShoppingCart, ArrowRight } from "lucide-react";
+import { BrainCircuit, UserCog, Database, Bot, Search, FileText, Megaphone, Briefcase, AppWindow, DatabaseZap, Palette, ShoppingCart, ArrowRight, Globe, FolderKanban } from "lucide-react";
 import { AnimatedTimeline } from "@/components/animated-timeline";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 const services = [
   { name: "AI & ML Solutions", icon: BrainCircuit, description: "Artificial intelligence and machine learning solutions to automate and optimize processes." },
+  { name: "Website Development", icon: Globe, description: "Creating stunning, high-performance websites tailored to your business needs." },
   { name: "CRM Development", icon: UserCog, description: "Customer Relationship Management systems to manage and improve customer interactions." },
+  { name: "Portfolio Management", icon: FolderKanban, description: "Strategic management of your project and investment portfolios to maximize returns." },
   { name: "RCM Development", icon: Database, description: "Revenue Cycle Management systems to optimize financial processes and billing." },
   { name: "Answer Engine Optimization", icon: Bot, description: "Optimize content for AI-powered search and voice assistants." },
   { name: "Search Engine Optimization", icon: Search, description: "Improve your website's visibility and ranking on search engines." },
