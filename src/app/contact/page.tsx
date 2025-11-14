@@ -1,10 +1,11 @@
+
 import { type Metadata } from "next";
-import ContactClientPage from "./contact-form";
+import ContactClientLoader from "./contact-client-loader";
 
 export const metadata: Metadata = {
     title: "Contact Us",
 };
 
 export default function ContactPage() {
-  return <ContactClientPage />;
+  return <ContactClientLoader />;
 }
