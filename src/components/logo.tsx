@@ -12,10 +12,15 @@ export function Logo() {
     setIsClient(true);
   }, []);
 
+  if (!isClient) {
+    // Render nothing on the server to prevent a mismatch
+    return null;
+  }
+
   const darkThemeLogo = "https://i.postimg.cc/pLk4JhpS/Red-White-Simple-Company-Technology-Logo-5.png";
   const lightThemeLogo = "https://i.postimg.cc/3RksR8rV/Red-White-Simple-Company-Technology-Logo-6.png";
 
-  const logoSrc = isClient && theme === 'dark' ? darkThemeLogo : lightThemeLogo;
+  const logoSrc = theme === 'dark' ? darkThemeLogo : lightThemeLogo;
 
   return (
     <Image 
