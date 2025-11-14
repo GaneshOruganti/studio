@@ -11,18 +11,9 @@ import { firebaseConfig } from '@/firebase/config';
 // Initialize Firebase Admin SDK if not already initialized
 if (!admin.apps.length) {
   try {
-    // This check is to prevent re-initialization in hot-reload environments
-    if (process.env.FIREBASE_PRIVATE_KEY) {
-      admin.initializeApp({
-        credential: admin.credential.cert({
-          projectId: process.env.FIREBASE_PROJECT_ID,
-          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-          privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-        }),
-      });
-    } else {
-        console.warn("Firebase Admin SDK not initialized. Missing environment variables.");
-    }
+    // In a managed environment like Firebase Studio's, the Admin SDK
+    // is often initialized automatically with the correct project credentials.
+    admin.initializeApp();
   } catch (error) {
     console.error('Firebase admin initialization error:', error);
   }
