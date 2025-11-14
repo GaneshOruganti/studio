@@ -1,47 +1,24 @@
 'use client';
 
-import { useActionState, useEffect } from 'react';
-import { useFormStatus } from 'react-dom';
-
+import { useState, type FormEvent } from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Loader2, Send } from "lucide-react";
-import { submitContactForm, type ContactFormState } from '@/lib/actions';
-import { useToast } from '@/hooks/use-toast';
+import { Send } from "lucide-react";
 
-function SubmitButton() {
-  const { pending } = useFormStatus();
+export default function ContactClientPage() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  return (
-    <Button type="submit" disabled={pending} className="w-full sm:w-auto justify-self-end">
-      {pending ? <Loader2 className="mr-2 animate-spin" /> : <Send className="mr-2" />}
-      Send Message
-    </Button>
-  );
-}
-
-export default function ContactForm() {
-  const initialState: ContactFormState = { message: '' };
-  const [state, dispatch] = useActionState(submitContactForm, initialState);
-  const { toast } = useToast();
-
-  useEffect(() => {
-    if (state.message === 'Your message has been sent successfully!') {
-      toast({
-        title: "Success!",
-        description: state.message,
-      });
-    } else if (state.message && state.message !== 'Invalid form data.') {
-      toast({
-        title: "Error",
-        description: state.message,
-        variant: "destructive",
-      });
-    }
-  }, [state, toast]);
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const subject = "Contact Form Submission";
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    window.location.href = `mailto:contact@speedopus.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   return (
     <div className="w-full max-w-6xl mx-auto">
@@ -63,25 +40,25 @@ export default function ContactForm() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <form action={dispatch} className="grid gap-6">
+            <form onSubmit={handleSubmit} className="grid gap-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="grid gap-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" name="name" placeholder="Your Name" />
-                  {state.errors?.name && <p className="text-sm font-medium text-destructive">{state.errors.name[0]}</p>}
+                  <Input id="name" name="name" placeholder="Your Name" value={name} onChange={(e) => setName(e.target.value)} required />
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" name="email" type="email" placeholder="your@email.com" />
-                  {state.errors?.email && <p className="text-sm font-medium text-destructive">{state.errors.email[0]}</p>}
+                  <Input id="email" name="email" type="email" placeholder="your@email.com" value={email} onChange={(e) => setEmail(e.target.value)} required />
                 </div>
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="message">Message</Label>
-                <Textarea id="message" name="message" placeholder="Your message..." rows={6} />
-                {state.errors?.message && <p className="text-sm font-medium text-destructive">{state.errors.message[0]}</p>}
+                <Textarea id="message" name="message" placeholder="Your message..." rows={6} value={message} onChange={(e) => setMessage(e.target.value)} required />
               </div>
-              <SubmitButton />
+              <Button type="submit" className="w-full sm:w-auto justify-self-end">
+                <Send className="mr-2" />
+                Send Message
+              </Button>
             </form>
           </CardContent>
         </Card>

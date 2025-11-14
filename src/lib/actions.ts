@@ -11,13 +11,18 @@ import { firebaseConfig } from '@/firebase/config';
 // Initialize Firebase Admin SDK if not already initialized
 if (!admin.apps.length) {
   try {
-    admin.initializeApp({
-      credential: admin.credential.cert({
-        projectId: process.env.FIREBASE_PROJECT_ID,
-        clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-        privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
-      }),
-    });
+    // This check is to prevent re-initialization in hot-reload environments
+    if (process.env.FIREBASE_PRIVATE_KEY) {
+      admin.initializeApp({
+        credential: admin.credential.cert({
+          projectId: process.env.FIREBASE_PROJECT_ID,
+          clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+          privateKey: process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n'),
+        }),
+      });
+    } else {
+        console.warn("Firebase Admin SDK not initialized. Missing environment variables.");
+    }
   } catch (error) {
     console.error('Firebase admin initialization error:', error);
   }
@@ -94,6 +99,13 @@ export async function submitContactForm(
     return {
       message: 'Invalid form data.',
       errors: validatedFields.error.flatten().fieldErrors,
+    };
+  }
+  
+  if (!admin.apps.length) {
+    console.error('Firebase Admin SDK is not initialized. Cannot submit contact form.');
+    return {
+      message: 'Server error: Firebase connection not available.',
     };
   }
 
