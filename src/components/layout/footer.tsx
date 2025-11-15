@@ -93,7 +93,7 @@ export function Footer() {
                         <Facebook className="h-6 w-6" />
                         <span className="sr-only">Facebook</span>
                     </Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://x.com/SpeedopusIndia" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Twitter className="h-6 w-6" />
                         <span className="sr-only">Twitter</span>
                     </Link>
