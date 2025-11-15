@@ -101,7 +101,7 @@ export function Footer() {
                         <Instagram className="h-6 w-6" />
                         <span className="sr-only">Instagram</span>
                     </Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.youtube.com/@speedopusindia" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Youtube className="h-6 w-6" />
                         <span className="sr-only">YouTube</span>
                     </Link>
