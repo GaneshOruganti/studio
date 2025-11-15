@@ -105,7 +105,7 @@ export function Footer() {
                         <Youtube className="h-6 w-6" />
                         <span className="sr-only">YouTube</span>
                     </Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="https://www.linkedin.com/company/speedopus/" className="text-muted-foreground hover:text-primary transition-colors">
                         <Linkedin className="h-6 w-6" />
                         <span className="sr-only">LinkedIn</span>
                     </Link>
