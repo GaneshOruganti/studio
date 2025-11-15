@@ -1,3 +1,4 @@
+
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "../logo";
@@ -89,7 +90,7 @@ export function Footer() {
                 <div className="mt-6">
                     <h4 className="font-bold font-headline text-lg mb-4">Follow Us</h4>
                     <div className="flex items-center gap-4">
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
+                    <Link href="https://www.facebook.com/people/Speedopus/61583960395919/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Facebook className="h-6 w-6" />
                         <span className="sr-only">Facebook</span>
                     </Link>
