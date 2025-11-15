@@ -89,23 +89,23 @@ export function Footer() {
                 <div className="mt-6">
                     <h4 className="font-bold font-headline text-lg mb-4">Follow Us</h4>
                     <div className="flex items-center gap-4">
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Facebook className="h-6 w-6" />
                         <span className="sr-only">Facebook</span>
                     </Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Twitter className="h-6 w-6" />
                         <span className="sr-only">Twitter</span>
                     </Link>
-                    <Link href="https://www.instagram.com/speedopus/" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="https://www.instagram.com/speedopus/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Instagram className="h-6 w-6" />
                         <span className="sr-only">Instagram</span>
                     </Link>
-                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="#" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Youtube className="h-6 w-6" />
                         <span className="sr-only">YouTube</span>
                     </Link>
-                    <Link href="https://www.linkedin.com/company/speedopus/" className="text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="https://www.linkedin.com/company/speedopus/" className="text-muted-foreground hover:text-primary transition-colors" target="_blank" rel="noopener noreferrer">
                         <Linkedin className="h-6 w-6" />
                         <span className="sr-only">LinkedIn</span>
                     </Link>
